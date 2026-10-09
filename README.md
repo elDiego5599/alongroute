@@ -86,7 +86,8 @@ type Reading = {
 };
 ```
 
-The Dart API mirrors it with Dart naming. Details in
+The pure-Dart package in [`dart/`](dart/) mirrors this API with Dart naming;
+the Dart and TypeScript implementations run the shared vectors. Details in
 [docs/design.md](docs/design.md).
 
 ## Non-goals
@@ -105,8 +106,8 @@ The Dart API mirrors it with Dart naming. Details in
 | 0 | This README and the [design](docs/design.md) | ✅ |
 | 1 | Along-route distance with windowed projection, inside Ya Viene's Dart core | Shipped in the Ya Viene app |
 | 2 | Shared test vectors in [`vectors/`](vectors/) | Public GTFS-Realtime traces from other cities, plus Ya Viene's once real GPS is installed |
-| 3 | `dart/` package extracted from stage 1 | All vectors pass |
-| 4 | `ts/` port | Same vectors pass; < 4 KB gzip |
+| 3 | Pure-Dart `dart/` package, ported from the TypeScript behavior | All shared vectors pass |
+| 4 | TypeScript package with the same behavior | Same vectors pass; < 4 KB gzip |
 | 5 | Demo page: raw fixes vs. straight-line animation vs. alongroute | Runs on a low-end phone |
 | 6 | 0.1.0 on pub.dev and npm | — |
 
