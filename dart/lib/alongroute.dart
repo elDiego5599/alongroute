@@ -114,7 +114,8 @@ class Route {
   final int _minX, _maxX, _minY, _maxY;
   int _distanceChecks = 0;
   int get distanceChecks => _distanceChecks;
-  List<Projection> debugCandidates(Point point) => _candidates(point)
+  List<Projection> debugCandidates(Point point) =>
+      _candidates(point)
       .map((c) => Projection(progress: c.progress, offset: c.offset))
       .toList();
 
@@ -128,28 +129,69 @@ class Route {
         (p.lat - _lat0) * _rad * _earthRadius,
       );
 
-  List<_Candidate> _candidates(Point point) {
+  List<_Candidate> _candidates(
+    Point point, [
+    bool Function(double progress)? filter,
+  ]) {
     final q = _local(point);
     final cx = (q.x / _cellSize).floor(), cy = (q.y / _cellSize).floor();
     final outside = cx < _minX || cx > _maxX || cy < _minY || cy > _maxY;
-    final maxRing = outside ? 0 : [cx - _minX, _maxX - cx, cy - _minY, _maxY - cy].reduce(math.max);
-    final found = <int>{}, examined = <int>{};
+    final maxRing = outside
+        ? 0
+        : [cx - _minX, _maxX - cx, cy - _minY, _maxY - cy].reduce(math.max);
+    final found = <int>{}, examined = <int>{}, eligible = <int>{};
     var best = double.infinity;
     for (var ring = 0; ring <= maxRing; ring++) {
       for (var x = cx - ring; x <= cx + ring; x++) {
         for (var y = cy - ring; y <= cy + ring; y++) {
-          if (ring > 0 && x != cx - ring && x != cx + ring && y != cy - ring && y != cy + ring) continue;
+          if (ring > 0 &&
+              x != cx - ring &&
+              x != cx + ring &&
+              y != cy - ring &&
+              y != cy + ring) {
+            continue;
+          }
           found.addAll(_grid['$x,$y'] ?? const []);
         }
       }
       if (found.isNotEmpty) {
-        for (final i in found) { if (!examined.add(i)) continue; final s = _segments[i]; final t = (((q.x - s.x) * s.dx + (q.y - s.y) * s.dy) / (s.length * s.length)).clamp(0.0, 1.0).toDouble(); _distanceChecks++; best = math.min(best, math.sqrt(math.pow(q.x - s.x - t * s.dx, 2) + math.pow(q.y - s.y - t * s.dy, 2))); }
-        if (outside || math.max(0, (ring - 1) * _cellSize) > best + 15) break;
+        for (final i in found) {
+          if (!examined.add(i)) continue;
+          final s = _segments[i];
+          final t = (((q.x - s.x) * s.dx + (q.y - s.y) * s.dy) /
+                  (s.length * s.length))
+              .clamp(0.0, 1.0)
+              .toDouble();
+          final progress = s.start + t * s.length;
+          final offset = math.sqrt(
+            math.pow(q.x - s.x - t * s.dx, 2) +
+                math.pow(q.y - s.y - t * s.dy, 2),
+          );
+          _distanceChecks++;
+          if (filter == null || filter(progress)) {
+            eligible.add(i);
+            best = math.min(best, offset);
+          }
+        }
+        if (outside ||
+            (eligible.isNotEmpty &&
+                math.max(0, (ring - 1) * _cellSize) > best + 15)) {
+          break;
+        }
       }
       if (ring == maxRing) break;
     }
-    final indices = outside ? List.generate(_segments.length, (i) => i) : found.toList()..sort();
-    return indices.map((i) { final s = _segments[i]; _distanceChecks++;
+    late final List<int> indices;
+    if (filter != null) {
+      indices = eligible.toList()..sort();
+    } else if (outside) {
+      indices = List.generate(_segments.length, (i) => i);
+    } else {
+      indices = found.toList()..sort();
+    }
+    return indices.map((i) {
+      final s = _segments[i];
+      _distanceChecks++;
       final t =
           (((q.x - s.x) * s.dx + (q.y - s.y) * s.dy) / (s.length * s.length))
               .clamp(0.0, 1.0)
@@ -157,7 +199,8 @@ class Route {
       return _Candidate(
         s.start + t * s.length,
         math.sqrt(
-          math.pow(q.x - s.x - t * s.dx, 2) + math.pow(q.y - s.y - t * s.dy, 2),
+          math.pow(q.x - s.x - t * s.dx, 2) +
+              math.pow(q.y - s.y - t * s.dy, 2),
         ),
         s.heading,
       );
@@ -275,8 +318,8 @@ class TrackerOptions {
     this.vMax = 25,
     this.maxOffset = 60,
     this.maxStopOffset = 300,
-    this.staleMs = 30000,
-    this.lostMs = 120000,
+    this.staleMs = 45000,
+    this.lostMs = 300000,
     this.speedAlpha = 0.4,
     this.extrapolateMs = 5000,
     this.easeMs = 3000,
@@ -295,8 +338,9 @@ class Tracker {
   final Route route;
   final TrackerOptions options;
   double? _previousProgress, _previousT, _lastFixT, _drawT, _backwardFrom;
+  double? _backwardCandidate;
   Reading? _current;
-  int _lapBefore = 0, _lap = 0, _backwardFixes = 0;
+  int _lapBefore = 0, _lap = 0;
   bool _offRoute = false;
   double _speed = 0, _drawFloor = 0, _drawBase = 0;
 
@@ -310,35 +354,53 @@ class Tracker {
 
   Reading? report(Fix fix) {
     if (_previousT != null && fix.t <= _previousT!) return _current?._copy();
-    _lastFixT = fix.t;
     final dt = _previousT == null ? 0.0 : (fix.t - _previousT!) / 1000;
     final low = _previousProgress == null ? 0.0 : _previousProgress! - 50;
     final high = _previousProgress == null
         ? route.length
         : _previousProgress! + options.vMax * dt + 100;
-    final candidates = route._candidates(fix);
-    final inWindow = <_Candidate>[];
-    for (final c in candidates) {
-      if (high - low >= route.length ||
-          (route.loop
-              ? ((c.progress - low) % route.length + route.length) %
-                      route.length <=
-                  high - low
-              : c.progress >= math.max(0, low) &&
-                  c.progress <= math.min(route.length, high))) {
-        inWindow.add(c);
+    bool inWindow(double progress) => high - low >= route.length ||
+        (route.loop
+            ? ((progress - low) % route.length + route.length) % route.length <= high - low
+            : progress >= math.max(0, low) && progress <= math.min(route.length, high));
+    final windowed = _previousT != null && !_offRoute;
+    final candidates = route._candidates(fix, windowed ? inWindow : null);
+    late final _Candidate c;
+    if (candidates.isNotEmpty) {
+      c = route._choose(candidates, fix.heading);
+    } else if (windowed) {
+      bool behind(double progress) {
+        final backwardLimit = math.max(50.0, options.vMax * dt + 100);
+        final forward = route.loop
+            ? ((progress - _previousProgress!) % route.length + route.length) %
+                route.length
+            : progress - _previousProgress!;
+        final distanceBehind = route.loop ? route.length - forward : -forward;
+        if (inWindow(progress)) return false;
+        return distanceBehind > 30 && distanceBehind <= backwardLimit;
       }
+
+      final backwardCandidates = route._candidates(fix, behind);
+      if (backwardCandidates.isNotEmpty) {
+        c = route._choose(backwardCandidates, fix.heading);
+      } else {
+        c = route._choose(route._candidates(fix), fix.heading);
+        if (c.offset <= options.maxOffset) {
+          _backwardCandidate = null;
+          return _current?._copy();
+        }
+      }
+    } else {
+      return _current?._copy();
     }
-    final c = route._choose(
-      inWindow.isNotEmpty ? inWindow : candidates,
-      fix.heading,
-    );
     final drawn = at(fix.t);
     final drawnAbsolute = drawn == null
         ? 0.0
         : drawn.progress + drawn.lap * (route.loop ? route.length : 0);
     if (c.offset > options.maxOffset) {
+      _lastFixT = fix.t;
       _offRoute = true;
+      _backwardCandidate = null;
       if (drawn != null) {
         _current = drawn._copy(state: TrackerState.offRoute, offset: c.offset);
         _drawFloor = _drawBase = drawnAbsolute;
@@ -348,6 +410,18 @@ class Tracker {
       }
       return _current?._copy();
     }
+    if (_previousProgress != null) {
+      final delta = c.progress - _previousProgress!;
+      final forward = route.loop
+          ? (delta % route.length + route.length) % route.length
+          : delta;
+      final backward = route.loop ? forward > route.length / 2 : delta < 0;
+      if (!backward && forward > options.vMax * dt + 100) {
+        _backwardCandidate = null;
+        return _current?._copy();
+      }
+    }
+    _lastFixT = fix.t;
     _offRoute = false;
     var progress = c.progress;
     var acceptedBackward = false;
@@ -362,18 +436,31 @@ class Tracker {
           route.loop ? route.length - forwardDelta : -rawDelta;
       if (isBackward && distanceBehind <= 30) {
         progress = _previousProgress!;
-        _backwardFixes = 0;
+        _backwardCandidate = null;
       } else if (isBackward) {
-        _backwardFixes++;
-        if (_backwardFixes < 2) {
+        final candidateDelta = _backwardCandidate == null
+            ? double.infinity
+            : route.loop
+                ? math.min(
+                    ((progress - _backwardCandidate!) % route.length +
+                            route.length) %
+                        route.length,
+                    ((_backwardCandidate! - progress) % route.length +
+                            route.length) %
+                        route.length,
+                  )
+                : (progress - _backwardCandidate!).abs();
+        if (_backwardCandidate == null ||
+            candidateDelta > options.vMax * dt + 100) {
           progress = _previousProgress!;
+          _backwardCandidate = c.progress;
         } else {
           if (route.loop &&
               _previousProgress! < route.length / 2 &&
               c.progress > route.length / 2) {
             _lap = math.max(0, _lap - 1).toInt();
           }
-          _backwardFixes = 0;
+          _backwardCandidate = null;
           acceptedBackward = true;
         }
       } else {
@@ -382,15 +469,20 @@ class Tracker {
             forwardDelta < route.length / 2) {
           _lap++;
         }
-        _backwardFixes = 0;
+        _backwardCandidate = null;
       }
     }
     final absolute = progress + _lap * (route.loop ? route.length : 0);
     if (_previousProgress != null && dt > 0) {
       final delta = absolute -
           (_previousProgress! + _lapBefore * (route.loop ? route.length : 0));
-      _speed +=
-          options.speedAlpha * (math.max(0.0, delta / dt).toDouble() - _speed);
+      final maxSpeed = options.vMax;
+      final sample =
+          math.min(maxSpeed, math.max(0.0, delta / dt)).toDouble();
+      _speed = math.max(
+        0.0,
+        math.min(maxSpeed, _speed + options.speedAlpha * (sample - _speed)),
+      ).toDouble();
     }
     _previousProgress = progress;
     _previousT = fix.t;

@@ -38,30 +38,47 @@ export function prepareRoute(points: Point[], options: { loop?: boolean } = {}) 
     for (let x = x0; x <= x1; x++) for (let y = y0; y <= y1; y++) { const k = key(x, y); const cell = grid.get(k); if (cell) cell.push(i); else grid.set(k, [i]); }
   });
   let distanceChecks = 0;
-  const projectCandidates = (p: Point) => {
+  const projectCandidates = (p: Point, filter?: (progress: number) => boolean) => {
     const q = local(p);
     const cx = Math.floor(q.x / CELL), cy = Math.floor(q.y / CELL), found = new Set<number>(), examined = new Set<number>();
+    const eligible = new Set<number>();
     const outside = cx < bounds.minX || cx > bounds.maxX || cy < bounds.minY || cy > bounds.maxY;
     const maxRing = outside ? 0 : Math.max(cx - bounds.minX, bounds.maxX - cx, cy - bounds.minY, bounds.maxY - cy);
     let best = Infinity;
+    const candidate = (i: number) => {
+      const s = segments[i]!;
+      const t = Math.max(0, Math.min(1, ((q.x - s.x) * s.dx + (q.y - s.y) * s.dy) / s.length ** 2));
+      return { progress: s.start + t * s.length,
+        offset: Math.hypot(q.x - s.x - t * s.dx, q.y - s.y - t * s.dy),
+        heading: s.heading };
+    };
     for (let ring = 0; ring <= maxRing; ring++) {
       for (let x = cx - ring; x <= cx + ring; x++) for (let y = cy - ring; y <= cy + ring; y++) {
         if (ring && x !== cx - ring && x !== cx + ring && y !== cy - ring && y !== cy + ring) continue;
         for (const i of grid.get(key(x, y)) ?? []) found.add(i);
       }
       if (found.size) {
-        for (const i of found) if (!examined.has(i)) { examined.add(i); const s = segments[i]!; distanceChecks++; const t = Math.max(0, Math.min(1, ((q.x - s.x) * s.dx + (q.y - s.y) * s.dy) / s.length ** 2)); best = Math.min(best, Math.hypot(q.x - s.x - t * s.dx, q.y - s.y - t * s.dy)); }
+        for (const i of found) {
+          if (examined.has(i)) continue;
+          examined.add(i);
+          distanceChecks++;
+          const c = candidate(i);
+          if (!filter || filter(c.progress)) {
+            eligible.add(i);
+            best = Math.min(best, c.offset);
+          }
+        }
         const reach = Math.max(0, (ring - 1) * CELL);
-        if (outside || reach > best + 15) break;
+        if (outside || (eligible.size > 0 && reach > best + 15)) break;
       }
       if (ring === maxRing) break;
     }
-    const indices = outside || found.size === segments.length ? segments.map((_, i) => i) : [...found].sort((a, b) => a - b);
-    return indices.map(i => {
-      const s = segments[i]!; distanceChecks++;
-      const t = Math.max(0, Math.min(1, ((q.x - s.x) * s.dx + (q.y - s.y) * s.dy) / s.length ** 2));
-      return { progress: s.start + t * s.length, offset: Math.hypot(q.x - s.x - t * s.dx, q.y - s.y - t * s.dy), heading: s.heading };
-    });
+    const indices = filter
+      ? [...eligible].sort((a, b) => a - b)
+      : outside || found.size === segments.length
+        ? segments.map((_, i) => i)
+        : [...found].sort((a, b) => a - b);
+    return indices.map(i => { distanceChecks++; return candidate(i); });
   };
   const choose = (cs: ReturnType<typeof projectCandidates>, heading?: number) => {
     const nearest = Math.min(...cs.map(c => c.offset));
@@ -98,7 +115,7 @@ export class Tracker {
   private drawT?: number;
   private drawBase = 0;
   private backwardFrom?: number;
-  private backwardFixes = 0;
+  private backwardCandidate?: number;
   readonly route: Route;
   readonly options: { vMax?: number; maxOffset?: number; maxStopOffset?: number; staleMs?: number; lostMs?: number; speedAlpha?: number; extrapolateMs?: number; easeMs?: number };
   constructor(route: Route, options: Tracker["options"] = {}) { this.route = route; this.options = options; }
@@ -106,25 +123,49 @@ export class Tracker {
     if (this.offRoute) return 'offRoute';
     if (this.lastFixT === undefined) return 'lost';
     const age = Math.max(0, nowMs - this.lastFixT);
-    if (age <= (this.options.staleMs ?? 30000)) return 'live';
-    return age <= (this.options.lostMs ?? 120000) ? 'stale' : 'lost';
+    if (age <= (this.options.staleMs ?? 45000)) return 'live';
+    return age <= (this.options.lostMs ?? 300000) ? 'stale' : 'lost';
   }
   report(fix: Fix): Reading | null {
     if (this.previous && fix.t <= this.previous.t) return copyReading(this.current);
-    this.lastFixT = fix.t;
     const dt = this.previous ? (fix.t - this.previous.t) / 1000 : 0;
     const low = this.previous ? this.previous.progress - 50 : 0;
     const high = this.previous ? this.previous.progress + (this.options.vMax ?? 25) * dt + 100 : this.route.length;
-    const candidates = this.route._candidates(fix);
-    const inWindow = candidates.map((c, i) => ({ ...c, i })).filter(c => {
+    const inWindow = (progress: number) => {
       if (high - low >= this.route.length) return true;
-      return this.route.loop ? ((c.progress - low) % this.route.length + this.route.length) % this.route.length <= high - low : c.progress >= Math.max(0, low) && c.progress <= Math.min(this.route.length, high);
-    });
-    let c = this.route._choose(inWindow.length ? inWindow : candidates, fix.heading);
+      return this.route.loop
+        ? ((progress - low) % this.route.length + this.route.length) % this.route.length <= high - low
+        : progress >= Math.max(0, low) && progress <= Math.min(this.route.length, high);
+    };
+    const windowed = !!this.previous && !this.offRoute;
+    const candidates = this.route._candidates(fix, windowed ? inWindow : undefined);
+    let c: ReturnType<Route["_candidates"]>[number];
+    if (candidates.length) c = this.route._choose(candidates, fix.heading);
+    else if (windowed) {
+      const backwardLimit = Math.max(50, (this.options.vMax ?? 25) * dt + 100);
+      const behind = (progress: number) => {
+        const forward = this.route.loop
+          ? ((progress - this.previous!.progress) % this.route.length + this.route.length) % this.route.length
+          : progress - this.previous!.progress;
+        const distanceBehind = this.route.loop ? this.route.length - forward : -forward;
+        return !inWindow(progress) && distanceBehind > 30 && distanceBehind <= backwardLimit;
+      };
+      const backwardCandidates = this.route._candidates(fix, behind);
+      if (backwardCandidates.length) c = this.route._choose(backwardCandidates, fix.heading);
+      else {
+        c = this.route._choose(this.route._candidates(fix), fix.heading);
+        if (c.offset <= (this.options.maxOffset ?? 60)) {
+          this.backwardCandidate = undefined;
+          return copyReading(this.current);
+        }
+      }
+    } else return copyReading(this.current);
     const drawn = this.at(fix.t);
     const drawnAbsolute = drawn ? drawn.progress + drawn.lap * (this.route.loop ? this.route.length : 0) : 0;
     if (c.offset > (this.options.maxOffset ?? 60)) {
+      this.lastFixT = fix.t;
       this.offRoute = true;
+      this.backwardCandidate = undefined;
       if (drawn) {
         this.current = { ...drawn, state: 'offRoute', offset: c.offset };
         this.drawFloor = this.drawBase = drawnAbsolute;
@@ -134,6 +175,16 @@ export class Tracker {
       }
       return copyReading(this.current);
     }
+    if (this.previous) {
+      const delta = c.progress - this.previous.progress;
+      const forward = this.route.loop ? (delta % this.route.length + this.route.length) % this.route.length : delta;
+      const backward = this.route.loop ? forward > this.route.length / 2 : delta < 0;
+      if (!backward && forward > (this.options.vMax ?? 25) * dt + 100) {
+        this.backwardCandidate = undefined;
+        return copyReading(this.current);
+      }
+    }
+    this.lastFixT = fix.t;
     this.offRoute = false;
     let progress = c.progress;
     let acceptedBackward = false;
@@ -144,22 +195,36 @@ export class Tracker {
       const distanceBehind = this.route.loop ? this.route.length - forwardDelta : -rawDelta;
       if (isBackward && distanceBehind <= 30) {
         progress = this.previous.progress;
-        this.backwardFixes = 0;
+        this.backwardCandidate = undefined;
       } else if (isBackward) {
-        this.backwardFixes++;
-        if (this.backwardFixes < 2) progress = this.previous.progress;
-        else { if (this.route.loop && this.previous.progress < this.route.length / 2 && c.progress > this.route.length / 2) this.lap = Math.max(0, this.lap - 1); this.backwardFixes = 0; acceptedBackward = true; }
+        const candidateDelta = this.backwardCandidate === undefined
+          ? Infinity
+          : this.route.loop
+            ? Math.min(
+                ((progress - this.backwardCandidate) % this.route.length + this.route.length) % this.route.length,
+                ((this.backwardCandidate - progress) % this.route.length + this.route.length) % this.route.length,
+              )
+            : Math.abs(progress - this.backwardCandidate);
+        if (this.backwardCandidate === undefined || candidateDelta > (this.options.vMax ?? 25) * dt + 100) {
+          progress = this.previous.progress;
+          this.backwardCandidate = c.progress;
+        } else {
+          if (this.route.loop && this.previous.progress < this.route.length / 2 && c.progress > this.route.length / 2) this.lap = Math.max(0, this.lap - 1);
+          this.backwardCandidate = undefined;
+          acceptedBackward = true;
+        }
       } else {
         if (this.route.loop && c.progress < this.previous.progress && forwardDelta < this.route.length / 2) this.lap++;
-        this.backwardFixes = 0;
+        this.backwardCandidate = undefined;
       }
     }
     const absolute = progress + this.lap * (this.route.loop ? this.route.length : 0);
     if (this.previous && dt > 0) {
       const delta = absolute - (this.previous.progress + this.lapBefore * (this.route.loop ? this.route.length : 0));
-      const sample = Math.max(0, delta / dt);
+      const maxSpeed = this.options.vMax ?? 25;
+      const sample = Math.max(0, Math.min(maxSpeed, delta / dt));
       const alpha = this.options.speedAlpha ?? 0.4;
-      this.speed += alpha * (sample - this.speed);
+      this.speed = Math.max(0, Math.min(maxSpeed, this.speed + alpha * (sample - this.speed)));
     }
     this.previous = { progress, t: fix.t };
     this.lapBefore = this.lap;

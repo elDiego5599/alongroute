@@ -102,7 +102,7 @@ new Tracker(route: ReturnType<typeof prepareRoute>, options?: {
   lostMs?: number; speedAlpha?: number; extrapolateMs?: number; easeMs?: number;
 });
 // Option defaults:
-// vMax=25, maxOffset=60, maxStopOffset=300, staleMs=30000, lostMs=120000,
+// vMax=25, maxOffset=60, maxStopOffset=300, staleMs=45000, lostMs=300000,
 // speedAlpha=0.4, extrapolateMs=5000, easeMs=3000
 Tracker.report(fix: Fix): Reading | null; // snapped reading, or null before a usable fix
 Tracker.state(nowMs: number): TrackerState; // freshness/off-route state at this time
@@ -132,8 +132,8 @@ final Projection projection = route.project(points.first);
 | `vMax` | 25 | Maximum expected speed in m/s for the matching window. |
 | `maxOffset` | 60 | Maximum fix distance in metres before marking off-route. |
 | `maxStopOffset` | 300 | Maximum point-to-route offset in metres for `distanceTo`. |
-| `staleMs` | 30000 | Age in ms after which a fix becomes stale. |
-| `lostMs` | 120000 | Age in ms after which a fix becomes lost. |
+| `staleMs` | 45000 | Age in ms after which a fix becomes stale. |
+| `lostMs` | 300000 | Age in ms after which a fix becomes lost. |
 | `speedAlpha` | 0.4 | Smoothing factor for reported speed. |
 | `extrapolateMs` | 5000 | Time in ms to extrapolate at the smoothed speed. |
 | `easeMs` | 3000 | Time in ms to ease to a stop after extrapolation. |

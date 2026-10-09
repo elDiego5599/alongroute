@@ -46,7 +46,10 @@ state.
    `pending` and the second fix decides.
 2. **Later fixes:** only segments inside
    `[progress − 50 m, progress + vMax·Δt + 100 m]` are searched (wrapping
-   on loops). `vMax` default: 25 m/s (90 km/h).
+   on loops). If no segment matches that window, segments behind the previous
+   progress are searched separately so the two-fix backward confirmation in
+   §3 can accept a sustained reversal. Forward candidates remain capped by
+   the window. `vMax` default: 25 m/s (90 km/h).
 3. **Off route:** if the best segment in the window is more than
    `maxOffset` (default 60 m) away for `offRouteFixes` (default 3) fixes in
    a row, the state becomes `offRoute` and the next search is global again.
@@ -58,8 +61,11 @@ whole route.
 
 - A backward move smaller than `backTolerance` (default 30 m) is noise: the
   progress stays.
-- A larger backward move confirmed by 2 fixes is accepted (the bus really
-  reversed, or the earlier fix was bad), with a smooth transition.
+- A larger backward move is held until 2 consecutive on-route fixes project
+  behind the last accepted progress by more than `backTolerance`. The second
+  projection must be consistent with the first (within `vMax·Δt + 100 m`);
+  then the move is accepted with a smooth transition. A forward, off-route, or
+  unmatched fix clears the pending confirmation.
 - After confirmation, the drawing eases back to accepted progress linearly
   over 2000 ms. A single lagging fix continues to hold the drawing forward.
 - On a loop, going from the end to the start adds a lap; it is not a
@@ -70,11 +76,12 @@ Property test: for any sequence of fixes on the route with ±25 m noise,
 
 ## 4. Between fixes
 
-- Speed along the route = Δprogress / Δt of the last two fixes, smoothed
-  with an exponential moving average (default α = 0.4).
+- Speed along the route = Δprogress / Δt of the last two fixes, capped at
+  `vMax` and smoothed with an exponential moving average (default α = 0.4).
 - `at(nowMs)` returns a copied Reading (or `null` before a valid fix), with
   state from `state(nowMs)`. Speed uses an exponential moving average with
-  `speedAlpha` default 0.4; the first fix sets it to 0. It advances along
+  `speedAlpha` default 0.4; the first fix sets it to 0. The smoothed speed
+  stays in `[0, vMax]`. It advances along
   route geometry for `extrapolateMs` (default 5000 ms), then eases linearly
   to a stop over `easeMs` (default 3000 ms). The ease adds exactly half of
   speed × ease duration. A fix behind the drawn point cannot pull it back.
