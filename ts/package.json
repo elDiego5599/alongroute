@@ -6,7 +6,8 @@
   "scripts": {
     "test": "node --experimental-strip-types --test",
     "typecheck": "tsc --noEmit",
-    "build:demo": "tsc -p tsconfig.demo.json && mv ../demo/index.js ../demo/alongroute.js"
+    "build:demo": "tsc -p tsconfig.demo.json && mv ../demo/index.js ../demo/alongroute.js",
+    "size": "npm run build:demo && node scripts/size.mjs"
   },
   "devDependencies": {
     "@types/node": "22.15.30",

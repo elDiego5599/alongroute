@@ -1,5 +1,7 @@
 # alongroute
 
+[![CI](https://github.com/elDiego5599/alongroute/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/elDiego5599/alongroute/actions/workflows/ci.yml)
+
 **Turn sparse, noisy GPS fixes into a vehicle that moves _along its route_ —
 never jumping backwards, never cutting corners — and measure the distance
 that is left _along the route_, not in a straight line.**
