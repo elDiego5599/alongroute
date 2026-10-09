@@ -64,33 +64,82 @@ known in advance and the answer has to come out on the phone, every frame.
 7. **One behaviour, two languages.** Dart and TypeScript run the same JSON
    test vectors, each with its own tolerance in metres.
 
-## Planned API (sketch)
+## API
 
 ```ts
-const route = prepareRoute(points, { loop: true }); // cumulative lengths, grid index
-const bus = new Tracker(route, options);
+import { prepareRoute, Tracker, type Point, type Fix, type Reading } from "alongroute";
 
-bus.report(fix);                 // a GPS fix in → a snapped Reading out
-bus.state(nowMs);                // live, stale, lost or offRoute
-bus.at(nowMs);                   // where to draw it this frame
-bus.distanceTo(point, nowMs);    // metres along the route, or null
-route.project(point);            // { progress, offset } — stateless
+const points: Point[] = [{ lat: 53.0, lon: -1.0 }, { lat: 53.001, lon: -1.0 }];
+const route = prepareRoute(points, { loop: false });
+const bus = new Tracker(route);
+const reading: Reading | null = bus.report({ lat: 53, lon: -1, t: 1000 });
+const state = bus.state(1000);
+const drawn: Reading | null = bus.at(1500);
+const remaining: number | null = bus.distanceTo({ lat: 53.001, lon: -1 });
+const projection = route.project({ lat: 53, lon: -1 });
 ```
 
 ```ts
+// TypeScript exports
+type Point = { lat: number; lon: number };
+type Fix = Point & { t: number; heading?: number; speed?: number; accuracy?: number };
+type Projection = { progress: number; offset: number };
 type Reading = {
-  progress: number;   // metres from the start of the route, [0, length)
-  lap: number;        // completed laps, so progress + lap·length never drops
-  point: { lat: number; lon: number };
-  heading: number;    // route tangent at that point
-  state: 'live' | 'stale' | 'lost' | 'offRoute';
-  offset: number;     // metres from the last fix to the route
+  progress: number; // metres from the start, in [0, length)
+  lap: number; // completed laps; progress + lap * length never drops
+  point: Point;
+  heading: number; // route tangent at this point
+  state: TrackerState;
+  offset: number; // metres from the last fix to the route
 };
+type TrackerState = 'live' | 'stale' | 'lost' | 'offRoute';
+prepareRoute(points: Point[], options?: { loop?: boolean }): {
+  points: Point[]; loop: boolean; length: number;
+  project(point: Point): Projection;
+};
+new Tracker(route: ReturnType<typeof prepareRoute>, options?: {
+  vMax?: number; maxOffset?: number; maxStopOffset?: number; staleMs?: number;
+  lostMs?: number; speedAlpha?: number; extrapolateMs?: number; easeMs?: number;
+});
+// Option defaults:
+// vMax=25, maxOffset=60, maxStopOffset=300, staleMs=30000, lostMs=120000,
+// speedAlpha=0.4, extrapolateMs=5000, easeMs=3000
+Tracker.report(fix: Fix): Reading | null; // snapped reading, or null before a usable fix
+Tracker.state(nowMs: number): TrackerState; // freshness/off-route state at this time
+Tracker.at(nowMs: number): Reading | null; // interpolated drawing position, or null before a reading
+Tracker.distanceTo(point: Point): number | null; // forward route distance, or null when unavailable
+route.project(point: Point): Projection; // stateless nearest route projection
 ```
 
-The pure-Dart package in [`dart/`](dart/) mirrors this API with Dart naming;
-the Dart and TypeScript implementations run the shared vectors. Details in
-[docs/design.md](docs/design.md).
+```dart
+import 'package:alongroute/alongroute.dart';
+
+final points = [
+  const Point(lat: 53, lon: -1),
+  const Point(lat: 53.001, lon: -1),
+];
+final route = prepareRoute(points, loop: false);
+final bus = Tracker(route);
+final Reading? reading = bus.report(const Fix(lat: 53, lon: -1, t: 1000));
+final TrackerState state = bus.state(1000);
+final Reading? drawn = bus.at(1500);
+final double? remaining = bus.distanceTo(points.last);
+final Projection projection = route.project(points.first);
+```
+
+| Tracker option | Default | Meaning |
+|---|---:|---|
+| `vMax` | 25 | Maximum expected speed in m/s for the matching window. |
+| `maxOffset` | 60 | Maximum fix distance in metres before marking off-route. |
+| `maxStopOffset` | 300 | Maximum point-to-route offset in metres for `distanceTo`. |
+| `staleMs` | 30000 | Age in ms after which a fix becomes stale. |
+| `lostMs` | 120000 | Age in ms after which a fix becomes lost. |
+| `speedAlpha` | 0.4 | Smoothing factor for reported speed. |
+| `extrapolateMs` | 5000 | Time in ms to extrapolate at the smoothed speed. |
+| `easeMs` | 3000 | Time in ms to ease to a stop after extrapolation. |
+
+Dart takes options as a `TrackerOptions` object. In both languages, omitted
+`loop` defaults to whether the route endpoints are within 50 m.
 
 ## Non-goals
 
@@ -118,6 +167,8 @@ the Dart and TypeScript implementations run the shared vectors. Details in
 Build the browser module with `cd ts && npm run build:demo`, then serve the
 repository root with `python3 -m http.server` and open
 <http://localhost:8000/demo/>.
+
+Run the TypeScript benchmark with `cd ts && npm run bench`.
 
 ## License
 
