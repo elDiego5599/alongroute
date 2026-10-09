@@ -111,6 +111,12 @@ the Dart and TypeScript implementations run the shared vectors. Details in
 | 5 | Demo page: raw fixes vs. straight-line animation vs. alongroute | Runs on a low-end phone |
 | 6 | 0.1.0 on pub.dev and npm | — |
 
+## Demo
+
+Build the browser module with `cd ts && npm run build:demo`, then serve the
+repository root with `python3 -m http.server` and open
+<http://localhost:8000/demo/>.
+
 ## License
 
 [MIT](LICENSE).

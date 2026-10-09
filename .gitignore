@@ -1,5 +1,6 @@
 node_modules/
 dist/
+demo/alongroute.js
 .dart_tool/
 dart/pubspec.lock
 build/

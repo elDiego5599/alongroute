@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "node --experimental-strip-types --test",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:demo": "tsc -p tsconfig.demo.json && mv ../demo/index.js ../demo/alongroute.js"
   },
   "devDependencies": {
     "@types/node": "22.15.30",
