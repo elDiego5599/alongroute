@@ -1,0 +1,22 @@
+{
+  "name": "vehicle more than 60 m off route",
+  "route": {
+    "points": [
+      { "lat": 0, "lon": 0 },
+      { "lat": 0, "lon": 0.0089831 }
+    ],
+    "loop": false
+  },
+  "options": {},
+  "steps": [
+    {
+      "report": { "lat": 0.0006284, "lon": 0.0044916, "t": 0, "heading": 90 },
+      "why": "The fix is 70 m perpendicular to the route at x = 500 m, beyond the 60 m vehicle-offset limit."
+    },
+    {
+      "distanceTo": { "lat": 0, "lon": 0.0062882 },
+      "expect": { "distance": null },
+      "why": "Although the point is 200 m ahead along-route, the vehicle is 70 m off-route, so no route distance is returned."
+    }
+  ]
+}

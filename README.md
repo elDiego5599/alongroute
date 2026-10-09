@@ -50,9 +50,12 @@ known in advance and the answer has to come out on the phone, every frame.
    along the route at the smoothed speed, so it turns corners. It
    extrapolates for a few seconds, then eases to a stop. If a fix arrives
    behind the drawn position, the drawing waits instead of going back.
-5. **Distance along the route.** The distance from the vehicle to a stop or
-   a rider is the length of route between them, with laps on loop routes.
-   A point already passed on an open route is "passed", not a number.
+5. **Distance along the route.** Measure forward to the point's next pass;
+   on a loop, wrap to its next lap. Up to 30 m past the point counts as 0
+   (GPS noise). Add the point's perpendicular offset to the route. Return
+   `null` if every pass is behind on an open route, if the point is over
+   300 m off-route, or if the vehicle is over 60 m off-route. The caller
+   chooses a fallback, such as straight-line distance.
 6. **Explicit freshness.** Every reading carries a state — `live`, `stale`,
    `lost` or `offRoute` — so the UI can say what is going on instead of
    freezing.

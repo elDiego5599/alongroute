@@ -1,24 +1,33 @@
 # Test vectors
 
 Every implementation (Dart and TypeScript) runs every file in this folder.
-A vector is a route, options, and a list of steps; each step feeds a fix or
-asks for a reading at a time, and states what it expects.
+A vector has a route, options, and ordered steps. A `report` step feeds a
+GPS fix to the tracker. A `distanceTo` step asks for the route
+distance from the tracker's current position to a point.
 
 ```json
 {
-  "name": "out-and-back on the same street, heading decides",
-  "route": { "points": [{ "lat": 10.98, "lon": -74.80 }], "loop": true },
+  "name": "straight open route, point ahead",
+  "route": { "points": [{ "lat": 0, "lon": 0 }, { "lat": 0, "lon": 0.0089831 }], "loop": false },
   "options": {},
   "steps": [
-    { "report": { "lat": 10.98, "lon": -74.80, "t": 0, "heading": 182 },
-      "expect": { "progress": [1520, 5], "state": "live" } },
-    { "at": 4000, "expect": { "progress": [1560, 5] } }
+    { "report": { "lat": 0, "lon": 0.0017966, "t": 0, "heading": 90 },
+      "why": "Fix is 200 m along the eastbound route." },
+    { "distanceTo": { "lat": 0, "lon": 0.0062882 },
+      "expect": { "distance": [500, 1] },
+      "why": "700 m point − 200 m vehicle = 500 m forward." }
   ]
 }
 ```
 
-`[value, tolerance]` is in metres. Expected values come from an independent
-source — a hand-worked example or a haversine reference — never from the
-implementation under test.
+Routes and points use latitude/longitude. Examples use the equator, where
+`0.0000089831°` is 1 m on a sphere of radius 6 378 137 m (WGS 84
+equatorial). With a 6 371 km radius the same degrees are 0.11 % shorter,
+well inside the tolerances used. A `report` has `lat`, `lon`,
+`t` (milliseconds), and optional `heading` (degrees clockwise from north).
+`distanceTo` takes the target point directly. A numeric expectation is
+`[metres, tolerance]`; use `null` for no result. Every step has a `why` string
+with its hand-worked reasoning. Expected values must come from hand
+arithmetic or an independent reference, never the implementation under test.
 
-No vectors yet: they arrive with stage 2 of the roadmap.
+`options` is the tracker options object (empty for these vectors).

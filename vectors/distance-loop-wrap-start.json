@@ -1,0 +1,29 @@
+{
+  "name": "loop, wrap forward after crossing the start",
+  "route": {
+    "points": [
+      { "lat": 0, "lon": 0 },
+      { "lat": 0, "lon": 0.0044916 },
+      { "lat": 0.0044916, "lon": 0.0044916 },
+      { "lat": 0.0044916, "lon": 0 },
+      { "lat": 0, "lon": 0 }
+    ],
+    "loop": true
+  },
+  "options": {},
+  "steps": [
+    {
+      "report": { "lat": 0.0001797, "lon": 0, "t": 0, "heading": 180 },
+      "why": "On the final 500 m side, the fix is 20 m before the start: 2000 − 20 = 1980 m."
+    },
+    {
+      "report": { "lat": 0, "lon": 0.0001797, "t": 4000, "heading": 90 },
+      "why": "The next fix is 20 m onto the first side, across the loop start; forward progress wraps from 1980 m to the next lap at 20 m."
+    },
+    {
+      "distanceTo": { "lat": 0, "lon": 0.0008983 },
+      "expect": { "distance": [80, 1] },
+      "why": "The point is 100 m from the start on this lap; 100 − 20 = 80 m forward."
+    }
+  ]
+}

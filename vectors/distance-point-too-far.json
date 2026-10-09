@@ -1,0 +1,22 @@
+{
+  "name": "point more than 300 m off route",
+  "route": {
+    "points": [
+      { "lat": 0, "lon": 0 },
+      { "lat": 0, "lon": 0.0089831 }
+    ],
+    "loop": false
+  },
+  "options": {},
+  "steps": [
+    {
+      "report": { "lat": 0, "lon": 0.0044916, "t": 0, "heading": 90 },
+      "why": "The vehicle fix projects to 500 m on the route with zero offset."
+    },
+    {
+      "distanceTo": { "lat": 0.0027043, "lon": 0.0044916 },
+      "expect": { "distance": null },
+      "why": "The point projects 301 m perpendicular to the route; 301 m exceeds the 300 m point-offset limit."
+    }
+  ]
+}

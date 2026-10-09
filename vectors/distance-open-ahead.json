@@ -1,0 +1,22 @@
+{
+  "name": "straight open route, point ahead",
+  "route": {
+    "points": [
+      { "lat": 0, "lon": 0 },
+      { "lat": 0, "lon": 0.0089831 }
+    ],
+    "loop": false
+  },
+  "options": {},
+  "steps": [
+    {
+      "report": { "lat": 0, "lon": 0.0017966, "t": 0, "heading": 90 },
+      "why": "The fix projects 200 m along the eastbound route."
+    },
+    {
+      "distanceTo": { "lat": 0, "lon": 0.0062882 },
+      "expect": { "distance": [500, 1] },
+      "why": "The point projects to 700 m; 700 − 200 = 500 m."
+    }
+  ]
+}

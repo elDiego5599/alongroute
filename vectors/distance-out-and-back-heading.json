@@ -1,0 +1,24 @@
+{
+  "name": "out-and-back on the same street, heading decides",
+  "route": {
+    "points": [
+      { "lat": 0, "lon": 0 },
+      { "lat": 0, "lon": 0.0089831 },
+      { "lat": 0.0000719, "lon": 0.0089831 },
+      { "lat": 0.0000719, "lon": 0 }
+    ],
+    "loop": true
+  },
+  "options": {},
+  "steps": [
+    {
+      "report": { "lat": 0.000018, "lon": 0.0044916, "t": 0, "heading": 270 },
+      "why": "At x = 500 m the fix is 2 m from the outbound lane and 6 m from the return lane; westward heading selects the return lane at 1000 + 8 + (1000 − 500) = 1508 m."
+    },
+    {
+      "distanceTo": { "lat": 0.0000359, "lon": 0.0017966 },
+      "expect": { "distance": [304, 1] },
+      "why": "The point projects 4 m from each pass, at route advances 200 m and 1808 m. From 1508 m, the next pass is 1808 − 1508 = 300 m away; add the 4 m offset: 300 + 4 = 304 m."
+    }
+  ]
+}

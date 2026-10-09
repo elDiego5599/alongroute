@@ -1,0 +1,25 @@
+{
+  "name": "loop, 10 m past point is zero",
+  "route": {
+    "points": [
+      { "lat": 0, "lon": 0 },
+      { "lat": 0, "lon": 0.0089831 },
+      { "lat": 0.0089831, "lon": 0.0089831 },
+      { "lat": 0.0089831, "lon": 0 },
+      { "lat": 0, "lon": 0 }
+    ],
+    "loop": true
+  },
+  "options": {},
+  "steps": [
+    {
+      "report": { "lat": 0, "lon": 0.0009881, "t": 0, "heading": 90 },
+      "why": "The fix projects to 110 m along the square loop's first side."
+    },
+    {
+      "distanceTo": { "lat": 0, "lon": 0.0008983 },
+      "expect": { "distance": [0, 1] },
+      "why": "The target is at 100 m; 100 − 110 = −10 m, within the 30 m GPS tolerance, so it is 0 rather than a lap."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "open route, point passed",
+  "route": {
+    "points": [
+      { "lat": 0, "lon": 0 },
+      { "lat": 0, "lon": 0.0089831 }
+    ],
+    "loop": false
+  },
+  "options": {},
+  "steps": [
+    {
+      "report": { "lat": 0, "lon": 0.0062882, "t": 0, "heading": 90 },
+      "why": "The fix projects to 700 m on the open route."
+    },
+    {
+      "distanceTo": { "lat": 0, "lon": 0.0026949 },
+      "expect": { "distance": null },
+      "why": "The point is at 300 m; 300 − 700 = −400 m, over 30 m behind, and there is no next pass."
+    }
+  ]
+}
