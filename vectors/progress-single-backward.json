@@ -1,0 +1,49 @@
+{
+  "name": "open route: single 80 m backward fix is ignored",
+  "route": {
+    "points": [
+      {
+        "lat": 0,
+        "lon": 0
+      },
+      {
+        "lat": 0,
+        "lon": 0.0089831
+      }
+    ],
+    "loop": false
+  },
+  "options": {},
+  "steps": [
+    {
+      "report": {
+        "lat": 0,
+        "lon": 0.00089831,
+        "t": 0,
+        "heading": 90
+      },
+      "expect": {
+        "progress": [
+          100,
+          2
+        ]
+      },
+      "why": "The fix is 100 m east of the start: 100 m \u00d7 0.0000089831\u00b0/m = 0.00089831\u00b0."
+    },
+    {
+      "report": {
+        "lat": 0,
+        "lon": 0.00017966,
+        "t": 1000,
+        "heading": 90
+      },
+      "expect": {
+        "progress": [
+          100,
+          2
+        ]
+      },
+      "why": "The fix is 20 m east, 100 m held \u2212 20 m observed = 80 m backward; one large backward fix is held."
+    }
+  ]
+}

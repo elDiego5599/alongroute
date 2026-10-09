@@ -1,0 +1,61 @@
+{
+  "name": "loop: 10 m backward noise holds progress",
+  "route": {
+    "points": [
+      {
+        "lat": 0,
+        "lon": 0
+      },
+      {
+        "lat": 0,
+        "lon": 0.00449155
+      },
+      {
+        "lat": 0.00449155,
+        "lon": 0.00449155
+      },
+      {
+        "lat": 0.00449155,
+        "lon": 0
+      },
+      {
+        "lat": 0,
+        "lon": 0
+      }
+    ],
+    "loop": true
+  },
+  "options": {},
+  "steps": [
+    {
+      "report": {
+        "lat": 0,
+        "lon": 0.00089831,
+        "t": 0,
+        "heading": 90
+      },
+      "expect": {
+        "progress": [
+          100,
+          2
+        ]
+      },
+      "why": "The fix is 100 m east of the start: 100 m \u00d7 0.0000089831\u00b0/m = 0.00089831\u00b0."
+    },
+    {
+      "report": {
+        "lat": 0,
+        "lon": 0.00080848,
+        "t": 1000,
+        "heading": 90
+      },
+      "expect": {
+        "progress": [
+          100,
+          2
+        ]
+      },
+      "why": "The fix is 90 m east: 100 m held \u2212 90 m observed = 10 m backward, within the 30 m noise allowance."
+    }
+  ]
+}

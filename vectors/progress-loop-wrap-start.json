@@ -1,0 +1,61 @@
+{
+  "name": "loop: crossing the start advances 20 m",
+  "route": {
+    "points": [
+      {
+        "lat": 0,
+        "lon": 0
+      },
+      {
+        "lat": 0,
+        "lon": 0.00449155
+      },
+      {
+        "lat": 0.00449155,
+        "lon": 0.00449155
+      },
+      {
+        "lat": 0.00449155,
+        "lon": 0
+      },
+      {
+        "lat": 0,
+        "lon": 0
+      }
+    ],
+    "loop": true
+  },
+  "options": {},
+  "steps": [
+    {
+      "report": {
+        "lat": 8.9831e-05,
+        "lon": 0,
+        "t": 0,
+        "heading": 180
+      },
+      "expect": {
+        "progress": [
+          1990,
+          3
+        ]
+      },
+      "why": "The fix is 10 m before the start on the final 500 m edge: 3 \u00d7 500 m + 490 m = 1990 m."
+    },
+    {
+      "report": {
+        "lat": 0,
+        "lon": 8.9831e-05,
+        "t": 1000,
+        "heading": 90
+      },
+      "expect": {
+        "progress": [
+          10,
+          3
+        ]
+      },
+      "why": "The fix is 10 m after the start; crossing the loop start advances 10 m + 10 m = 20 m."
+    }
+  ]
+}

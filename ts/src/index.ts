@@ -55,6 +55,7 @@ type Route = ReturnType<typeof prepareRoute>;
 export class Tracker {
   private previous?: { progress: number; t: number };
   private current?: { progress: number; offset: number };
+  private backwardFixes = 0;
   readonly route: Route;
   readonly options: { vMax?: number; maxOffset?: number; maxStopOffset?: number };
   constructor(route: Route, options: Tracker["options"] = {}) { this.route = route; this.options = options; }
@@ -69,9 +70,24 @@ export class Tracker {
       return this.route.loop ? ((c.progress - low) % this.route.length + this.route.length) % this.route.length <= high - low : c.progress >= Math.max(0, low) && c.progress <= Math.min(this.route.length, high);
     });
     let c = this.route._choose(inWindow.length ? inWindow : candidates, fix.heading);
-    if (c.offset > (this.options.maxOffset ?? 60)) { this.previous = undefined; this.current = undefined; return null; }
+    if (c.offset > (this.options.maxOffset ?? 60)) { this.previous = undefined; this.current = undefined; this.backwardFixes = 0; return null; }
     let progress = c.progress;
-    if (this.previous && !this.route.loop && progress < this.previous.progress && this.previous.progress - progress < 30) progress = this.previous.progress;
+    if (this.previous) {
+      const rawDelta = progress - this.previous.progress;
+      const forwardDelta = this.route.loop ? (rawDelta % this.route.length + this.route.length) % this.route.length : rawDelta;
+      const isBackward = this.route.loop ? forwardDelta > this.route.length / 2 : rawDelta < 0;
+      const distanceBehind = this.route.loop ? this.route.length - forwardDelta : -rawDelta;
+      if (isBackward && distanceBehind <= 30) {
+        progress = this.previous.progress;
+        this.backwardFixes = 0;
+      } else if (isBackward) {
+        this.backwardFixes++;
+        if (this.backwardFixes < 2) progress = this.previous.progress;
+        else this.backwardFixes = 0;
+      } else {
+        this.backwardFixes = 0;
+      }
+    }
     this.previous = { progress, t: fix.t }; this.current = { progress, offset: c.offset };
     return { ...this.current };
   }

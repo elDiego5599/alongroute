@@ -11,7 +11,12 @@ for (const file of files) {
     const tracker = new Tracker(prepareRoute(vector.route.points, { loop: vector.route.loop }), vector.options);
     vector.steps.forEach((step: any, index: number) => {
       try {
-        if (step.report) tracker.report(step.report);
+        if (step.report) {
+          const actual = tracker.report(step.report);
+          if (step.expect?.progress) {
+            assert.ok(actual !== null && Math.abs(actual.progress - step.expect.progress[0]) <= step.expect.progress[1], `expected progress ${step.expect.progress[0]}±${step.expect.progress[1]}, got ${actual?.progress}; ${step.why}`);
+          }
+        }
         if (step.distanceTo) {
           const actual = tracker.distanceTo(step.distanceTo), expected = step.expect.distance;
           if (expected === null) assert.equal(actual, null, step.why);

@@ -30,4 +30,8 @@ well inside the tolerances used. A `report` has `lat`, `lon`,
 with its hand-worked reasoning. Expected values must come from hand
 arithmetic or an independent reference, never the implementation under test.
 
+A `report` step may include `expect: { "progress": [metres, tolerance] }` to
+check the progress returned by that fix. This is useful for vectors that check
+how the tracker handles noisy or backward fixes.
+
 `options` is the tracker options object (empty for these vectors).
