@@ -1,0 +1,10 @@
+{
+  "name": "regression: backward fixes still use the off-route check",
+  "description": "Guards against checking a behind-window candidate before maxOffset, which could accept it as live.",
+  "route": { "points": [{ "lat": 0, "lon": 0 }, { "lat": 0, "lon": 0.0089831 }], "loop": false },
+  "options": {},
+  "steps": [
+    { "report": { "lat": 0, "lon": 0.0044916, "t": 0 }, "expect": { "progress": [500, 1] }, "why": "The first fix is 500 m along the route." },
+    { "report": { "lat": 0.0008983, "lon": 0.0026949, "t": 10000 }, "expect": { "progress": [500, 1], "state": "offRoute" }, "why": "The only route projection is 300 m, 200 m behind; the forward window is [450, 850], so it finds nothing, while the 25×10 + 100 = 350 m backward limit admits this projection. Its offset is 100 m, greater than maxOffset 60 m, so the off-route check must retain 500 m and report offRoute. A wrong ordering that commits the behind candidate before checking offset would report live at 300 m with offset 100 m." }
+  ]
+}

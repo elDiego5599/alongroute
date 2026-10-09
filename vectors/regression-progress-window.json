@@ -1,0 +1,10 @@
+{
+  "name": "regression: report stays inside the progress window",
+  "description": "Pins the bug where report() fell back to the global nearest segment when no projection was in the progress window, jumping about 13.4 km.",
+  "route": { "points": [{ "lat": 0, "lon": 0 }, { "lat": 0, "lon": 0.0651275 }, { "lat": 0.0001797, "lon": 0.0651275 }, { "lat": 0.0001797, "lon": 0 }], "loop": false },
+  "options": { "speedAlpha": 1 },
+  "steps": [
+    { "report": { "lat": 0, "lon": 0.0008983, "t": 0, "heading": 90 }, "expect": { "progress": [100, 1] }, "why": "First fix projects 100 m east on the 7,250 m outbound leg." },
+    { "report": { "lat": 0.0001797, "lon": 0.0089831, "t": 1000, "heading": 90 }, "expect": { "progress": [100, 1] }, "why": "At x=1,000 m, the outbound projection is progress 1,000 and the return projection is 7,250 + 20 + (7,250 − 1,000) = 13,520 m; both are outside [50, 225]. The old empty-window fallback picks the nearer return branch (offset 0) and accepts 13,520 m, a 13,420 m jump from 100. The current behind search finds no candidate behind 100, and its global fallback sees an on-route forward candidate but returns the current reading, holding at 100 m." }
+  ]
+}

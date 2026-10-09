@@ -1,7 +1,9 @@
 # Test vectors
 
 Every implementation (Dart and TypeScript) runs every file in this folder.
-A vector has a route, options, and ordered steps. A `report` step feeds a
+A vector has a name, an optional top-level `description`, a route, options,
+and ordered steps. Regression vectors use `description` to name the bug they
+pin. A `report` step feeds a
 GPS fix to the tracker. An `at` step asks for the drawn Reading at that
 millisecond timestamp. A step may include both `report` and `at` to inspect
 the animation immediately after a fix. `at` expectations may check progress,

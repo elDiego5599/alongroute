@@ -1,0 +1,11 @@
+{
+  "name": "regression: extrapolation speed is capped at vMax",
+  "description": "Pins a speed estimate above vMax causing at() to extrapolate too fast.",
+  "route": { "points": [{ "lat": 0, "lon": 0 }, { "lat": 0, "lon": 0.0089831 }], "loop": false },
+  "options": { "speedAlpha": 1, "vMax": 25 },
+  "steps": [
+    { "report": { "lat": 0, "lon": 0.0008983, "t": 0 }, "expect": { "progress": [100, 1] }, "why": "First fix is 100 m along the route." },
+    { "report": { "lat": 0, "lon": 0.002020, "t": 1000 }, "expect": { "progress": [225, 1] }, "why": "The window permits at most 25×1 + 100 = 125 m forward, so this fix projects at 225 m." },
+    { "at": 2000, "expect": { "progress": [250, 1] }, "why": "Raw speed is (225 − 100)/1 = 125 m/s, but vMax caps it at 25 m/s. One second after the fix, drawing is 225 + 25×1 = 250 m." }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "regression: backward confirmation requires consistent fixes",
+  "description": "Pins acceptance of two far-apart behind projections as a sustained reversal.",
+  "route": { "points": [{ "lat": 0, "lon": 0 }, { "lat": 0, "lon": 0.0538986 }], "loop": false },
+  "options": { "speedAlpha": 1, "vMax": 25 },
+  "steps": [
+    { "report": { "lat": 0, "lon": 0.0449155, "t": 0 }, "expect": { "progress": [5000, 1] }, "why": "The first fix is 5,000 m along the eastbound route." },
+    { "report": { "lat": 0, "lon": 0.0089831, "t": 1000 }, "expect": { "progress": [5000, 1] }, "why": "This fix is at 1,000 m, 4,000 m behind, so the first backward fix is held at 5,000 m." },
+    { "report": { "lat": 0, "lon": 0.0359324, "t": 2000 }, "expect": { "progress": [5000, 1] }, "why": "This fix is at 4,000 m, still 1,000 m behind accepted progress but 3,000 m ahead of the pending 1,000 m fix. Consistency allows at most 25×1 + 100 = 125 m, so confirmation must be discarded and progress remains 5,000 m." }
+  ]
+}
