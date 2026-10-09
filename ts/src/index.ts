@@ -52,15 +52,29 @@ export function prepareRoute(points: Point[], options: { loop?: boolean } = {}) 
 }
 
 type Route = ReturnType<typeof prepareRoute>;
+export type Reading = { progress: number; lap: number; point: Point; heading: number; state: 'live' | 'stale' | 'lost' | 'offRoute'; offset: number };
+export type TrackerState = Reading['state'];
+const copyReading = (reading: Reading | undefined): Reading | null => reading ? { ...reading, point: { ...reading.point } } : null;
 export class Tracker {
   private previous?: { progress: number; t: number };
-  private current?: { progress: number; offset: number };
+  private current?: Reading;
+  private lastFixT?: number;
+  private offRoute = false;
+  private lap = 0;
   private backwardFixes = 0;
   readonly route: Route;
-  readonly options: { vMax?: number; maxOffset?: number; maxStopOffset?: number };
+  readonly options: { vMax?: number; maxOffset?: number; maxStopOffset?: number; staleMs?: number; lostMs?: number };
   constructor(route: Route, options: Tracker["options"] = {}) { this.route = route; this.options = options; }
-  report(fix: Fix): Projection | null {
-    if (this.previous && fix.t <= this.previous.t) return this.current ?? null;
+  state(nowMs: number): TrackerState {
+    if (this.offRoute) return 'offRoute';
+    if (this.lastFixT === undefined) return 'lost';
+    const age = Math.max(0, nowMs - this.lastFixT);
+    if (age <= (this.options.staleMs ?? 30000)) return 'live';
+    return age <= (this.options.lostMs ?? 120000) ? 'stale' : 'lost';
+  }
+  report(fix: Fix): Reading | null {
+    if (this.previous && fix.t <= this.previous.t) return copyReading(this.current);
+    this.lastFixT = fix.t;
     const dt = this.previous ? (fix.t - this.previous.t) / 1000 : 0;
     const low = this.previous ? this.previous.progress - 50 : 0;
     const high = this.previous ? this.previous.progress + (this.options.vMax ?? 25) * dt + 100 : this.route.length;
@@ -70,7 +84,12 @@ export class Tracker {
       return this.route.loop ? ((c.progress - low) % this.route.length + this.route.length) % this.route.length <= high - low : c.progress >= Math.max(0, low) && c.progress <= Math.min(this.route.length, high);
     });
     let c = this.route._choose(inWindow.length ? inWindow : candidates, fix.heading);
-    if (c.offset > (this.options.maxOffset ?? 60)) { this.previous = undefined; this.current = undefined; this.backwardFixes = 0; return null; }
+    if (c.offset > (this.options.maxOffset ?? 60)) {
+      this.offRoute = true;
+      if (this.current) this.current = { ...this.current, state: 'offRoute', offset: c.offset };
+      return copyReading(this.current);
+    }
+    this.offRoute = false;
     let progress = c.progress;
     if (this.previous) {
       const rawDelta = progress - this.previous.progress;
@@ -83,16 +102,19 @@ export class Tracker {
       } else if (isBackward) {
         this.backwardFixes++;
         if (this.backwardFixes < 2) progress = this.previous.progress;
-        else this.backwardFixes = 0;
+        else { if (this.route.loop && this.previous.progress < this.route.length / 2 && c.progress > this.route.length / 2) this.lap = Math.max(0, this.lap - 1); this.backwardFixes = 0; }
       } else {
+        if (this.route.loop && c.progress < this.previous.progress && forwardDelta < this.route.length / 2) this.lap++;
         this.backwardFixes = 0;
       }
     }
-    this.previous = { progress, t: fix.t }; this.current = { progress, offset: c.offset };
-    return { ...this.current };
+    this.previous = { progress, t: fix.t };
+    const at = this.route._at(progress);
+    this.current = { progress, lap: this.route.loop ? this.lap : 0, point: at.point, heading: at.heading, state: 'live', offset: c.offset };
+    return copyReading(this.current);
   }
   distanceTo(point: Point): number | null {
-    if (!this.current || this.current.offset > 60) return null;
+    if (!this.current || this.offRoute || this.current.offset > 60) return null;
     const candidates = this.route._candidates(point), nearest = Math.min(...candidates.map(c => c.offset));
     if (nearest > (this.options.maxStopOffset ?? 300)) return null;
     const passes = candidates.filter(c => c.offset <= nearest + 15);

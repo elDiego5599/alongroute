@@ -69,6 +69,7 @@ const route = prepareRoute(points, { loop: true }); // cumulative lengths, grid 
 const bus = new Tracker(route, options);
 
 bus.report(fix);                 // a GPS fix in → a snapped Reading out
+bus.state(nowMs);                // live, stale, lost or offRoute
 bus.at(nowMs);                   // where to draw it this frame
 bus.distanceTo(point, nowMs);    // metres along the route, or null
 route.project(point);            // { progress, offset } — stateless

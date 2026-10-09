@@ -34,4 +34,17 @@ A `report` step may include `expect: { "progress": [metres, tolerance] }` to
 check the progress returned by that fix. This is useful for vectors that check
 how the tracker handles noisy or backward fixes.
 
+Reading vectors can also check `expect.lap` (an integer), `expect.heading`
+(`[degrees, tolerance]`, clockwise from north), and `expect.state` (one of
+`live`, `stale`, `lost`, or `offRoute`). `stateAt` on a step checks
+`tracker.state(report.t + stateAt)`, where `stateAt` is a millisecond offset
+from that step's report time. Lap is zero on open routes and counts completed
+forward wraps on loop routes. An off-route report retains the last valid
+progress, lap, and route point while changing the Reading state to `offRoute`;
+before any valid report it returns null.
+
+Every vector's `why` explains the expected arithmetic by hand. Expected values
+must come from hand arithmetic or an independent reference, never the
+implementation under test.
+
 `options` is the tracker options object (empty for these vectors).

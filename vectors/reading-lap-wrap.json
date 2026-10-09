@@ -1,0 +1,9 @@
+{
+  "name": "reading: loop lap increments at wrap",
+  "route": { "points": [{"lat":0,"lon":0},{"lat":0,"lon":0.00449155},{"lat":0.00449155,"lon":0.00449155},{"lat":0.00449155,"lon":0},{"lat":0,"lon":0}], "loop": true },
+  "options": {},
+  "steps": [
+    { "report": {"lat":0.000089831,"lon":0,"t":0,"heading":180}, "expect":{"progress":[1990,3],"lap":0}, "why":"Three 500 m edges plus 490 m on the last edge gives 1990 m, still lap zero." },
+    { "report": {"lat":0,"lon":0.000089831,"t":1000,"heading":90}, "expect":{"progress":[10,3],"lap":1}, "why":"The fix is 10 m after the start; forward wrap from 1990 m advances completed lap count to one." }
+  ]
+}

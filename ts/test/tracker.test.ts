@@ -19,3 +19,33 @@ test("a vehicle on its third lap still measures forward, not backward", () => {
   // And one more fix on the south side keeps it in the window.
   assert.ok(tracker.report({ lat: 0, lon: s / 2, t: (t += 1000), heading: 90 }));
 });
+
+test("mutating an off-route or stale Reading cannot mutate tracker state", () => {
+  const tracker = new Tracker(prepareRoute([{ lat: 0, lon: 0 }, { lat: 0, lon: 0.0089831 }], { loop: false }));
+  const valid = tracker.report({ lat: 0, lon: 0.0017966, t: 1000, heading: 90 });
+  assert.ok(valid);
+
+  const offRoute = tracker.report({ lat: 0.00089831, lon: 0.00449155, t: 2000, heading: 90 });
+  assert.ok(offRoute);
+  offRoute.progress = 0;
+  offRoute.point.lat = 50;
+
+  const staleAfterOffRoute = tracker.report({ lat: 0, lon: 0.0017966, t: 1000, heading: 90 });
+  assert.ok(staleAfterOffRoute);
+  assert.equal(staleAfterOffRoute.state, "offRoute");
+  assert.ok(Math.abs(staleAfterOffRoute.progress - valid.progress) < 0.1);
+  assert.ok(Math.abs(staleAfterOffRoute.point.lat) < 1e-8);
+  staleAfterOffRoute.progress = 0;
+  staleAfterOffRoute.point.lon = 50;
+
+  const staleAgain = tracker.report({ lat: 0, lon: 0.0017966, t: 1000, heading: 90 });
+  assert.ok(staleAgain);
+  assert.ok(Math.abs(staleAgain.progress - valid.progress) < 0.1);
+  assert.ok(Math.abs(staleAgain.point.lon - valid.point.lon) < 1e-8);
+
+  const next = tracker.report({ lat: 0, lon: 0.00269493, t: 3000, heading: 90 });
+  assert.ok(next);
+  assert.ok(Math.abs(next.progress - 300) < 1, `expected ≈300 m, got ${next.progress}`);
+  const distance = tracker.distanceTo({ lat: 0, lon: 0.00718648 });
+  assert.ok(distance !== null && Math.abs(distance - 500) < 1, `expected ≈500 m, got ${distance}`);
+});

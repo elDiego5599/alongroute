@@ -1,0 +1,8 @@
+{
+  "name": "reading: eastbound tangent heading",
+  "route": { "points": [{"lat":0,"lon":0},{"lat":0,"lon":0.0089831}], "loop": false },
+  "options": {},
+  "steps": [
+    { "report": {"lat":0,"lon":0.00449155,"t":0,"heading":90}, "expect":{"heading":[90,0.1]}, "why":"The segment runs due east, a quarter turn clockwise from north is 90 degrees." }
+  ]
+}

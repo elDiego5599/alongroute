@@ -13,10 +13,14 @@ for (const file of files) {
       try {
         if (step.report) {
           const actual = tracker.report(step.report);
+          if (step.expect?.state !== undefined && step.stateAt === undefined) assert.equal(actual?.state, step.expect.state, step.why);
+          if (step.expect?.lap !== undefined) assert.equal(actual?.lap, step.expect.lap, step.why);
+          if (step.expect?.heading) assert.ok(actual !== null && Math.abs(((actual.heading - step.expect.heading[0] + 540) % 360) - 180) <= step.expect.heading[1], `expected heading ${step.expect.heading[0]}±${step.expect.heading[1]}, got ${actual?.heading}; ${step.why}`);
           if (step.expect?.progress) {
             assert.ok(actual !== null && Math.abs(actual.progress - step.expect.progress[0]) <= step.expect.progress[1], `expected progress ${step.expect.progress[0]}±${step.expect.progress[1]}, got ${actual?.progress}; ${step.why}`);
           }
         }
+        if (step.stateAt !== undefined) assert.equal(tracker.state(step.report?.t + step.stateAt), step.expect.state, step.why);
         if (step.distanceTo) {
           const actual = tracker.distanceTo(step.distanceTo), expected = step.expect.distance;
           if (expected === null) assert.equal(actual, null, step.why);

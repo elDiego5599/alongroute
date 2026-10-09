@@ -1,0 +1,8 @@
+{
+  "name": "reading: northbound tangent heading",
+  "route": { "points": [{"lat":0,"lon":0},{"lat":0.0089831,"lon":0}], "loop": false },
+  "options": {},
+  "steps": [
+    { "report": {"lat":0.00449155,"lon":0,"t":0,"heading":0}, "expect":{"heading":[0,0.1]}, "why":"The segment runs due north, so its tangent is 0 degrees clockwise from north." }
+  ]
+}

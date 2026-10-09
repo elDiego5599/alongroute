@@ -1,0 +1,9 @@
+{
+  "name": "reading: off route retains last valid position",
+  "route": { "points": [{"lat":0,"lon":0},{"lat":0,"lon":0.0089831}], "loop": false },
+  "options": {"maxOffset":60},
+  "steps": [
+    { "report": {"lat":0,"lon":0.002,"t":0,"heading":90}, "why":"First fix projects about 223 m along the eastbound route." },
+    { "report": {"lat":0.00089831,"lon":0.004,"t":1000,"heading":90}, "expect":{"progress":[223,2],"lap":0,"state":"offRoute"}, "why":"The second fix is 100 m north of route, beyond maxOffset; keep the prior valid progress and lap in the returned offRoute reading." }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "reading: freshness moves live to stale to lost",
+  "route": { "points": [{"lat":0,"lon":0},{"lat":0,"lon":0.0089831}], "loop": false },
+  "options": {"staleMs":30000,"lostMs":120000},
+  "steps": [
+    { "report": {"lat":0,"lon":0.002,"t":1000,"heading":90}, "stateAt":30000, "expect":{"state":"live"}, "why":"At 30000 ms after the step, age is exactly 30000 ms, within the live threshold." },
+    { "report": {"lat":0,"lon":0.003,"t":31001,"heading":90}, "stateAt":30001, "expect":{"state":"stale"}, "why":"Age 30001 ms exceeds staleMs 30000 but remains below lostMs 120000." },
+    { "report": {"lat":0,"lon":0.004,"t":62002,"heading":90}, "stateAt":120001, "expect":{"state":"lost"}, "why":"Age 120001 ms exceeds lostMs 120000, so freshness is lost." }
+  ]
+}
