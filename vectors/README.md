@@ -52,4 +52,10 @@ Every vector's `why` explains the expected arithmetic by hand. Expected values
 must come from hand arithmetic or an independent reference, never the
 implementation under test.
 
+The generated cross-language trace is in `../parity/parity-traces.json`. It is
+created by `cd ts && npm run parity:update` from seeded scenarios shared with
+the TypeScript and Dart invariant tests. It checks agreement, not correctness;
+unlike the hand-worked vectors above, its expected values come from the
+TypeScript tracker.
+
 `options` is the tracker options object (empty for these vectors).

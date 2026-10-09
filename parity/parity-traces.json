@@ -1,0 +1,6104 @@
+{
+  "scenarios": [
+    {
+      "scenario": 0,
+      "seed": 334462,
+      "readings": [
+        {
+          "kind": "report",
+          "t": 2166.681321337819,
+          "reading": {
+            "progress": 5112.233384,
+            "lap": 0,
+            "point": {
+              "lat": 0.000062,
+              "lon": -0.000041
+            },
+            "heading": 343.032689,
+            "state": "live",
+            "offset": 0.882524
+          }
+        },
+        {
+          "kind": "at",
+          "t": 8166.681321337819,
+          "reading": {
+            "progress": 5112.233384,
+            "lap": 0,
+            "point": {
+              "lat": 0.000062,
+              "lon": -0.000041
+            },
+            "heading": 343.032689,
+            "state": "live",
+            "offset": 0.882524
+          }
+        },
+        {
+          "kind": "report",
+          "t": 5091.460182331502,
+          "reading": {
+            "progress": 5140.111554,
+            "lap": 0,
+            "point": {
+              "lat": 0.000301,
+              "lon": -0.000114
+            },
+            "heading": 343.032689,
+            "state": "live",
+            "offset": 22.021472
+          }
+        },
+        {
+          "kind": "at",
+          "t": 11091.460182331502,
+          "reading": {
+            "progress": 5162.352232,
+            "lap": 0,
+            "point": {
+              "lat": 0.000201,
+              "lon": -0.000287
+            },
+            "heading": 239.985919,
+            "state": "live",
+            "offset": 22.021472
+          }
+        },
+        {
+          "kind": "report",
+          "t": 9347.173030488193,
+          "reading": {
+            "progress": 5140.111554,
+            "lap": 0,
+            "point": {
+              "lat": 0.000301,
+              "lon": -0.000114
+            },
+            "heading": 343.032689,
+            "state": "live",
+            "offset": 1.629229
+          }
+        },
+        {
+          "kind": "at",
+          "t": 15347.173030488193,
+          "reading": {
+            "progress": 5156.337258,
+            "lap": 0,
+            "point": {
+              "lat": 0.000228,
+              "lon": -0.00024
+            },
+            "heading": 239.985919,
+            "state": "live",
+            "offset": 1.629229
+          }
+        },
+        {
+          "kind": "report",
+          "t": 10855.660795234144,
+          "reading": {
+            "progress": 5140.111554,
+            "lap": 0,
+            "point": {
+              "lat": 0.000301,
+              "lon": -0.000114
+            },
+            "heading": 343.032689,
+            "state": "live",
+            "offset": 2.459613
+          }
+        },
+        {
+          "kind": "at",
+          "t": 16855.660795234144,
+          "reading": {
+            "progress": 5156.337258,
+            "lap": 0,
+            "point": {
+              "lat": 0.000228,
+              "lon": -0.00024
+            },
+            "heading": 239.985919,
+            "state": "live",
+            "offset": 2.459613
+          }
+        },
+        {
+          "kind": "report",
+          "t": 11988.672278821468,
+          "reading": {
+            "progress": 5140.111554,
+            "lap": 0,
+            "point": {
+              "lat": 0.000301,
+              "lon": -0.000114
+            },
+            "heading": 343.032689,
+            "state": "live",
+            "offset": 5.929623
+          }
+        },
+        {
+          "kind": "at",
+          "t": 17988.67227882147,
+          "reading": {
+            "progress": 5156.337258,
+            "lap": 0,
+            "point": {
+              "lat": 0.000228,
+              "lon": -0.00024
+            },
+            "heading": 239.985919,
+            "state": "live",
+            "offset": 5.929623
+          }
+        },
+        {
+          "kind": "report",
+          "t": 16643.118037842214,
+          "reading": {
+            "progress": 5140.111554,
+            "lap": 0,
+            "point": {
+              "lat": 0.000301,
+              "lon": -0.000114
+            },
+            "heading": 343.032689,
+            "state": "live",
+            "offset": 36.442062
+          }
+        },
+        {
+          "kind": "at",
+          "t": 22643.118037842214,
+          "reading": {
+            "progress": 5156.337258,
+            "lap": 0,
+            "point": {
+              "lat": 0.000228,
+              "lon": -0.00024
+            },
+            "heading": 239.985919,
+            "state": "live",
+            "offset": 36.442062
+          }
+        },
+        {
+          "kind": "report",
+          "t": 19905.71373794228,
+          "reading": {
+            "progress": 5140.111554,
+            "lap": 0,
+            "point": {
+              "lat": 0.000301,
+              "lon": -0.000114
+            },
+            "heading": 343.032689,
+            "state": "live",
+            "offset": 35.529129
+          }
+        },
+        {
+          "kind": "at",
+          "t": 25905.71373794228,
+          "reading": {
+            "progress": 5156.337258,
+            "lap": 0,
+            "point": {
+              "lat": 0.000228,
+              "lon": -0.00024
+            },
+            "heading": 239.985919,
+            "state": "live",
+            "offset": 35.529129
+          }
+        },
+        {
+          "kind": "report",
+          "t": 21502.35824007541,
+          "reading": {
+            "progress": 5156.337258,
+            "lap": 0,
+            "point": {
+              "lat": 0.000228,
+              "lon": -0.00024
+            },
+            "heading": 239.985919,
+            "state": "offRoute",
+            "offset": 71.291971
+          }
+        },
+        {
+          "kind": "at",
+          "t": 27502.35824007541,
+          "reading": {
+            "progress": 5156.337258,
+            "lap": 0,
+            "point": {
+              "lat": 0.000228,
+              "lon": -0.00024
+            },
+            "heading": 239.985919,
+            "state": "offRoute",
+            "offset": 71.291971
+          }
+        },
+        {
+          "kind": "report",
+          "t": 23639.222282916307,
+          "reading": {
+            "progress": 5140.111554,
+            "lap": 0,
+            "point": {
+              "lat": 0.000301,
+              "lon": -0.000114
+            },
+            "heading": 343.032689,
+            "state": "live",
+            "offset": 7.575817
+          }
+        },
+        {
+          "kind": "at",
+          "t": 29639.222282916307,
+          "reading": {
+            "progress": 5156.337258,
+            "lap": 0,
+            "point": {
+              "lat": 0.000228,
+              "lon": -0.00024
+            },
+            "heading": 239.985919,
+            "state": "live",
+            "offset": 7.575817
+          }
+        },
+        {
+          "kind": "report",
+          "t": 27258.14068969339,
+          "reading": {
+            "progress": 5156.337258,
+            "lap": 0,
+            "point": {
+              "lat": 0.000228,
+              "lon": -0.00024
+            },
+            "heading": 239.985919,
+            "state": "offRoute",
+            "offset": 123.859818
+          }
+        },
+        {
+          "kind": "at",
+          "t": 33258.14068969339,
+          "reading": {
+            "progress": 5156.337258,
+            "lap": 0,
+            "point": {
+              "lat": 0.000228,
+              "lon": -0.00024
+            },
+            "heading": 239.985919,
+            "state": "offRoute",
+            "offset": 123.859818
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 1,
+      "seed": 334463,
+      "readings": [
+        {
+          "kind": "report",
+          "t": 2353.884533047676,
+          "reading": null
+        },
+        {
+          "kind": "at",
+          "t": 8353.884533047676,
+          "reading": null
+        },
+        {
+          "kind": "report",
+          "t": 5691.859300248325,
+          "reading": {
+            "progress": 106.273033,
+            "lap": 0,
+            "point": {
+              "lat": -0.00072,
+              "lon": 0.000627
+            },
+            "heading": 138.92714,
+            "state": "live",
+            "offset": 0.749257
+          }
+        },
+        {
+          "kind": "at",
+          "t": 11691.859300248325,
+          "reading": {
+            "progress": 106.273033,
+            "lap": 0,
+            "point": {
+              "lat": -0.00072,
+              "lon": 0.000627
+            },
+            "heading": 138.92714,
+            "state": "live",
+            "offset": 0.749257
+          }
+        },
+        {
+          "kind": "report",
+          "t": 9289.635967463255,
+          "reading": {
+            "progress": 143.413038,
+            "lap": 0,
+            "point": {
+              "lat": -0.000971,
+              "lon": 0.000846
+            },
+            "heading": 138.92714,
+            "state": "live",
+            "offset": 3.93104
+          }
+        },
+        {
+          "kind": "at",
+          "t": 15289.635967463255,
+          "reading": {
+            "progress": 167.500139,
+            "lap": 0,
+            "point": {
+              "lat": -0.001023,
+              "lon": 0.00104
+            },
+            "heading": 90.805041,
+            "state": "live",
+            "offset": 3.93104
+          }
+        },
+        {
+          "kind": "report",
+          "t": 13108.668112196028,
+          "reading": {
+            "progress": 224.89185,
+            "lap": 0,
+            "point": {
+              "lat": -0.00103,
+              "lon": 0.001556
+            },
+            "heading": 90.805041,
+            "state": "live",
+            "offset": 6.605178
+          }
+        },
+        {
+          "kind": "at",
+          "t": 19108.66811219603,
+          "reading": {
+            "progress": 286.010778,
+            "lap": 0,
+            "point": {
+              "lat": -0.001038,
+              "lon": 0.002105
+            },
+            "heading": 90.805041,
+            "state": "live",
+            "offset": 6.605178
+          }
+        },
+        {
+          "kind": "report",
+          "t": 16825.674631632864,
+          "reading": {
+            "progress": 270.593517,
+            "lap": 0,
+            "point": {
+              "lat": -0.001036,
+              "lon": 0.001966
+            },
+            "heading": 90.805041,
+            "state": "live",
+            "offset": 3.297296
+          }
+        },
+        {
+          "kind": "at",
+          "t": 22825.674631632864,
+          "reading": {
+            "progress": 335.95388,
+            "lap": 0,
+            "point": {
+              "lat": -0.000888,
+              "lon": 0.001854
+            },
+            "heading": 294.468408,
+            "state": "live",
+            "offset": 3.297296
+          }
+        },
+        {
+          "kind": "report",
+          "t": 121241.49052100256,
+          "reading": {
+            "progress": 2086.949228,
+            "lap": 0,
+            "point": {
+              "lat": -0.001078,
+              "lon": 0.000727
+            },
+            "heading": 232.61119,
+            "state": "live",
+            "offset": 0.070291
+          }
+        },
+        {
+          "kind": "at",
+          "t": 127241.49052100256,
+          "reading": {
+            "progress": 2166.754731,
+            "lap": 0,
+            "point": {
+              "lat": -0.001513,
+              "lon": 0.000157
+            },
+            "heading": 232.61119,
+            "state": "live",
+            "offset": 0.070291
+          }
+        },
+        {
+          "kind": "report",
+          "t": 268577.0594715141,
+          "reading": {
+            "progress": 4033.550047,
+            "lap": 0,
+            "point": {
+              "lat": -0.004068,
+              "lon": -0.002282
+            },
+            "heading": 194.816764,
+            "state": "live",
+            "offset": 0.88873
+          }
+        },
+        {
+          "kind": "at",
+          "t": 274577.0594715141,
+          "reading": {
+            "progress": 4112.2614,
+            "lap": 0,
+            "point": {
+              "lat": -0.004742,
+              "lon": -0.002496
+            },
+            "heading": 198.58672,
+            "state": "live",
+            "offset": 0.88873
+          }
+        },
+        {
+          "kind": "report",
+          "t": 270905.5521977134,
+          "reading": {
+            "progress": 4049.687723,
+            "lap": 0,
+            "point": {
+              "lat": -0.004208,
+              "lon": -0.00232
+            },
+            "heading": 194.816764,
+            "state": "live",
+            "offset": 4.596397
+          }
+        },
+        {
+          "kind": "at",
+          "t": 276905.5521977134,
+          "reading": {
+            "progress": 4113.085759,
+            "lap": 0,
+            "point": {
+              "lat": -0.004749,
+              "lon": -0.002498
+            },
+            "heading": 198.58672,
+            "state": "live",
+            "offset": 4.596397
+          }
+        },
+        {
+          "kind": "report",
+          "t": 411678.90696413815,
+          "reading": {
+            "progress": 6290.018751,
+            "lap": 0,
+            "point": {
+              "lat": -0.002016,
+              "lon": -0.005838
+            },
+            "heading": 291.698349,
+            "state": "live",
+            "offset": 21.45547
+          }
+        },
+        {
+          "kind": "at",
+          "t": 417678.90696413815,
+          "reading": {
+            "progress": 6323.513546,
+            "lap": 0,
+            "point": {
+              "lat": -0.001905,
+              "lon": -0.006117
+            },
+            "heading": 291.698349,
+            "state": "live",
+            "offset": 21.45547
+          }
+        },
+        {
+          "kind": "report",
+          "t": 414471.6331511736,
+          "reading": {
+            "progress": 6323.513546,
+            "lap": 0,
+            "point": {
+              "lat": -0.001905,
+              "lon": -0.006117
+            },
+            "heading": 291.698349,
+            "state": "live",
+            "offset": 5.544885
+          }
+        },
+        {
+          "kind": "at",
+          "t": 420471.6331511736,
+          "reading": {
+            "progress": 6323.513546,
+            "lap": 0,
+            "point": {
+              "lat": -0.001905,
+              "lon": -0.006117
+            },
+            "heading": 291.698349,
+            "state": "live",
+            "offset": 5.544885
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 2,
+      "seed": 334464,
+      "readings": [
+        {
+          "kind": "report",
+          "t": 2021.1697947233915,
+          "reading": {
+            "progress": 18.411977,
+            "lap": 0,
+            "point": {
+              "lat": -0.000095,
+              "lon": -0.000135
+            },
+            "heading": 234.741848,
+            "state": "live",
+            "offset": 1.030672
+          }
+        },
+        {
+          "kind": "at",
+          "t": 8021.1697947233915,
+          "reading": {
+            "progress": 18.411977,
+            "lap": 0,
+            "point": {
+              "lat": -0.000095,
+              "lon": -0.000135
+            },
+            "heading": 234.741848,
+            "state": "live",
+            "offset": 1.030672
+          }
+        },
+        {
+          "kind": "report",
+          "t": 5260.658849962056,
+          "reading": {
+            "progress": 18.411977,
+            "lap": 0,
+            "point": {
+              "lat": -0.000095,
+              "lon": -0.000135
+            },
+            "heading": 234.741848,
+            "state": "offRoute",
+            "offset": 361.532674
+          }
+        },
+        {
+          "kind": "at",
+          "t": 11260.658849962056,
+          "reading": {
+            "progress": 18.411977,
+            "lap": 0,
+            "point": {
+              "lat": -0.000095,
+              "lon": -0.000135
+            },
+            "heading": 234.741848,
+            "state": "offRoute",
+            "offset": 361.532674
+          }
+        },
+        {
+          "kind": "report",
+          "t": 7243.072518147528,
+          "reading": {
+            "progress": 18.411977,
+            "lap": 0,
+            "point": {
+              "lat": -0.000095,
+              "lon": -0.000135
+            },
+            "heading": 234.741848,
+            "state": "offRoute",
+            "offset": 361.532674
+          }
+        },
+        {
+          "kind": "at",
+          "t": 13243.072518147528,
+          "reading": {
+            "progress": 18.411977,
+            "lap": 0,
+            "point": {
+              "lat": -0.000095,
+              "lon": -0.000135
+            },
+            "heading": 234.741848,
+            "state": "offRoute",
+            "offset": 361.532674
+          }
+        },
+        {
+          "kind": "report",
+          "t": 8464.994347654283,
+          "reading": {
+            "progress": 87.264542,
+            "lap": 0,
+            "point": {
+              "lat": -0.000453,
+              "lon": -0.00064
+            },
+            "heading": 234.741848,
+            "state": "live",
+            "offset": 0.922594
+          }
+        },
+        {
+          "kind": "at",
+          "t": 14464.994347654283,
+          "reading": {
+            "progress": 112.196317,
+            "lap": 0,
+            "point": {
+              "lat": -0.000582,
+              "lon": -0.000823
+            },
+            "heading": 234.741848,
+            "state": "live",
+            "offset": 0.922594
+          }
+        },
+        {
+          "kind": "report",
+          "t": 9744.16001047939,
+          "reading": {
+            "progress": 107.688557,
+            "lap": 0,
+            "point": {
+              "lat": -0.000558,
+              "lon": -0.00079
+            },
+            "heading": 234.741848,
+            "state": "live",
+            "offset": 3.154727
+          }
+        },
+        {
+          "kind": "at",
+          "t": 15744.16001047939,
+          "reading": {
+            "progress": 159.903183,
+            "lap": 0,
+            "point": {
+              "lat": -0.000829,
+              "lon": -0.001173
+            },
+            "heading": 234.741848,
+            "state": "live",
+            "offset": 3.154727
+          }
+        },
+        {
+          "kind": "report",
+          "t": 196481.271461118,
+          "reading": {
+            "progress": 3413.824301,
+            "lap": 0,
+            "point": {
+              "lat": -0.00505,
+              "lon": 0.00249
+            },
+            "heading": 246.331679,
+            "state": "live",
+            "offset": 0.634261
+          }
+        },
+        {
+          "kind": "at",
+          "t": 202481.271461118,
+          "reading": {
+            "progress": 3486.464184,
+            "lap": 0,
+            "point": {
+              "lat": -0.005312,
+              "lon": 0.001893
+            },
+            "heading": 246.331679,
+            "state": "live",
+            "offset": 0.634261
+          }
+        },
+        {
+          "kind": "report",
+          "t": 198410.10572155938,
+          "reading": {
+            "progress": 3437.843209,
+            "lap": 0,
+            "point": {
+              "lat": -0.005137,
+              "lon": 0.002293
+            },
+            "heading": 246.331679,
+            "state": "offRoute",
+            "offset": 160.957288
+          }
+        },
+        {
+          "kind": "at",
+          "t": 204410.10572155938,
+          "reading": {
+            "progress": 3437.843209,
+            "lap": 0,
+            "point": {
+              "lat": -0.005137,
+              "lon": 0.002293
+            },
+            "heading": 246.331679,
+            "state": "offRoute",
+            "offset": 160.957288
+          }
+        },
+        {
+          "kind": "report",
+          "t": 202074.20634059235,
+          "reading": {
+            "progress": 3413.824301,
+            "lap": 0,
+            "point": {
+              "lat": -0.00505,
+              "lon": 0.00249
+            },
+            "heading": 246.331679,
+            "state": "live",
+            "offset": 6.362889
+          }
+        },
+        {
+          "kind": "at",
+          "t": 208074.20634059235,
+          "reading": {
+            "progress": 3437.843209,
+            "lap": 0,
+            "point": {
+              "lat": -0.005137,
+              "lon": 0.002293
+            },
+            "heading": 246.331679,
+            "state": "live",
+            "offset": 6.362889
+          }
+        },
+        {
+          "kind": "report",
+          "t": 396944.73237218335,
+          "reading": {
+            "progress": 6694.954852,
+            "lap": 0,
+            "point": {
+              "lat": 0.000791,
+              "lon": 0.003525
+            },
+            "heading": 225.915602,
+            "state": "live",
+            "offset": 36.915566
+          }
+        },
+        {
+          "kind": "at",
+          "t": 402944.73237218335,
+          "reading": {
+            "progress": 6734.242329,
+            "lap": 0,
+            "point": {
+              "lat": 0.000527,
+              "lon": 0.003348
+            },
+            "heading": 162.169592,
+            "state": "live",
+            "offset": 36.915566
+          }
+        },
+        {
+          "kind": "report",
+          "t": 399117.206487339,
+          "reading": {
+            "progress": 6709.586457,
+            "lap": 0,
+            "point": {
+              "lat": 0.0007,
+              "lon": 0.003431
+            },
+            "heading": 225.915602,
+            "state": "offRoute",
+            "offset": 173.389446
+          }
+        },
+        {
+          "kind": "at",
+          "t": 405117.206487339,
+          "reading": {
+            "progress": 6709.586457,
+            "lap": 0,
+            "point": {
+              "lat": 0.0007,
+              "lon": 0.003431
+            },
+            "heading": 225.915602,
+            "state": "offRoute",
+            "offset": 173.389446
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 3,
+      "seed": 334465,
+      "readings": [
+        {
+          "kind": "report",
+          "t": 3846.9571452587843,
+          "reading": {
+            "progress": 7268.977,
+            "lap": 0,
+            "point": {
+              "lat": 0.001755,
+              "lon": 0.000595
+            },
+            "heading": 324.005293,
+            "state": "live",
+            "offset": 15.164505
+          }
+        },
+        {
+          "kind": "at",
+          "t": 9846.957145258784,
+          "reading": {
+            "progress": 7268.977,
+            "lap": 0,
+            "point": {
+              "lat": 0.001755,
+              "lon": 0.000595
+            },
+            "heading": 324.005293,
+            "state": "live",
+            "offset": 15.164505
+          }
+        },
+        {
+          "kind": "report",
+          "t": 8276.34035423398,
+          "reading": {
+            "progress": 7268.977,
+            "lap": 0,
+            "point": {
+              "lat": 0.001755,
+              "lon": 0.000595
+            },
+            "heading": 324.005293,
+            "state": "offRoute",
+            "offset": 73.092732
+          }
+        },
+        {
+          "kind": "at",
+          "t": 14276.34035423398,
+          "reading": {
+            "progress": 7268.977,
+            "lap": 0,
+            "point": {
+              "lat": 0.001755,
+              "lon": 0.000595
+            },
+            "heading": 324.005293,
+            "state": "offRoute",
+            "offset": 73.092732
+          }
+        },
+        {
+          "kind": "report",
+          "t": 10281.31257276982,
+          "reading": {
+            "progress": 7481.698012,
+            "lap": 0,
+            "point": {
+              "lat": 0.002104,
+              "lon": 0.001084
+            },
+            "heading": 109.203906,
+            "state": "live",
+            "offset": 20.772189
+          }
+        },
+        {
+          "kind": "at",
+          "t": 16281.31257276982,
+          "reading": {
+            "progress": 7528.364679,
+            "lap": 0,
+            "point": {
+              "lat": 0.001966,
+              "lon": 0.00148
+            },
+            "heading": 109.203906,
+            "state": "live",
+            "offset": 20.772189
+          }
+        },
+        {
+          "kind": "report",
+          "t": 11786.296206526458,
+          "reading": {
+            "progress": 7493.737882,
+            "lap": 0,
+            "point": {
+              "lat": 0.002068,
+              "lon": 0.001186
+            },
+            "heading": 109.203906,
+            "state": "offRoute",
+            "offset": 211.978
+          }
+        },
+        {
+          "kind": "at",
+          "t": 17786.29620652646,
+          "reading": {
+            "progress": 7493.737882,
+            "lap": 0,
+            "point": {
+              "lat": 0.002068,
+              "lon": 0.001186
+            },
+            "heading": 109.203906,
+            "state": "offRoute",
+            "offset": 211.978
+          }
+        },
+        {
+          "kind": "report",
+          "t": 160602.1428941749,
+          "reading": {
+            "progress": 7481.698012,
+            "lap": 0,
+            "point": {
+              "lat": 0.002104,
+              "lon": 0.001084
+            },
+            "heading": 109.203906,
+            "state": "live",
+            "offset": 3.987224
+          }
+        },
+        {
+          "kind": "at",
+          "t": 166602.1428941749,
+          "reading": {
+            "progress": 7493.737882,
+            "lap": 0,
+            "point": {
+              "lat": 0.002068,
+              "lon": 0.001186
+            },
+            "heading": 109.203906,
+            "state": "live",
+            "offset": 3.987224
+          }
+        },
+        {
+          "kind": "report",
+          "t": 287007.9353027977,
+          "reading": {
+            "progress": 7493.737882,
+            "lap": 0,
+            "point": {
+              "lat": 0.002068,
+              "lon": 0.001186
+            },
+            "heading": 109.203906,
+            "state": "offRoute",
+            "offset": 60.193138
+          }
+        },
+        {
+          "kind": "at",
+          "t": 293007.9353027977,
+          "reading": {
+            "progress": 7493.737882,
+            "lap": 0,
+            "point": {
+              "lat": 0.002068,
+              "lon": 0.001186
+            },
+            "heading": 109.203906,
+            "state": "offRoute",
+            "offset": 60.193138
+          }
+        },
+        {
+          "kind": "report",
+          "t": 289017.5656382926,
+          "reading": {
+            "progress": 7481.698012,
+            "lap": 0,
+            "point": {
+              "lat": 0.002104,
+              "lon": 0.001084
+            },
+            "heading": 109.203906,
+            "state": "live",
+            "offset": 0.067901
+          }
+        },
+        {
+          "kind": "at",
+          "t": 295017.5656382926,
+          "reading": {
+            "progress": 7493.737882,
+            "lap": 0,
+            "point": {
+              "lat": 0.002068,
+              "lon": 0.001186
+            },
+            "heading": 109.203906,
+            "state": "live",
+            "offset": 0.067901
+          }
+        },
+        {
+          "kind": "report",
+          "t": 440513.76888435334,
+          "reading": {
+            "progress": 7913.015533,
+            "lap": 0,
+            "point": {
+              "lat": -0.001215,
+              "lon": 0.002702
+            },
+            "heading": 172.506192,
+            "state": "live",
+            "offset": 39.078058
+          }
+        },
+        {
+          "kind": "at",
+          "t": 446513.76888435334,
+          "reading": {
+            "progress": 7919.658654,
+            "lap": 0,
+            "point": {
+              "lat": -0.001274,
+              "lon": 0.00271
+            },
+            "heading": 172.506192,
+            "state": "live",
+            "offset": 39.078058
+          }
+        },
+        {
+          "kind": "report",
+          "t": 522878.0013360083,
+          "reading": {
+            "progress": 8185.051051,
+            "lap": 0,
+            "point": {
+              "lat": -0.00135,
+              "lon": 0.000511
+            },
+            "heading": 225.297312,
+            "state": "live",
+            "offset": 1.80248
+          }
+        },
+        {
+          "kind": "at",
+          "t": 528878.0013360083,
+          "reading": {
+            "progress": 8196.74354,
+            "lap": 0,
+            "point": {
+              "lat": -0.001423,
+              "lon": 0.000436
+            },
+            "heading": 225.297312,
+            "state": "live",
+            "offset": 1.80248
+          }
+        },
+        {
+          "kind": "report",
+          "t": 527559.8430335522,
+          "reading": {
+            "progress": 8194.43546,
+            "lap": 0,
+            "point": {
+              "lat": -0.001409,
+              "lon": 0.000451
+            },
+            "heading": 225.297312,
+            "state": "offRoute",
+            "offset": 326.967075
+          }
+        },
+        {
+          "kind": "at",
+          "t": 533559.8430335522,
+          "reading": {
+            "progress": 8194.43546,
+            "lap": 0,
+            "point": {
+              "lat": -0.001409,
+              "lon": 0.000451
+            },
+            "heading": 225.297312,
+            "state": "offRoute",
+            "offset": 326.967075
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 4,
+      "seed": 334466,
+      "readings": [
+        {
+          "kind": "report",
+          "t": 2623.5676743090153,
+          "reading": {
+            "progress": 41.018684,
+            "lap": 0,
+            "point": {
+              "lat": -0.000342,
+              "lon": -0.000136
+            },
+            "heading": 201.74013,
+            "state": "live",
+            "offset": 9.577931
+          }
+        },
+        {
+          "kind": "at",
+          "t": 8623.567674309015,
+          "reading": {
+            "progress": 41.018684,
+            "lap": 0,
+            "point": {
+              "lat": -0.000342,
+              "lon": -0.000136
+            },
+            "heading": 201.74013,
+            "state": "live",
+            "offset": 9.577931
+          }
+        },
+        {
+          "kind": "report",
+          "t": 117476.66039969772,
+          "reading": {
+            "progress": 1919.072686,
+            "lap": 0,
+            "point": {
+              "lat": 0.002492,
+              "lon": -0.004428
+            },
+            "heading": 275.273626,
+            "state": "live",
+            "offset": 18.407839
+          }
+        },
+        {
+          "kind": "at",
+          "t": 123476.66039969772,
+          "reading": {
+            "progress": 1957.22687,
+            "lap": 0,
+            "point": {
+              "lat": 0.00242,
+              "lon": -0.004627
+            },
+            "heading": 156.431532,
+            "state": "live",
+            "offset": 18.407839
+          }
+        },
+        {
+          "kind": "report",
+          "t": 121474.70322623849,
+          "reading": {
+            "progress": 1929.448146,
+            "lap": 0,
+            "point": {
+              "lat": 0.0025,
+              "lon": -0.004521
+            },
+            "heading": 275.273626,
+            "state": "live",
+            "offset": 8.608625
+          }
+        },
+        {
+          "kind": "at",
+          "t": 127474.70322623849,
+          "reading": {
+            "progress": 1958.39597,
+            "lap": 0,
+            "point": {
+              "lat": 0.00241,
+              "lon": -0.004623
+            },
+            "heading": 156.431532,
+            "state": "live",
+            "offset": 8.608625
+          }
+        },
+        {
+          "kind": "report",
+          "t": 122630.63653185964,
+          "reading": {
+            "progress": 1929.448146,
+            "lap": 0,
+            "point": {
+              "lat": 0.0025,
+              "lon": -0.004521
+            },
+            "heading": 275.273626,
+            "state": "live",
+            "offset": 2.911986
+          }
+        },
+        {
+          "kind": "at",
+          "t": 128630.63653185964,
+          "reading": {
+            "progress": 1946.816841,
+            "lap": 0,
+            "point": {
+              "lat": 0.002506,
+              "lon": -0.004664
+            },
+            "heading": 156.431532,
+            "state": "live",
+            "offset": 2.911986
+          }
+        },
+        {
+          "kind": "report",
+          "t": 175993.89322614297,
+          "reading": {
+            "progress": 2633.98163,
+            "lap": 0,
+            "point": {
+              "lat": 0.003203,
+              "lon": -0.002911
+            },
+            "heading": 321.911759,
+            "state": "live",
+            "offset": 9.717553
+          }
+        },
+        {
+          "kind": "at",
+          "t": 181993.89322614297,
+          "reading": {
+            "progress": 2675.208903,
+            "lap": 0,
+            "point": {
+              "lat": 0.003417,
+              "lon": -0.003177
+            },
+            "heading": 270.100534,
+            "state": "live",
+            "offset": 9.717553
+          }
+        },
+        {
+          "kind": "report",
+          "t": 179532.73727511987,
+          "reading": {
+            "progress": 2683.995968,
+            "lap": 0,
+            "point": {
+              "lat": 0.003417,
+              "lon": -0.003256
+            },
+            "heading": 270.100534,
+            "state": "live",
+            "offset": 6.194265
+          }
+        },
+        {
+          "kind": "at",
+          "t": 185532.73727511987,
+          "reading": {
+            "progress": 2741.709236,
+            "lap": 0,
+            "point": {
+              "lat": 0.003418,
+              "lon": -0.003775
+            },
+            "heading": 270.100534,
+            "state": "live",
+            "offset": 6.194265
+          }
+        },
+        {
+          "kind": "report",
+          "t": 182080.24365687743,
+          "reading": {
+            "progress": 2709.200239,
+            "lap": 0,
+            "point": {
+              "lat": 0.003418,
+              "lon": -0.003483
+            },
+            "heading": 270.100534,
+            "state": "offRoute",
+            "offset": 405.905598
+          }
+        },
+        {
+          "kind": "at",
+          "t": 188080.24365687743,
+          "reading": {
+            "progress": 2709.200239,
+            "lap": 0,
+            "point": {
+              "lat": 0.003418,
+              "lon": -0.003483
+            },
+            "heading": 270.100534,
+            "state": "offRoute",
+            "offset": 405.905598
+          }
+        },
+        {
+          "kind": "report",
+          "t": 243036.1773618497,
+          "reading": {
+            "progress": 3865.290606,
+            "lap": 0,
+            "point": {
+              "lat": 0.001101,
+              "lon": -0.00696
+            },
+            "heading": 276.801407,
+            "state": "live",
+            "offset": 9.669233
+          }
+        },
+        {
+          "kind": "at",
+          "t": 249036.1773618497,
+          "reading": {
+            "progress": 3908.695407,
+            "lap": 0,
+            "point": {
+              "lat": 0.001148,
+              "lon": -0.007347
+            },
+            "heading": 276.801407,
+            "state": "live",
+            "offset": 9.669233
+          }
+        },
+        {
+          "kind": "report",
+          "t": 245014.35891492292,
+          "reading": {
+            "progress": 3865.290606,
+            "lap": 0,
+            "point": {
+              "lat": 0.001101,
+              "lon": -0.00696
+            },
+            "heading": 276.801407,
+            "state": "live",
+            "offset": 4.865634
+          }
+        },
+        {
+          "kind": "at",
+          "t": 251014.35891492292,
+          "reading": {
+            "progress": 3891.333486,
+            "lap": 0,
+            "point": {
+              "lat": 0.001129,
+              "lon": -0.007192
+            },
+            "heading": 276.801407,
+            "state": "live",
+            "offset": 4.865634
+          }
+        },
+        {
+          "kind": "report",
+          "t": 248328.7014453672,
+          "reading": {
+            "progress": 3879.351744,
+            "lap": 0,
+            "point": {
+              "lat": 0.001116,
+              "lon": -0.007085
+            },
+            "heading": 276.801407,
+            "state": "live",
+            "offset": 24.952558
+          }
+        },
+        {
+          "kind": "at",
+          "t": 254328.7014453672,
+          "reading": {
+            "progress": 3904.876667,
+            "lap": 0,
+            "point": {
+              "lat": 0.001143,
+              "lon": -0.007313
+            },
+            "heading": 276.801407,
+            "state": "live",
+            "offset": 24.952558
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 5,
+      "seed": 334467,
+      "readings": [
+        {
+          "kind": "report",
+          "t": 2917.2996571287513,
+          "reading": {
+            "progress": 26.47463,
+            "lap": 0,
+            "point": {
+              "lat": 0.000213,
+              "lon": 0.000105
+            },
+            "heading": 26.328806,
+            "state": "live",
+            "offset": 1.906204
+          }
+        },
+        {
+          "kind": "at",
+          "t": 8917.299657128751,
+          "reading": {
+            "progress": 26.47463,
+            "lap": 0,
+            "point": {
+              "lat": 0.000213,
+              "lon": 0.000105
+            },
+            "heading": 26.328806,
+            "state": "live",
+            "offset": 1.906204
+          }
+        },
+        {
+          "kind": "report",
+          "t": 95820.073611103,
+          "reading": {
+            "progress": 1430.267963,
+            "lap": 0,
+            "point": {
+              "lat": 0.002115,
+              "lon": -0.000848
+            },
+            "heading": 287.538557,
+            "state": "live",
+            "offset": 4.237253
+          }
+        },
+        {
+          "kind": "at",
+          "t": 101820.073611103,
+          "reading": {
+            "progress": 1465.525444,
+            "lap": 0,
+            "point": {
+              "lat": 0.00221,
+              "lon": -0.00115
+            },
+            "heading": 287.538557,
+            "state": "live",
+            "offset": 4.237253
+          }
+        },
+        {
+          "kind": "report",
+          "t": 100267.68139004707,
+          "reading": {
+            "progress": 1430.267963,
+            "lap": 0,
+            "point": {
+              "lat": 0.002115,
+              "lon": -0.000848
+            },
+            "heading": 287.538557,
+            "state": "live",
+            "offset": 7.251129
+          }
+        },
+        {
+          "kind": "at",
+          "t": 106267.68139004707,
+          "reading": {
+            "progress": 1457.149925,
+            "lap": 0,
+            "point": {
+              "lat": 0.002188,
+              "lon": -0.001078
+            },
+            "heading": 287.538557,
+            "state": "live",
+            "offset": 7.251129
+          }
+        },
+        {
+          "kind": "report",
+          "t": 103198.16143531352,
+          "reading": {
+            "progress": 1430.267963,
+            "lap": 0,
+            "point": {
+              "lat": 0.002115,
+              "lon": -0.000848
+            },
+            "heading": 287.538557,
+            "state": "live",
+            "offset": 0.889307
+          }
+        },
+        {
+          "kind": "at",
+          "t": 109198.16143531352,
+          "reading": {
+            "progress": 1457.149925,
+            "lap": 0,
+            "point": {
+              "lat": 0.002188,
+              "lon": -0.001078
+            },
+            "heading": 287.538557,
+            "state": "live",
+            "offset": 0.889307
+          }
+        },
+        {
+          "kind": "report",
+          "t": 117524.18750012293,
+          "reading": {
+            "progress": 1587.005106,
+            "lap": 0,
+            "point": {
+              "lat": 0.001903,
+              "lon": -0.000612
+            },
+            "heading": 116.402646,
+            "state": "live",
+            "offset": 4.880076
+          }
+        },
+        {
+          "kind": "at",
+          "t": 123524.18750012293,
+          "reading": {
+            "progress": 1620.149085,
+            "lap": 0,
+            "point": {
+              "lat": 0.001784,
+              "lon": -0.000347
+            },
+            "heading": 48.664218,
+            "state": "live",
+            "offset": 4.880076
+          }
+        },
+        {
+          "kind": "report",
+          "t": 120091.77943645045,
+          "reading": {
+            "progress": 1656.464843,
+            "lap": 0,
+            "point": {
+              "lat": 0.002,
+              "lon": -0.000102
+            },
+            "heading": 48.664218,
+            "state": "live",
+            "offset": 11.516942
+          }
+        },
+        {
+          "kind": "at",
+          "t": 126091.77943645045,
+          "reading": {
+            "progress": 1723.017897,
+            "lap": 0,
+            "point": {
+              "lat": 0.002394,
+              "lon": 0.000347
+            },
+            "heading": 48.664218,
+            "state": "live",
+            "offset": 11.516942
+          }
+        },
+        {
+          "kind": "report",
+          "t": 238363.71692083776,
+          "reading": {
+            "progress": 3120.166009,
+            "lap": 0,
+            "point": {
+              "lat": 0.003941,
+              "lon": 0.000313
+            },
+            "heading": 108.3151,
+            "state": "live",
+            "offset": 1.383808
+          }
+        },
+        {
+          "kind": "at",
+          "t": 244363.71692083776,
+          "reading": {
+            "progress": 3188.974537,
+            "lap": 0,
+            "point": {
+              "lat": 0.003746,
+              "lon": 0.0009
+            },
+            "heading": 108.3151,
+            "state": "live",
+            "offset": 1.383808
+          }
+        },
+        {
+          "kind": "report",
+          "t": 411037.3425153084,
+          "reading": {
+            "progress": 4829.371343,
+            "lap": 0,
+            "point": {
+              "lat": 0.00439,
+              "lon": 0.004436
+            },
+            "heading": 59.701552,
+            "state": "live",
+            "offset": 13.820183
+          }
+        },
+        {
+          "kind": "at",
+          "t": 417037.3425153084,
+          "reading": {
+            "progress": 4893.752899,
+            "lap": 0,
+            "point": {
+              "lat": 0.004184,
+              "lon": 0.004926
+            },
+            "heading": 122.433062,
+            "state": "live",
+            "offset": 13.820183
+          }
+        },
+        {
+          "kind": "report",
+          "t": 412704.6612217091,
+          "reading": {
+            "progress": 4855.836904,
+            "lap": 0,
+            "point": {
+              "lat": 0.004367,
+              "lon": 0.004639
+            },
+            "heading": 122.433062,
+            "state": "live",
+            "offset": 2.4521
+          }
+        },
+        {
+          "kind": "at",
+          "t": 418704.6612217091,
+          "reading": {
+            "progress": 4931.503132,
+            "lap": 0,
+            "point": {
+              "lat": 0.004002,
+              "lon": 0.005212
+            },
+            "heading": 122.433062,
+            "state": "live",
+            "offset": 2.4521
+          }
+        },
+        {
+          "kind": "report",
+          "t": 417063.34109744057,
+          "reading": {
+            "progress": 4938.926572,
+            "lap": 0,
+            "point": {
+              "lat": 0.003966,
+              "lon": 0.005269
+            },
+            "heading": 122.433062,
+            "state": "live",
+            "offset": 9.024885
+          }
+        },
+        {
+          "kind": "at",
+          "t": 423063.34109744057,
+          "reading": {
+            "progress": 5028.806724,
+            "lap": 0,
+            "point": {
+              "lat": 0.003533,
+              "lon": 0.00595
+            },
+            "heading": 122.433062,
+            "state": "live",
+            "offset": 9.024885
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 6,
+      "seed": 334468,
+      "readings": [
+        {
+          "kind": "report",
+          "t": 2770.1143668964505,
+          "reading": {
+            "progress": 30.874571,
+            "lap": 0,
+            "point": {
+              "lat": -0.000269,
+              "lon": 0.000068
+            },
+            "heading": 165.743909,
+            "state": "live",
+            "offset": 0.802153
+          }
+        },
+        {
+          "kind": "at",
+          "t": 8770.11436689645,
+          "reading": {
+            "progress": 30.874571,
+            "lap": 0,
+            "point": {
+              "lat": -0.000269,
+              "lon": 0.000068
+            },
+            "heading": 165.743909,
+            "state": "live",
+            "offset": 0.802153
+          }
+        },
+        {
+          "kind": "report",
+          "t": 3798.432028852403,
+          "reading": {
+            "progress": 30.874571,
+            "lap": 0,
+            "point": {
+              "lat": -0.000269,
+              "lon": 0.000068
+            },
+            "heading": 165.743909,
+            "state": "offRoute",
+            "offset": 270.353397
+          }
+        },
+        {
+          "kind": "at",
+          "t": 9798.432028852403,
+          "reading": {
+            "progress": 30.874571,
+            "lap": 0,
+            "point": {
+              "lat": -0.000269,
+              "lon": 0.000068
+            },
+            "heading": 165.743909,
+            "state": "offRoute",
+            "offset": 270.353397
+          }
+        },
+        {
+          "kind": "report",
+          "t": 187190.91549748555,
+          "reading": {
+            "progress": 1030.713411,
+            "lap": 0,
+            "point": {
+              "lat": -0.006335,
+              "lon": 0.000845
+            },
+            "heading": 38.094201,
+            "state": "live",
+            "offset": 21.484304
+          }
+        },
+        {
+          "kind": "at",
+          "t": 193190.91549748555,
+          "reading": {
+            "progress": 1043.363596,
+            "lap": 0,
+            "point": {
+              "lat": -0.006375,
+              "lon": 0.000861
+            },
+            "heading": 187.261018,
+            "state": "live",
+            "offset": 21.484304
+          }
+        },
+        {
+          "kind": "report",
+          "t": 191027.83385431394,
+          "reading": {
+            "progress": 1035.288466,
+            "lap": 0,
+            "point": {
+              "lat": -0.006303,
+              "lon": 0.00087
+            },
+            "heading": 38.094201,
+            "state": "live",
+            "offset": 22.015599
+          }
+        },
+        {
+          "kind": "at",
+          "t": 197027.83385431394,
+          "reading": {
+            "progress": 1045.66079,
+            "lap": 0,
+            "point": {
+              "lat": -0.006395,
+              "lon": 0.000858
+            },
+            "heading": 187.261018,
+            "state": "live",
+            "offset": 22.015599
+          }
+        },
+        {
+          "kind": "report",
+          "t": 194854.4177156873,
+          "reading": {
+            "progress": 1035.288466,
+            "lap": 0,
+            "point": {
+              "lat": -0.006303,
+              "lon": 0.00087
+            },
+            "heading": 38.094201,
+            "state": "live",
+            "offset": 4.294431
+          }
+        },
+        {
+          "kind": "at",
+          "t": 200854.4177156873,
+          "reading": {
+            "progress": 1042.092563,
+            "lap": 0,
+            "point": {
+              "lat": -0.006363,
+              "lon": 0.000862
+            },
+            "heading": 187.261018,
+            "state": "live",
+            "offset": 4.294431
+          }
+        },
+        {
+          "kind": "report",
+          "t": 199437.35434720293,
+          "reading": {
+            "progress": 1049.405698,
+            "lap": 0,
+            "point": {
+              "lat": -0.006429,
+              "lon": 0.000854
+            },
+            "heading": 187.261018,
+            "state": "live",
+            "offset": 3.784514
+          }
+        },
+        {
+          "kind": "at",
+          "t": 205437.35434720293,
+          "reading": {
+            "progress": 1060.327311,
+            "lap": 0,
+            "point": {
+              "lat": -0.006526,
+              "lon": 0.000842
+            },
+            "heading": 187.261018,
+            "state": "live",
+            "offset": 3.784514
+          }
+        },
+        {
+          "kind": "report",
+          "t": 201169.0055723302,
+          "reading": {
+            "progress": 1061.168779,
+            "lap": 0,
+            "point": {
+              "lat": -0.006533,
+              "lon": 0.000841
+            },
+            "heading": 187.261018,
+            "state": "live",
+            "offset": 1.789851
+          }
+        },
+        {
+          "kind": "at",
+          "t": 207169.0055723302,
+          "reading": {
+            "progress": 1083.572047,
+            "lap": 0,
+            "point": {
+              "lat": -0.006733,
+              "lon": 0.000815
+            },
+            "heading": 187.261018,
+            "state": "live",
+            "offset": 1.789851
+          }
+        },
+        {
+          "kind": "report",
+          "t": 202469.44935666397,
+          "reading": {
+            "progress": 1088.567507,
+            "lap": 0,
+            "point": {
+              "lat": -0.006778,
+              "lon": 0.00081
+            },
+            "heading": 187.261018,
+            "state": "live",
+            "offset": 3.848509
+          }
+        },
+        {
+          "kind": "at",
+          "t": 208469.44935666397,
+          "reading": {
+            "progress": 1148.676134,
+            "lap": 0,
+            "point": {
+              "lat": -0.007313,
+              "lon": 0.000741
+            },
+            "heading": 187.261018,
+            "state": "live",
+            "offset": 3.848509
+          }
+        },
+        {
+          "kind": "report",
+          "t": 205446.09142513946,
+          "reading": {
+            "progress": 1088.567507,
+            "lap": 0,
+            "point": {
+              "lat": -0.006778,
+              "lon": 0.00081
+            },
+            "heading": 187.261018,
+            "state": "live",
+            "offset": 2.226426
+          }
+        },
+        {
+          "kind": "at",
+          "t": 211446.09142513946,
+          "reading": {
+            "progress": 1124.632683,
+            "lap": 0,
+            "point": {
+              "lat": -0.007099,
+              "lon": 0.000769
+            },
+            "heading": 187.261018,
+            "state": "live",
+            "offset": 2.226426
+          }
+        },
+        {
+          "kind": "report",
+          "t": 386723.8396364264,
+          "reading": {
+            "progress": 3850.652829,
+            "lap": 0,
+            "point": {
+              "lat": -0.005079,
+              "lon": 0.0038
+            },
+            "heading": 277.806637,
+            "state": "live",
+            "offset": 13.574556
+          }
+        },
+        {
+          "kind": "at",
+          "t": 392723.8396364264,
+          "reading": {
+            "progress": 3907.844372,
+            "lap": 0,
+            "point": {
+              "lat": -0.005026,
+              "lon": 0.003304
+            },
+            "heading": 189.422486,
+            "state": "live",
+            "offset": 13.574556
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 7,
+      "seed": 334469,
+      "readings": [
+        {
+          "kind": "report",
+          "t": 2110.2169873192906,
+          "reading": {
+            "progress": 9.351759,
+            "lap": 0,
+            "point": {
+              "lat": 0.00007,
+              "lon": -0.000047
+            },
+            "heading": 326.340182,
+            "state": "live",
+            "offset": 1.467843
+          }
+        },
+        {
+          "kind": "at",
+          "t": 8110.216987319291,
+          "reading": {
+            "progress": 9.351759,
+            "lap": 0,
+            "point": {
+              "lat": 0.00007,
+              "lon": -0.000047
+            },
+            "heading": 326.340182,
+            "state": "live",
+            "offset": 1.467843
+          }
+        },
+        {
+          "kind": "report",
+          "t": 5192.681789398193,
+          "reading": {
+            "progress": 42.775067,
+            "lap": 0,
+            "point": {
+              "lat": 0.00032,
+              "lon": -0.000213
+            },
+            "heading": 326.340182,
+            "state": "live",
+            "offset": 2.045454
+          }
+        },
+        {
+          "kind": "at",
+          "t": 11192.681789398193,
+          "reading": {
+            "progress": 68.075507,
+            "lap": 0,
+            "point": {
+              "lat": 0.000509,
+              "lon": -0.000339
+            },
+            "heading": 326.340182,
+            "state": "live",
+            "offset": 2.045454
+          }
+        },
+        {
+          "kind": "report",
+          "t": 6474.571794271469,
+          "reading": {
+            "progress": 60.889425,
+            "lap": 0,
+            "point": {
+              "lat": 0.000455,
+              "lon": -0.000303
+            },
+            "heading": 326.340182,
+            "state": "live",
+            "offset": 3.054143
+          }
+        },
+        {
+          "kind": "at",
+          "t": 12474.57179427147,
+          "reading": {
+            "progress": 109.041969,
+            "lap": 0,
+            "point": {
+              "lat": 0.000849,
+              "lon": -0.000435
+            },
+            "heading": 359.096207,
+            "state": "live",
+            "offset": 3.054143
+          }
+        },
+        {
+          "kind": "report",
+          "t": 8608.787849545479,
+          "reading": {
+            "progress": 114.690272,
+            "lap": 0,
+            "point": {
+              "lat": 0.0009,
+              "lon": -0.000436
+            },
+            "heading": 359.096207,
+            "state": "live",
+            "offset": 5.112171
+          }
+        },
+        {
+          "kind": "at",
+          "t": 14608.787849545479,
+          "reading": {
+            "progress": 190.248465,
+            "lap": 0,
+            "point": {
+              "lat": 0.001578,
+              "lon": -0.000446
+            },
+            "heading": 359.096207,
+            "state": "live",
+            "offset": 5.112171
+          }
+        },
+        {
+          "kind": "report",
+          "t": 12679.365238174796,
+          "reading": {
+            "progress": 167.415782,
+            "lap": 0,
+            "point": {
+              "lat": 0.001373,
+              "lon": -0.000443
+            },
+            "heading": 359.096207,
+            "state": "offRoute",
+            "offset": 304.487878
+          }
+        },
+        {
+          "kind": "at",
+          "t": 18679.365238174796,
+          "reading": {
+            "progress": 167.415782,
+            "lap": 0,
+            "point": {
+              "lat": 0.001373,
+              "lon": -0.000443
+            },
+            "heading": 359.096207,
+            "state": "offRoute",
+            "offset": 304.487878
+          }
+        },
+        {
+          "kind": "report",
+          "t": 16472.86848537624,
+          "reading": {
+            "progress": 198.817018,
+            "lap": 0,
+            "point": {
+              "lat": 0.001655,
+              "lon": -0.000448
+            },
+            "heading": 359.096207,
+            "state": "live",
+            "offset": 3.198094
+          }
+        },
+        {
+          "kind": "at",
+          "t": 22472.86848537624,
+          "reading": {
+            "progress": 223.778072,
+            "lap": 0,
+            "point": {
+              "lat": 0.001879,
+              "lon": -0.000451
+            },
+            "heading": 359.096207,
+            "state": "live",
+            "offset": 3.198094
+          }
+        },
+        {
+          "kind": "report",
+          "t": 17686.47862225771,
+          "reading": {
+            "progress": 199.307858,
+            "lap": 0,
+            "point": {
+              "lat": 0.00166,
+              "lon": -0.000448
+            },
+            "heading": 359.096207,
+            "state": "live",
+            "offset": 2.055233
+          }
+        },
+        {
+          "kind": "at",
+          "t": 23686.47862225771,
+          "reading": {
+            "progress": 215.228197,
+            "lap": 0,
+            "point": {
+              "lat": 0.001803,
+              "lon": -0.00045
+            },
+            "heading": 359.096207,
+            "state": "live",
+            "offset": 2.055233
+          }
+        },
+        {
+          "kind": "report",
+          "t": 21929.06979750842,
+          "reading": {
+            "progress": 229.511286,
+            "lap": 0,
+            "point": {
+              "lat": 0.001931,
+              "lon": -0.000452
+            },
+            "heading": 359.096207,
+            "state": "live",
+            "offset": 0.819995
+          }
+        },
+        {
+          "kind": "at",
+          "t": 27929.06979750842,
+          "reading": {
+            "progress": 255.674721,
+            "lap": 0,
+            "point": {
+              "lat": 0.002166,
+              "lon": -0.000456
+            },
+            "heading": 359.096207,
+            "state": "live",
+            "offset": 0.819995
+          }
+        },
+        {
+          "kind": "report",
+          "t": 25054.511301219463,
+          "reading": {
+            "progress": 258.176346,
+            "lap": 0,
+            "point": {
+              "lat": 0.002188,
+              "lon": -0.000456
+            },
+            "heading": 359.096207,
+            "state": "live",
+            "offset": 20.049505
+          }
+        },
+        {
+          "kind": "at",
+          "t": 31054.511301219463,
+          "reading": {
+            "progress": 295.274628,
+            "lap": 0,
+            "point": {
+              "lat": 0.00242,
+              "lon": -0.000532
+            },
+            "heading": 250.855266,
+            "state": "live",
+            "offset": 20.049505
+          }
+        },
+        {
+          "kind": "report",
+          "t": 29223.763989284635,
+          "reading": {
+            "progress": 258.176346,
+            "lap": 0,
+            "point": {
+              "lat": 0.002188,
+              "lon": -0.000456
+            },
+            "heading": 359.096207,
+            "state": "live",
+            "offset": 1.397936
+          }
+        },
+        {
+          "kind": "at",
+          "t": 35223.763989284635,
+          "reading": {
+            "progress": 284.691565,
+            "lap": 0,
+            "point": {
+              "lat": 0.002427,
+              "lon": -0.00046
+            },
+            "heading": 359.096207,
+            "state": "live",
+            "offset": 1.397936
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 8,
+      "seed": 334470,
+      "readings": [
+        {
+          "kind": "report",
+          "t": 2599.83966127038,
+          "reading": {
+            "progress": 28.380928,
+            "lap": 0,
+            "point": {
+              "lat": -0.000163,
+              "lon": 0.000196
+            },
+            "heading": 129.749104,
+            "state": "live",
+            "offset": 1.688378
+          }
+        },
+        {
+          "kind": "at",
+          "t": 8599.83966127038,
+          "reading": {
+            "progress": 28.380928,
+            "lap": 0,
+            "point": {
+              "lat": -0.000163,
+              "lon": 0.000196
+            },
+            "heading": 129.749104,
+            "state": "live",
+            "offset": 1.688378
+          }
+        },
+        {
+          "kind": "report",
+          "t": 187198.23860097677,
+          "reading": {
+            "progress": 2633.732362,
+            "lap": 0,
+            "point": {
+              "lat": 0.006796,
+              "lon": 0.007357
+            },
+            "heading": 232.780384,
+            "state": "live",
+            "offset": 5.554312
+          }
+        },
+        {
+          "kind": "at",
+          "t": 193198.23860097677,
+          "reading": {
+            "progress": 2666.664139,
+            "lap": 0,
+            "point": {
+              "lat": 0.006617,
+              "lon": 0.007121
+            },
+            "heading": 232.780384,
+            "state": "live",
+            "offset": 5.554312
+          }
+        },
+        {
+          "kind": "report",
+          "t": 190206.18397183716,
+          "reading": {
+            "progress": 2660.282661,
+            "lap": 0,
+            "point": {
+              "lat": 0.006651,
+              "lon": 0.007167
+            },
+            "heading": 232.780384,
+            "state": "live",
+            "offset": 15.138013
+          }
+        },
+        {
+          "kind": "at",
+          "t": 196206.18397183716,
+          "reading": {
+            "progress": 2700.637413,
+            "lap": 0,
+            "point": {
+              "lat": 0.006514,
+              "lon": 0.006854
+            },
+            "heading": 273.787157,
+            "state": "live",
+            "offset": 15.138013
+          }
+        },
+        {
+          "kind": "report",
+          "t": 296492.31747863814,
+          "reading": {
+            "progress": 3146.360554,
+            "lap": 0,
+            "point": {
+              "lat": 0.00782,
+              "lon": 0.003984
+            },
+            "heading": 76.258893,
+            "state": "live",
+            "offset": 4.036116
+          }
+        },
+        {
+          "kind": "at",
+          "t": 302492.31747863814,
+          "reading": {
+            "progress": 3181.244428,
+            "lap": 0,
+            "point": {
+              "lat": 0.007894,
+              "lon": 0.004288
+            },
+            "heading": 76.258893,
+            "state": "live",
+            "offset": 4.036116
+          }
+        },
+        {
+          "kind": "report",
+          "t": 297713.3604758419,
+          "reading": {
+            "progress": 3162.452047,
+            "lap": 0,
+            "point": {
+              "lat": 0.007854,
+              "lon": 0.004124
+            },
+            "heading": 76.258893,
+            "state": "live",
+            "offset": 0.113723
+          }
+        },
+        {
+          "kind": "at",
+          "t": 303713.3604758419,
+          "reading": {
+            "progress": 3214.132164,
+            "lap": 0,
+            "point": {
+              "lat": 0.007964,
+              "lon": 0.004575
+            },
+            "heading": 76.258893,
+            "state": "live",
+            "offset": 0.113723
+          }
+        },
+        {
+          "kind": "report",
+          "t": 300873.7244377844,
+          "reading": {
+            "progress": 3228.962974,
+            "lap": 0,
+            "point": {
+              "lat": 0.007996,
+              "lon": 0.004705
+            },
+            "heading": 76.258893,
+            "state": "live",
+            "offset": 1.84453
+          }
+        },
+        {
+          "kind": "at",
+          "t": 306873.7244377844,
+          "reading": {
+            "progress": 3306.637711,
+            "lap": 0,
+            "point": {
+              "lat": 0.008166,
+              "lon": 0.004873
+            },
+            "heading": 284.627006,
+            "state": "live",
+            "offset": 1.84453
+          }
+        },
+        {
+          "kind": "report",
+          "t": 321131.05725171044,
+          "reading": {
+            "progress": 3313.034209,
+            "lap": 0,
+            "point": {
+              "lat": 0.00818,
+              "lon": 0.004818
+            },
+            "heading": 284.627006,
+            "state": "live",
+            "offset": 1.105934
+          }
+        },
+        {
+          "kind": "at",
+          "t": 327131.05725171044,
+          "reading": {
+            "progress": 3369.322764,
+            "lap": 0,
+            "point": {
+              "lat": 0.008301,
+              "lon": 0.004372
+            },
+            "heading": 92.262795,
+            "state": "live",
+            "offset": 1.105934
+          }
+        },
+        {
+          "kind": "report",
+          "t": 323925.31260708347,
+          "reading": {
+            "progress": 3313.034209,
+            "lap": 0,
+            "point": {
+              "lat": 0.00818,
+              "lon": 0.004818
+            },
+            "heading": 284.627006,
+            "state": "live",
+            "offset": 9.074034
+          }
+        },
+        {
+          "kind": "at",
+          "t": 329925.31260708347,
+          "reading": {
+            "progress": 3346.807342,
+            "lap": 0,
+            "point": {
+              "lat": 0.008257,
+              "lon": 0.004524
+            },
+            "heading": 284.627006,
+            "state": "live",
+            "offset": 9.074034
+          }
+        },
+        {
+          "kind": "report",
+          "t": 414841.74561081454,
+          "reading": {
+            "progress": 3350.667129,
+            "lap": 0,
+            "point": {
+              "lat": 0.008266,
+              "lon": 0.004491
+            },
+            "heading": 284.627006,
+            "state": "offRoute",
+            "offset": 61.862186
+          }
+        },
+        {
+          "kind": "at",
+          "t": 420841.74561081454,
+          "reading": {
+            "progress": 3350.667129,
+            "lap": 0,
+            "point": {
+              "lat": 0.008266,
+              "lon": 0.004491
+            },
+            "heading": 284.627006,
+            "state": "offRoute",
+            "offset": 61.862186
+          }
+        },
+        {
+          "kind": "report",
+          "t": 554275.1114801504,
+          "reading": {
+            "progress": 3350.667129,
+            "lap": 0,
+            "point": {
+              "lat": 0.008266,
+              "lon": 0.004491
+            },
+            "heading": 284.627006,
+            "state": "offRoute",
+            "offset": 61.862186
+          }
+        },
+        {
+          "kind": "at",
+          "t": 560275.1114801504,
+          "reading": {
+            "progress": 3350.667129,
+            "lap": 0,
+            "point": {
+              "lat": 0.008266,
+              "lon": 0.004491
+            },
+            "heading": 284.627006,
+            "state": "offRoute",
+            "offset": 61.862186
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 9,
+      "seed": 334471,
+      "readings": [
+        {
+          "kind": "report",
+          "t": 3783.259359188378,
+          "reading": {
+            "progress": 2557.079006,
+            "lap": 0,
+            "point": {
+              "lat": 0.002965,
+              "lon": -0.000101
+            },
+            "heading": 329.977387,
+            "state": "live",
+            "offset": 52.476657
+          }
+        },
+        {
+          "kind": "at",
+          "t": 9783.259359188378,
+          "reading": {
+            "progress": 2557.079006,
+            "lap": 0,
+            "point": {
+              "lat": 0.002965,
+              "lon": -0.000101
+            },
+            "heading": 329.977387,
+            "state": "live",
+            "offset": 52.476657
+          }
+        },
+        {
+          "kind": "report",
+          "t": 7665.024485439062,
+          "reading": {
+            "progress": 2557.079006,
+            "lap": 0,
+            "point": {
+              "lat": 0.002965,
+              "lon": -0.000101
+            },
+            "heading": 329.977387,
+            "state": "offRoute",
+            "offset": 347.499442
+          }
+        },
+        {
+          "kind": "at",
+          "t": 13665.024485439062,
+          "reading": {
+            "progress": 2557.079006,
+            "lap": 0,
+            "point": {
+              "lat": 0.002965,
+              "lon": -0.000101
+            },
+            "heading": 329.977387,
+            "state": "offRoute",
+            "offset": 347.499442
+          }
+        },
+        {
+          "kind": "report",
+          "t": 12115.627197548747,
+          "reading": {
+            "progress": 2557.079006,
+            "lap": 0,
+            "point": {
+              "lat": 0.002965,
+              "lon": -0.000101
+            },
+            "heading": 329.977387,
+            "state": "live",
+            "offset": 0.498756
+          }
+        },
+        {
+          "kind": "at",
+          "t": 18115.627197548747,
+          "reading": {
+            "progress": 2557.079006,
+            "lap": 0,
+            "point": {
+              "lat": 0.002965,
+              "lon": -0.000101
+            },
+            "heading": 329.977387,
+            "state": "live",
+            "offset": 0.498756
+          }
+        },
+        {
+          "kind": "report",
+          "t": 14191.507757641375,
+          "reading": {
+            "progress": 2557.079006,
+            "lap": 0,
+            "point": {
+              "lat": 0.002965,
+              "lon": -0.000101
+            },
+            "heading": 329.977387,
+            "state": "offRoute",
+            "offset": 345.558224
+          }
+        },
+        {
+          "kind": "at",
+          "t": 20191.507757641375,
+          "reading": {
+            "progress": 2557.079006,
+            "lap": 0,
+            "point": {
+              "lat": 0.002965,
+              "lon": -0.000101
+            },
+            "heading": 329.977387,
+            "state": "offRoute",
+            "offset": 345.558224
+          }
+        },
+        {
+          "kind": "report",
+          "t": 17704.721188172698,
+          "reading": {
+            "progress": 2557.079006,
+            "lap": 0,
+            "point": {
+              "lat": 0.002965,
+              "lon": -0.000101
+            },
+            "heading": 329.977387,
+            "state": "live",
+            "offset": 1.658462
+          }
+        },
+        {
+          "kind": "at",
+          "t": 23704.721188172698,
+          "reading": {
+            "progress": 2557.079006,
+            "lap": 0,
+            "point": {
+              "lat": 0.002965,
+              "lon": -0.000101
+            },
+            "heading": 329.977387,
+            "state": "live",
+            "offset": 1.658462
+          }
+        },
+        {
+          "kind": "report",
+          "t": 22310.355124995112,
+          "reading": {
+            "progress": 2557.079006,
+            "lap": 0,
+            "point": {
+              "lat": 0.002965,
+              "lon": -0.000101
+            },
+            "heading": 329.977387,
+            "state": "offRoute",
+            "offset": 383.556985
+          }
+        },
+        {
+          "kind": "at",
+          "t": 28310.355124995112,
+          "reading": {
+            "progress": 2557.079006,
+            "lap": 0,
+            "point": {
+              "lat": 0.002965,
+              "lon": -0.000101
+            },
+            "heading": 329.977387,
+            "state": "offRoute",
+            "offset": 383.556985
+          }
+        },
+        {
+          "kind": "report",
+          "t": 25040.742233395576,
+          "reading": {
+            "progress": 2557.079006,
+            "lap": 0,
+            "point": {
+              "lat": 0.002965,
+              "lon": -0.000101
+            },
+            "heading": 329.977387,
+            "state": "offRoute",
+            "offset": 93.826086
+          }
+        },
+        {
+          "kind": "at",
+          "t": 31040.742233395576,
+          "reading": {
+            "progress": 2557.079006,
+            "lap": 0,
+            "point": {
+              "lat": 0.002965,
+              "lon": -0.000101
+            },
+            "heading": 329.977387,
+            "state": "offRoute",
+            "offset": 93.826086
+          }
+        },
+        {
+          "kind": "report",
+          "t": 65384.84299555421,
+          "reading": {
+            "progress": 2557.079006,
+            "lap": 0,
+            "point": {
+              "lat": 0.002965,
+              "lon": -0.000101
+            },
+            "heading": 329.977387,
+            "state": "live",
+            "offset": 2.128256
+          }
+        },
+        {
+          "kind": "at",
+          "t": 71384.84299555421,
+          "reading": {
+            "progress": 2557.079006,
+            "lap": 0,
+            "point": {
+              "lat": 0.002965,
+              "lon": -0.000101
+            },
+            "heading": 329.977387,
+            "state": "live",
+            "offset": 2.128256
+          }
+        },
+        {
+          "kind": "report",
+          "t": 67020.73573321104,
+          "reading": {
+            "progress": 2557.079006,
+            "lap": 0,
+            "point": {
+              "lat": 0.002965,
+              "lon": -0.000101
+            },
+            "heading": 329.977387,
+            "state": "offRoute",
+            "offset": 708.617975
+          }
+        },
+        {
+          "kind": "at",
+          "t": 73020.73573321104,
+          "reading": {
+            "progress": 2557.079006,
+            "lap": 0,
+            "point": {
+              "lat": 0.002965,
+              "lon": -0.000101
+            },
+            "heading": 329.977387,
+            "state": "offRoute",
+            "offset": 708.617975
+          }
+        },
+        {
+          "kind": "report",
+          "t": 71552.50536836684,
+          "reading": {
+            "progress": 2557.079006,
+            "lap": 0,
+            "point": {
+              "lat": 0.002965,
+              "lon": -0.000101
+            },
+            "heading": 329.977387,
+            "state": "live",
+            "offset": 14.531464
+          }
+        },
+        {
+          "kind": "at",
+          "t": 77552.50536836684,
+          "reading": {
+            "progress": 2557.079006,
+            "lap": 0,
+            "point": {
+              "lat": 0.002965,
+              "lon": -0.000101
+            },
+            "heading": 329.977387,
+            "state": "live",
+            "offset": 14.531464
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 10,
+      "seed": 334472,
+      "readings": [
+        {
+          "kind": "report",
+          "t": 2571.772648021579,
+          "reading": {
+            "progress": 9.478142,
+            "lap": 0,
+            "point": {
+              "lat": 0.000085,
+              "lon": 0.000001
+            },
+            "heading": 0.780398,
+            "state": "live",
+            "offset": 0.297923
+          }
+        },
+        {
+          "kind": "at",
+          "t": 8571.772648021579,
+          "reading": {
+            "progress": 9.478142,
+            "lap": 0,
+            "point": {
+              "lat": 0.000085,
+              "lon": 0.000001
+            },
+            "heading": 0.780398,
+            "state": "live",
+            "offset": 0.297923
+          }
+        },
+        {
+          "kind": "report",
+          "t": 7115.508650429547,
+          "reading": {
+            "progress": 40.308805,
+            "lap": 0,
+            "point": {
+              "lat": 0.000362,
+              "lon": 0.000005
+            },
+            "heading": 0.780398,
+            "state": "live",
+            "offset": 5.303094
+          }
+        },
+        {
+          "kind": "at",
+          "t": 13115.508650429547,
+          "reading": {
+            "progress": 56.141198,
+            "lap": 0,
+            "point": {
+              "lat": 0.000504,
+              "lon": 0.000007
+            },
+            "heading": 0.780398,
+            "state": "live",
+            "offset": 5.303094
+          }
+        },
+        {
+          "kind": "report",
+          "t": 8772.20067102462,
+          "reading": {
+            "progress": 44.805274,
+            "lap": 0,
+            "point": {
+              "lat": 0.000402,
+              "lon": 0.000005
+            },
+            "heading": 0.780398,
+            "state": "offRoute",
+            "offset": 391.353232
+          }
+        },
+        {
+          "kind": "at",
+          "t": 14772.20067102462,
+          "reading": {
+            "progress": 44.805274,
+            "lap": 0,
+            "point": {
+              "lat": 0.000402,
+              "lon": 0.000005
+            },
+            "heading": 0.780398,
+            "state": "offRoute",
+            "offset": 391.353232
+          }
+        },
+        {
+          "kind": "report",
+          "t": 11114.47836831212,
+          "reading": {
+            "progress": 88.587261,
+            "lap": 0,
+            "point": {
+              "lat": 0.000796,
+              "lon": 0.000011
+            },
+            "heading": 0.780398,
+            "state": "live",
+            "offset": 5.832192
+          }
+        },
+        {
+          "kind": "at",
+          "t": 17114.47836831212,
+          "reading": {
+            "progress": 116.75695,
+            "lap": 0,
+            "point": {
+              "lat": 0.001049,
+              "lon": 0.000014
+            },
+            "heading": 0.780398,
+            "state": "live",
+            "offset": 5.832192
+          }
+        },
+        {
+          "kind": "report",
+          "t": 12907.464670017362,
+          "reading": {
+            "progress": 97.245753,
+            "lap": 0,
+            "point": {
+              "lat": 0.000873,
+              "lon": 0.000012
+            },
+            "heading": 0.780398,
+            "state": "offRoute",
+            "offset": 349.872289
+          }
+        },
+        {
+          "kind": "at",
+          "t": 18907.46467001736,
+          "reading": {
+            "progress": 97.245753,
+            "lap": 0,
+            "point": {
+              "lat": 0.000873,
+              "lon": 0.000012
+            },
+            "heading": 0.780398,
+            "state": "offRoute",
+            "offset": 349.872289
+          }
+        },
+        {
+          "kind": "report",
+          "t": 15466.341271996498,
+          "reading": {
+            "progress": 88.587261,
+            "lap": 0,
+            "point": {
+              "lat": 0.000796,
+              "lon": 0.000011
+            },
+            "heading": 0.780398,
+            "state": "live",
+            "offset": 7.891065
+          }
+        },
+        {
+          "kind": "at",
+          "t": 21466.341271996498,
+          "reading": {
+            "progress": 97.245753,
+            "lap": 0,
+            "point": {
+              "lat": 0.000873,
+              "lon": 0.000012
+            },
+            "heading": 0.780398,
+            "state": "live",
+            "offset": 7.891065
+          }
+        },
+        {
+          "kind": "report",
+          "t": 19405.302225612104,
+          "reading": {
+            "progress": 97.245753,
+            "lap": 0,
+            "point": {
+              "lat": 0.000873,
+              "lon": 0.000012
+            },
+            "heading": 0.780398,
+            "state": "offRoute",
+            "offset": 428.224083
+          }
+        },
+        {
+          "kind": "at",
+          "t": 25405.302225612104,
+          "reading": {
+            "progress": 97.245753,
+            "lap": 0,
+            "point": {
+              "lat": 0.000873,
+              "lon": 0.000012
+            },
+            "heading": 0.780398,
+            "state": "offRoute",
+            "offset": 428.224083
+          }
+        },
+        {
+          "kind": "report",
+          "t": 21120.932738296688,
+          "reading": {
+            "progress": 88.587261,
+            "lap": 0,
+            "point": {
+              "lat": 0.000796,
+              "lon": 0.000011
+            },
+            "heading": 0.780398,
+            "state": "live",
+            "offset": 0.057036
+          }
+        },
+        {
+          "kind": "at",
+          "t": 27120.932738296688,
+          "reading": {
+            "progress": 97.245753,
+            "lap": 0,
+            "point": {
+              "lat": 0.000873,
+              "lon": 0.000012
+            },
+            "heading": 0.780398,
+            "state": "live",
+            "offset": 0.057036
+          }
+        },
+        {
+          "kind": "report",
+          "t": 22574.476240202785,
+          "reading": {
+            "progress": 97.245753,
+            "lap": 0,
+            "point": {
+              "lat": 0.000873,
+              "lon": 0.000012
+            },
+            "heading": 0.780398,
+            "state": "offRoute",
+            "offset": 115.122856
+          }
+        },
+        {
+          "kind": "at",
+          "t": 28574.476240202785,
+          "reading": {
+            "progress": 97.245753,
+            "lap": 0,
+            "point": {
+              "lat": 0.000873,
+              "lon": 0.000012
+            },
+            "heading": 0.780398,
+            "state": "offRoute",
+            "offset": 115.122856
+          }
+        },
+        {
+          "kind": "report",
+          "t": 25940.792025066912,
+          "reading": {
+            "progress": 88.587261,
+            "lap": 0,
+            "point": {
+              "lat": 0.000796,
+              "lon": 0.000011
+            },
+            "heading": 0.780398,
+            "state": "live",
+            "offset": 6.009224
+          }
+        },
+        {
+          "kind": "at",
+          "t": 31940.792025066912,
+          "reading": {
+            "progress": 97.245753,
+            "lap": 0,
+            "point": {
+              "lat": 0.000873,
+              "lon": 0.000012
+            },
+            "heading": 0.780398,
+            "state": "live",
+            "offset": 6.009224
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 11,
+      "seed": 334473,
+      "readings": [
+        {
+          "kind": "report",
+          "t": 3209.710014052689,
+          "reading": {
+            "progress": 24.614199,
+            "lap": 0,
+            "point": {
+              "lat": -0.000167,
+              "lon": -0.000145
+            },
+            "heading": 221.147788,
+            "state": "live",
+            "offset": 23.250465
+          }
+        },
+        {
+          "kind": "at",
+          "t": 9209.710014052689,
+          "reading": {
+            "progress": 24.614199,
+            "lap": 0,
+            "point": {
+              "lat": -0.000167,
+              "lon": -0.000145
+            },
+            "heading": 221.147788,
+            "state": "live",
+            "offset": 23.250465
+          }
+        },
+        {
+          "kind": "report",
+          "t": 165716.75947401673,
+          "reading": {
+            "progress": 3081.342053,
+            "lap": 0,
+            "point": {
+              "lat": -0.004544,
+              "lon": -0.00431
+            },
+            "heading": 184.557098,
+            "state": "live",
+            "offset": 10.514347
+          }
+        },
+        {
+          "kind": "at",
+          "t": 171716.75947401673,
+          "reading": {
+            "progress": 3125.231626,
+            "lap": 0,
+            "point": {
+              "lat": -0.004937,
+              "lon": -0.004342
+            },
+            "heading": 184.557098,
+            "state": "live",
+            "offset": 10.514347
+          }
+        },
+        {
+          "kind": "report",
+          "t": 169552.6654869318,
+          "reading": {
+            "progress": 3110.203129,
+            "lap": 0,
+            "point": {
+              "lat": -0.004803,
+              "lon": -0.004331
+            },
+            "heading": 184.557098,
+            "state": "offRoute",
+            "offset": 160.590824
+          }
+        },
+        {
+          "kind": "at",
+          "t": 175552.6654869318,
+          "reading": {
+            "progress": 3110.203129,
+            "lap": 0,
+            "point": {
+              "lat": -0.004803,
+              "lon": -0.004331
+            },
+            "heading": 184.557098,
+            "state": "offRoute",
+            "offset": 160.590824
+          }
+        },
+        {
+          "kind": "report",
+          "t": 171499.12606272846,
+          "reading": {
+            "progress": 3081.342053,
+            "lap": 0,
+            "point": {
+              "lat": -0.004544,
+              "lon": -0.00431
+            },
+            "heading": 184.557098,
+            "state": "live",
+            "offset": 7.708291
+          }
+        },
+        {
+          "kind": "at",
+          "t": 177499.12606272846,
+          "reading": {
+            "progress": 3110.203129,
+            "lap": 0,
+            "point": {
+              "lat": -0.004803,
+              "lon": -0.004331
+            },
+            "heading": 184.557098,
+            "state": "live",
+            "offset": 7.708291
+          }
+        },
+        {
+          "kind": "report",
+          "t": 175675.64938217402,
+          "reading": {
+            "progress": 3081.453134,
+            "lap": 0,
+            "point": {
+              "lat": -0.004545,
+              "lon": -0.004311
+            },
+            "heading": 184.557098,
+            "state": "live",
+            "offset": 0.35964
+          }
+        },
+        {
+          "kind": "at",
+          "t": 181675.64938217402,
+          "reading": {
+            "progress": 3110.203129,
+            "lap": 0,
+            "point": {
+              "lat": -0.004803,
+              "lon": -0.004331
+            },
+            "heading": 184.557098,
+            "state": "live",
+            "offset": 0.35964
+          }
+        },
+        {
+          "kind": "report",
+          "t": 280526.00397728384,
+          "reading": {
+            "progress": 3901.800914,
+            "lap": 0,
+            "point": {
+              "lat": -0.006377,
+              "lon": -0.003334
+            },
+            "heading": 121.93694,
+            "state": "live",
+            "offset": 0.264657
+          }
+        },
+        {
+          "kind": "at",
+          "t": 286526.00397728384,
+          "reading": {
+            "progress": 3920.094118,
+            "lap": 0,
+            "point": {
+              "lat": -0.006464,
+              "lon": -0.003194
+            },
+            "heading": 121.93694,
+            "state": "live",
+            "offset": 0.264657
+          }
+        },
+        {
+          "kind": "report",
+          "t": 285151.2779891491,
+          "reading": {
+            "progress": 3916.305671,
+            "lap": 0,
+            "point": {
+              "lat": -0.006446,
+              "lon": -0.003223
+            },
+            "heading": 121.93694,
+            "state": "offRoute",
+            "offset": 118.715569
+          }
+        },
+        {
+          "kind": "at",
+          "t": 291151.2779891491,
+          "reading": {
+            "progress": 3916.305671,
+            "lap": 0,
+            "point": {
+              "lat": -0.006446,
+              "lon": -0.003223
+            },
+            "heading": 121.93694,
+            "state": "offRoute",
+            "offset": 118.715569
+          }
+        },
+        {
+          "kind": "report",
+          "t": 289345.57534754276,
+          "reading": {
+            "progress": 3916.305671,
+            "lap": 0,
+            "point": {
+              "lat": -0.006446,
+              "lon": -0.003223
+            },
+            "heading": 121.93694,
+            "state": "offRoute",
+            "offset": 118.715569
+          }
+        },
+        {
+          "kind": "at",
+          "t": 295345.57534754276,
+          "reading": {
+            "progress": 3916.305671,
+            "lap": 0,
+            "point": {
+              "lat": -0.006446,
+              "lon": -0.003223
+            },
+            "heading": 121.93694,
+            "state": "offRoute",
+            "offset": 118.715569
+          }
+        },
+        {
+          "kind": "report",
+          "t": 291279.6281101182,
+          "reading": {
+            "progress": 3916.305671,
+            "lap": 0,
+            "point": {
+              "lat": -0.006446,
+              "lon": -0.003223
+            },
+            "heading": 121.93694,
+            "state": "offRoute",
+            "offset": 118.715569
+          }
+        },
+        {
+          "kind": "at",
+          "t": 297279.6281101182,
+          "reading": {
+            "progress": 3916.305671,
+            "lap": 0,
+            "point": {
+              "lat": -0.006446,
+              "lon": -0.003223
+            },
+            "heading": 121.93694,
+            "state": "offRoute",
+            "offset": 118.715569
+          }
+        },
+        {
+          "kind": "report",
+          "t": 295911.567306146,
+          "reading": {
+            "progress": 3916.305671,
+            "lap": 0,
+            "point": {
+              "lat": -0.006446,
+              "lon": -0.003223
+            },
+            "heading": 121.93694,
+            "state": "offRoute",
+            "offset": 74.210481
+          }
+        },
+        {
+          "kind": "at",
+          "t": 301911.567306146,
+          "reading": {
+            "progress": 3916.305671,
+            "lap": 0,
+            "point": {
+              "lat": -0.006446,
+              "lon": -0.003223
+            },
+            "heading": 121.93694,
+            "state": "offRoute",
+            "offset": 74.210481
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 12,
+      "seed": 334474,
+      "readings": [
+        {
+          "kind": "report",
+          "t": 2337.2196722775698,
+          "reading": {
+            "progress": 45.777845,
+            "lap": 0,
+            "point": {
+              "lat": 0.000219,
+              "lon": 0.000348
+            },
+            "heading": 57.781427,
+            "state": "live",
+            "offset": 3.082831
+          }
+        },
+        {
+          "kind": "at",
+          "t": 8337.21967227757,
+          "reading": {
+            "progress": 45.777845,
+            "lap": 0,
+            "point": {
+              "lat": 0.000219,
+              "lon": 0.000348
+            },
+            "heading": 57.781427,
+            "state": "live",
+            "offset": 3.082831
+          }
+        },
+        {
+          "kind": "report",
+          "t": 5552.594667300582,
+          "reading": {
+            "progress": 45.777845,
+            "lap": 0,
+            "point": {
+              "lat": 0.000219,
+              "lon": 0.000348
+            },
+            "heading": 57.781427,
+            "state": "live",
+            "offset": 6.21323
+          }
+        },
+        {
+          "kind": "at",
+          "t": 11552.594667300582,
+          "reading": {
+            "progress": 45.777845,
+            "lap": 0,
+            "point": {
+              "lat": 0.000219,
+              "lon": 0.000348
+            },
+            "heading": 57.781427,
+            "state": "live",
+            "offset": 6.21323
+          }
+        },
+        {
+          "kind": "report",
+          "t": 8791.955219581723,
+          "reading": {
+            "progress": 122.672956,
+            "lap": 0,
+            "point": {
+              "lat": 0.000435,
+              "lon": 0.000919
+            },
+            "heading": 132.377645,
+            "state": "live",
+            "offset": 15.609854
+          }
+        },
+        {
+          "kind": "at",
+          "t": 14791.955219581723,
+          "reading": {
+            "progress": 169.339623,
+            "lap": 0,
+            "point": {
+              "lat": 0.000153,
+              "lon": 0.001228
+            },
+            "heading": 132.377645,
+            "state": "live",
+            "offset": 15.609854
+          }
+        },
+        {
+          "kind": "report",
+          "t": 11926.53583176434,
+          "reading": {
+            "progress": 156.504584,
+            "lap": 0,
+            "point": {
+              "lat": 0.00023,
+              "lon": 0.001143
+            },
+            "heading": 132.377645,
+            "state": "live",
+            "offset": 13.637102
+          }
+        },
+        {
+          "kind": "at",
+          "t": 17926.53583176434,
+          "reading": {
+            "progress": 209.688325,
+            "lap": 0,
+            "point": {
+              "lat": -0.000092,
+              "lon": 0.001496
+            },
+            "heading": 132.377645,
+            "state": "live",
+            "offset": 13.637102
+          }
+        },
+        {
+          "kind": "report",
+          "t": 15842.607674188912,
+          "reading": {
+            "progress": 171.612227,
+            "lap": 0,
+            "point": {
+              "lat": 0.000139,
+              "lon": 0.001244
+            },
+            "heading": 132.377645,
+            "state": "live",
+            "offset": 0.326172
+          }
+        },
+        {
+          "kind": "at",
+          "t": 21842.607674188912,
+          "reading": {
+            "progress": 212.524136,
+            "lap": 0,
+            "point": {
+              "lat": -0.000109,
+              "lon": 0.001515
+            },
+            "heading": 132.377645,
+            "state": "live",
+            "offset": 0.326172
+          }
+        },
+        {
+          "kind": "report",
+          "t": 20635.38671284914,
+          "reading": {
+            "progress": 185.666607,
+            "lap": 0,
+            "point": {
+              "lat": 0.000054,
+              "lon": 0.001337
+            },
+            "heading": 132.377645,
+            "state": "live",
+            "offset": 12.868403
+          }
+        },
+        {
+          "kind": "at",
+          "t": 26635.38671284914,
+          "reading": {
+            "progress": 217.056037,
+            "lap": 0,
+            "point": {
+              "lat": -0.000136,
+              "lon": 0.001545
+            },
+            "heading": 132.377645,
+            "state": "live",
+            "offset": 12.868403
+          }
+        },
+        {
+          "kind": "report",
+          "t": 24272.52020314336,
+          "reading": {
+            "progress": 205.238186,
+            "lap": 0,
+            "point": {
+              "lat": -0.000065,
+              "lon": 0.001467
+            },
+            "heading": 132.377645,
+            "state": "offRoute",
+            "offset": 140.321685
+          }
+        },
+        {
+          "kind": "at",
+          "t": 30272.52020314336,
+          "reading": {
+            "progress": 205.238186,
+            "lap": 0,
+            "point": {
+              "lat": -0.000065,
+              "lon": 0.001467
+            },
+            "heading": 132.377645,
+            "state": "offRoute",
+            "offset": 140.321685
+          }
+        },
+        {
+          "kind": "report",
+          "t": 29078.46188917756,
+          "reading": {
+            "progress": 202.170742,
+            "lap": 0,
+            "point": {
+              "lat": -0.000046,
+              "lon": 0.001446
+            },
+            "heading": 132.377645,
+            "state": "live",
+            "offset": 4.104789
+          }
+        },
+        {
+          "kind": "at",
+          "t": 35078.46188917756,
+          "reading": {
+            "progress": 206.731834,
+            "lap": 0,
+            "point": {
+              "lat": -0.000074,
+              "lon": 0.001477
+            },
+            "heading": 132.377645,
+            "state": "live",
+            "offset": 4.104789
+          }
+        },
+        {
+          "kind": "report",
+          "t": 51604.64068688452,
+          "reading": {
+            "progress": 452.905169,
+            "lap": 0,
+            "point": {
+              "lat": -0.000637,
+              "lon": 0.001153
+            },
+            "heading": 278.300826,
+            "state": "live",
+            "offset": 0.943198
+          }
+        },
+        {
+          "kind": "at",
+          "t": 57604.64068688452,
+          "reading": {
+            "progress": 481.613695,
+            "lap": 0,
+            "point": {
+              "lat": -0.0006,
+              "lon": 0.000897
+            },
+            "heading": 278.300826,
+            "state": "live",
+            "offset": 0.943198
+          }
+        },
+        {
+          "kind": "report",
+          "t": 56428.773844614625,
+          "reading": {
+            "progress": 452.905169,
+            "lap": 0,
+            "point": {
+              "lat": -0.000637,
+              "lon": 0.001153
+            },
+            "heading": 278.300826,
+            "state": "live",
+            "offset": 7.678657
+          }
+        },
+        {
+          "kind": "at",
+          "t": 62428.773844614625,
+          "reading": {
+            "progress": 476.646955,
+            "lap": 0,
+            "point": {
+              "lat": -0.000606,
+              "lon": 0.000942
+            },
+            "heading": 278.300826,
+            "state": "live",
+            "offset": 7.678657
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 13,
+      "seed": 334475,
+      "readings": [
+        {
+          "kind": "report",
+          "t": 1544.0977970138192,
+          "reading": {
+            "progress": 24.478744,
+            "lap": 0,
+            "point": {
+              "lat": -0.000059,
+              "lon": -0.000212
+            },
+            "heading": 254.3246,
+            "state": "live",
+            "offset": 21.178674
+          }
+        },
+        {
+          "kind": "at",
+          "t": 7544.097797013819,
+          "reading": {
+            "progress": 24.478744,
+            "lap": 0,
+            "point": {
+              "lat": -0.000059,
+              "lon": -0.000212
+            },
+            "heading": 254.3246,
+            "state": "live",
+            "offset": 21.178674
+          }
+        },
+        {
+          "kind": "report",
+          "t": 131315.94920065254,
+          "reading": {
+            "progress": 988.289106,
+            "lap": 0,
+            "point": {
+              "lat": 0.003257,
+              "lon": -0.001212
+            },
+            "heading": 274.95772,
+            "state": "live",
+            "offset": 2.094415
+          }
+        },
+        {
+          "kind": "at",
+          "t": 137315.94920065254,
+          "reading": {
+            "progress": 1005.61868,
+            "lap": 0,
+            "point": {
+              "lat": 0.003271,
+              "lon": -0.001367
+            },
+            "heading": 274.95772,
+            "state": "live",
+            "offset": 2.094415
+          }
+        },
+        {
+          "kind": "report",
+          "t": 134589.0983324498,
+          "reading": {
+            "progress": 988.289106,
+            "lap": 0,
+            "point": {
+              "lat": 0.003257,
+              "lon": -0.001212
+            },
+            "heading": 274.95772,
+            "state": "live",
+            "offset": 12.618481
+          }
+        },
+        {
+          "kind": "at",
+          "t": 140589.0983324498,
+          "reading": {
+            "progress": 998.68685,
+            "lap": 0,
+            "point": {
+              "lat": 0.003265,
+              "lon": -0.001305
+            },
+            "heading": 274.95772,
+            "state": "live",
+            "offset": 12.618481
+          }
+        },
+        {
+          "kind": "report",
+          "t": 138987.3357815668,
+          "reading": {
+            "progress": 1052.421699,
+            "lap": 0,
+            "point": {
+              "lat": 0.002882,
+              "lon": -0.001419
+            },
+            "heading": 183.443054,
+            "state": "live",
+            "offset": 21.062872
+          }
+        },
+        {
+          "kind": "at",
+          "t": 144987.3357815668,
+          "reading": {
+            "progress": 1092.683682,
+            "lap": 0,
+            "point": {
+              "lat": 0.002521,
+              "lon": -0.001441
+            },
+            "heading": 183.443054,
+            "state": "live",
+            "offset": 21.062872
+          }
+        },
+        {
+          "kind": "report",
+          "t": 141698.87909572572,
+          "reading": {
+            "progress": 1109.556117,
+            "lap": 0,
+            "point": {
+              "lat": 0.00237,
+              "lon": -0.00145
+            },
+            "heading": 183.443054,
+            "state": "live",
+            "offset": 3.235047
+          }
+        },
+        {
+          "kind": "at",
+          "t": 147698.87909572572,
+          "reading": {
+            "progress": 1180.379974,
+            "lap": 0,
+            "point": {
+              "lat": 0.002134,
+              "lon": -0.001255
+            },
+            "heading": 57.17285,
+            "state": "live",
+            "offset": 3.235047
+          }
+        },
+        {
+          "kind": "report",
+          "t": 143666.67985357344,
+          "reading": {
+            "progress": 1133.447643,
+            "lap": 0,
+            "point": {
+              "lat": 0.002156,
+              "lon": -0.001463
+            },
+            "heading": 183.443054,
+            "state": "offRoute",
+            "offset": 362.240414
+          }
+        },
+        {
+          "kind": "at",
+          "t": 149666.67985357344,
+          "reading": {
+            "progress": 1133.447643,
+            "lap": 0,
+            "point": {
+              "lat": 0.002156,
+              "lon": -0.001463
+            },
+            "heading": 183.443054,
+            "state": "offRoute",
+            "offset": 362.240414
+          }
+        },
+        {
+          "kind": "report",
+          "t": 145318.40369291604,
+          "reading": {
+            "progress": 1109.556117,
+            "lap": 0,
+            "point": {
+              "lat": 0.00237,
+              "lon": -0.00145
+            },
+            "heading": 183.443054,
+            "state": "live",
+            "offset": 10.652777
+          }
+        },
+        {
+          "kind": "at",
+          "t": 151318.40369291604,
+          "reading": {
+            "progress": 1133.447643,
+            "lap": 0,
+            "point": {
+              "lat": 0.002156,
+              "lon": -0.001463
+            },
+            "heading": 183.443054,
+            "state": "live",
+            "offset": 10.652777
+          }
+        },
+        {
+          "kind": "report",
+          "t": 149677.78267990798,
+          "reading": {
+            "progress": 1188.665162,
+            "lap": 0,
+            "point": {
+              "lat": 0.002175,
+              "lon": -0.001192
+            },
+            "heading": 57.17285,
+            "state": "live",
+            "offset": 5.996014
+          }
+        },
+        {
+          "kind": "at",
+          "t": 155677.78267990798,
+          "reading": {
+            "progress": 1231.007838,
+            "lap": 0,
+            "point": {
+              "lat": 0.002381,
+              "lon": -0.000873
+            },
+            "heading": 57.17285,
+            "state": "live",
+            "offset": 5.996014
+          }
+        },
+        {
+          "kind": "report",
+          "t": 153922.08002321422,
+          "reading": {
+            "progress": 1256.566691,
+            "lap": 0,
+            "point": {
+              "lat": 0.002505,
+              "lon": -0.00068
+            },
+            "heading": 57.17285,
+            "state": "live",
+            "offset": 19.150978
+          }
+        },
+        {
+          "kind": "at",
+          "t": 159922.08002321422,
+          "reading": {
+            "progress": 1319.301656,
+            "lap": 0,
+            "point": {
+              "lat": 0.002811,
+              "lon": -0.000206
+            },
+            "heading": 57.17285,
+            "state": "live",
+            "offset": 19.150978
+          }
+        },
+        {
+          "kind": "report",
+          "t": 156791.03014618158,
+          "reading": {
+            "progress": 1305.979697,
+            "lap": 0,
+            "point": {
+              "lat": 0.002746,
+              "lon": -0.000307
+            },
+            "heading": 57.17285,
+            "state": "live",
+            "offset": 5.206473
+          }
+        },
+        {
+          "kind": "at",
+          "t": 162791.03014618158,
+          "reading": {
+            "progress": 1383.808553,
+            "lap": 0,
+            "point": {
+              "lat": 0.003018,
+              "lon": 0.000296
+            },
+            "heading": 106.154324,
+            "state": "live",
+            "offset": 5.206473
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 14,
+      "seed": 334476,
+      "readings": [
+        {
+          "kind": "report",
+          "t": 4472.901346161962,
+          "reading": {
+            "progress": 1155.291783,
+            "lap": 0,
+            "point": {
+              "lat": 0.000284,
+              "lon": -0.000591
+            },
+            "heading": 138.663332,
+            "state": "live",
+            "offset": 0.90141
+          }
+        },
+        {
+          "kind": "at",
+          "t": 10472.901346161962,
+          "reading": {
+            "progress": 1155.291783,
+            "lap": 0,
+            "point": {
+              "lat": 0.000284,
+              "lon": -0.000591
+            },
+            "heading": 138.663332,
+            "state": "live",
+            "offset": 0.90141
+          }
+        },
+        {
+          "kind": "report",
+          "t": 7924.572095274925,
+          "reading": {
+            "progress": 1155.291783,
+            "lap": 0,
+            "point": {
+              "lat": 0.000284,
+              "lon": -0.000591
+            },
+            "heading": 138.663332,
+            "state": "live",
+            "offset": 14.833096
+          }
+        },
+        {
+          "kind": "at",
+          "t": 13924.572095274925,
+          "reading": {
+            "progress": 1155.291783,
+            "lap": 0,
+            "point": {
+              "lat": 0.000284,
+              "lon": -0.000591
+            },
+            "heading": 138.663332,
+            "state": "live",
+            "offset": 14.833096
+          }
+        },
+        {
+          "kind": "report",
+          "t": 38932.55885085091,
+          "reading": {
+            "progress": 1155.291783,
+            "lap": 0,
+            "point": {
+              "lat": 0.000284,
+              "lon": -0.000591
+            },
+            "heading": 138.663332,
+            "state": "offRoute",
+            "offset": 80.115017
+          }
+        },
+        {
+          "kind": "at",
+          "t": 44932.55885085091,
+          "reading": {
+            "progress": 1155.291783,
+            "lap": 0,
+            "point": {
+              "lat": 0.000284,
+              "lon": -0.000591
+            },
+            "heading": 138.663332,
+            "state": "offRoute",
+            "offset": 80.115017
+          }
+        },
+        {
+          "kind": "report",
+          "t": 40957.491524051875,
+          "reading": {
+            "progress": 1155.291783,
+            "lap": 0,
+            "point": {
+              "lat": 0.000284,
+              "lon": -0.000591
+            },
+            "heading": 138.663332,
+            "state": "live",
+            "offset": 2.201092
+          }
+        },
+        {
+          "kind": "at",
+          "t": 46957.491524051875,
+          "reading": {
+            "progress": 1155.291783,
+            "lap": 0,
+            "point": {
+              "lat": 0.000284,
+              "lon": -0.000591
+            },
+            "heading": 138.663332,
+            "state": "live",
+            "offset": 2.201092
+          }
+        },
+        {
+          "kind": "report",
+          "t": 42446.88162161037,
+          "reading": {
+            "progress": 1155.291783,
+            "lap": 0,
+            "point": {
+              "lat": 0.000284,
+              "lon": -0.000591
+            },
+            "heading": 138.663332,
+            "state": "offRoute",
+            "offset": 113.553258
+          }
+        },
+        {
+          "kind": "at",
+          "t": 48446.88162161037,
+          "reading": {
+            "progress": 1155.291783,
+            "lap": 0,
+            "point": {
+              "lat": 0.000284,
+              "lon": -0.000591
+            },
+            "heading": 138.663332,
+            "state": "offRoute",
+            "offset": 113.553258
+          }
+        },
+        {
+          "kind": "report",
+          "t": 96784.46670807898,
+          "reading": {
+            "progress": 1155.291783,
+            "lap": 0,
+            "point": {
+              "lat": 0.000284,
+              "lon": -0.000591
+            },
+            "heading": 138.663332,
+            "state": "live",
+            "offset": 2.16404
+          }
+        },
+        {
+          "kind": "at",
+          "t": 102784.46670807898,
+          "reading": {
+            "progress": 1155.291783,
+            "lap": 0,
+            "point": {
+              "lat": 0.000284,
+              "lon": -0.000591
+            },
+            "heading": 138.663332,
+            "state": "live",
+            "offset": 2.16404
+          }
+        },
+        {
+          "kind": "report",
+          "t": 173425.40068598464,
+          "reading": {
+            "progress": 1468.262831,
+            "lap": 0,
+            "point": {
+              "lat": -0.001246,
+              "lon": -0.001735
+            },
+            "heading": 258.863001,
+            "state": "live",
+            "offset": 16.355795
+          }
+        },
+        {
+          "kind": "at",
+          "t": 179425.40068598464,
+          "reading": {
+            "progress": 1477.791235,
+            "lap": 0,
+            "point": {
+              "lat": -0.001262,
+              "lon": -0.001819
+            },
+            "heading": 258.863001,
+            "state": "live",
+            "offset": 16.355795
+          }
+        },
+        {
+          "kind": "report",
+          "t": 178180.5996936746,
+          "reading": {
+            "progress": 1526.772608,
+            "lap": 0,
+            "point": {
+              "lat": -0.001412,
+              "lon": -0.00223
+            },
+            "heading": 245.182139,
+            "state": "live",
+            "offset": 8.884172
+          }
+        },
+        {
+          "kind": "at",
+          "t": 184180.5996936746,
+          "reading": {
+            "progress": 1561.199871,
+            "lap": 0,
+            "point": {
+              "lat": -0.001542,
+              "lon": -0.002511
+            },
+            "heading": 245.182139,
+            "state": "live",
+            "offset": 8.884172
+          }
+        },
+        {
+          "kind": "report",
+          "t": 181519.5446643047,
+          "reading": {
+            "progress": 1546.478449,
+            "lap": 0,
+            "point": {
+              "lat": -0.001486,
+              "lon": -0.002391
+            },
+            "heading": 245.182139,
+            "state": "offRoute",
+            "offset": 410.827735
+          }
+        },
+        {
+          "kind": "at",
+          "t": 187519.5446643047,
+          "reading": {
+            "progress": 1546.478449,
+            "lap": 0,
+            "point": {
+              "lat": -0.001486,
+              "lon": -0.002391
+            },
+            "heading": 245.182139,
+            "state": "offRoute",
+            "offset": 410.827735
+          }
+        },
+        {
+          "kind": "report",
+          "t": 228012.3674911447,
+          "reading": {
+            "progress": 1885.547532,
+            "lap": 0,
+            "point": {
+              "lat": -0.000543,
+              "lon": -0.004555
+            },
+            "heading": 325.065628,
+            "state": "live",
+            "offset": 7.594344
+          }
+        },
+        {
+          "kind": "at",
+          "t": 234012.3674911447,
+          "reading": {
+            "progress": 1902.346886,
+            "lap": 0,
+            "point": {
+              "lat": -0.000605,
+              "lon": -0.004457
+            },
+            "heading": 125.395172,
+            "state": "live",
+            "offset": 7.594344
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 15,
+      "seed": 334477,
+      "readings": [
+        {
+          "kind": "report",
+          "t": 1239.457936026156,
+          "reading": {
+            "progress": 7.724749,
+            "lap": 0,
+            "point": {
+              "lat": -0.000024,
+              "lon": 0.000065
+            },
+            "heading": 110.319405,
+            "state": "live",
+            "offset": 4.9774
+          }
+        },
+        {
+          "kind": "at",
+          "t": 7239.457936026156,
+          "reading": {
+            "progress": 7.724749,
+            "lap": 0,
+            "point": {
+              "lat": -0.000024,
+              "lon": 0.000065
+            },
+            "heading": 110.319405,
+            "state": "live",
+            "offset": 4.9774
+          }
+        },
+        {
+          "kind": "report",
+          "t": 196235.8545511961,
+          "reading": {
+            "progress": 2128.82339,
+            "lap": 0,
+            "point": {
+              "lat": 0.000826,
+              "lon": -0.002765
+            },
+            "heading": 283.105164,
+            "state": "live",
+            "offset": 12.93638
+          }
+        },
+        {
+          "kind": "at",
+          "t": 202235.8545511961,
+          "reading": {
+            "progress": 2154.204527,
+            "lap": 0,
+            "point": {
+              "lat": 0.000838,
+              "lon": -0.002537
+            },
+            "heading": 86.956332,
+            "state": "live",
+            "offset": 12.93638
+          }
+        },
+        {
+          "kind": "report",
+          "t": 197346.89872991294,
+          "reading": {
+            "progress": 2133.657601,
+            "lap": 0,
+            "point": {
+              "lat": 0.000828,
+              "lon": -0.002722
+            },
+            "heading": 86.956332,
+            "state": "offRoute",
+            "offset": 203.135136
+          }
+        },
+        {
+          "kind": "at",
+          "t": 203346.89872991294,
+          "reading": {
+            "progress": 2133.657601,
+            "lap": 0,
+            "point": {
+              "lat": 0.000828,
+              "lon": -0.002722
+            },
+            "heading": 86.956332,
+            "state": "offRoute",
+            "offset": 203.135136
+          }
+        },
+        {
+          "kind": "report",
+          "t": 200544.12413947284,
+          "reading": {
+            "progress": 2148.386422,
+            "lap": 0,
+            "point": {
+              "lat": 0.000835,
+              "lon": -0.002589
+            },
+            "heading": 86.956332,
+            "state": "live",
+            "offset": 9.731137
+          }
+        },
+        {
+          "kind": "at",
+          "t": 206544.12413947284,
+          "reading": {
+            "progress": 2158.981644,
+            "lap": 0,
+            "point": {
+              "lat": 0.00084,
+              "lon": -0.002494
+            },
+            "heading": 86.956332,
+            "state": "live",
+            "offset": 9.731137
+          }
+        },
+        {
+          "kind": "report",
+          "t": 202569.83634084463,
+          "reading": {
+            "progress": 2152.065771,
+            "lap": 0,
+            "point": {
+              "lat": 0.000837,
+              "lon": -0.002556
+            },
+            "heading": 86.956332,
+            "state": "offRoute",
+            "offset": 99.806006
+          }
+        },
+        {
+          "kind": "at",
+          "t": 208569.83634084463,
+          "reading": {
+            "progress": 2152.065771,
+            "lap": 0,
+            "point": {
+              "lat": 0.000837,
+              "lon": -0.002556
+            },
+            "heading": 86.956332,
+            "state": "offRoute",
+            "offset": 99.806006
+          }
+        },
+        {
+          "kind": "report",
+          "t": 206316.28848798573,
+          "reading": {
+            "progress": 2155.073622,
+            "lap": 0,
+            "point": {
+              "lat": 0.000838,
+              "lon": -0.002529
+            },
+            "heading": 86.956332,
+            "state": "live",
+            "offset": 19.330158
+          }
+        },
+        {
+          "kind": "at",
+          "t": 212316.28848798573,
+          "reading": {
+            "progress": 2157.776848,
+            "lap": 0,
+            "point": {
+              "lat": 0.00084,
+              "lon": -0.002505
+            },
+            "heading": 86.956332,
+            "state": "live",
+            "offset": 19.330158
+          }
+        },
+        {
+          "kind": "report",
+          "t": 207696.20841182768,
+          "reading": {
+            "progress": 2184.262936,
+            "lap": 0,
+            "point": {
+              "lat": 0.000852,
+              "lon": -0.002268
+            },
+            "heading": 86.956332,
+            "state": "live",
+            "offset": 23.041223
+          }
+        },
+        {
+          "kind": "at",
+          "t": 213696.20841182768,
+          "reading": {
+            "progress": 2232.551538,
+            "lap": 0,
+            "point": {
+              "lat": 0.000875,
+              "lon": -0.001834
+            },
+            "heading": 86.956332,
+            "state": "live",
+            "offset": 23.041223
+          }
+        },
+        {
+          "kind": "report",
+          "t": 209339.99592252076,
+          "reading": {
+            "progress": 2210.369391,
+            "lap": 0,
+            "point": {
+              "lat": 0.000865,
+              "lon": -0.002033
+            },
+            "heading": 86.956332,
+            "state": "live",
+            "offset": 0.776202
+          }
+        },
+        {
+          "kind": "at",
+          "t": 215339.99592252076,
+          "reading": {
+            "progress": 2276.400299,
+            "lap": 0,
+            "point": {
+              "lat": 0.001025,
+              "lon": -0.001803
+            },
+            "heading": 312.200171,
+            "state": "live",
+            "offset": 0.776202
+          }
+        },
+        {
+          "kind": "report",
+          "t": 213098.16525224596,
+          "reading": {
+            "progress": 2252.910305,
+            "lap": 0,
+            "point": {
+              "lat": 0.000885,
+              "lon": -0.001652
+            },
+            "heading": 86.956332,
+            "state": "offRoute",
+            "offset": 152.998872
+          }
+        },
+        {
+          "kind": "at",
+          "t": 219098.16525224596,
+          "reading": {
+            "progress": 2252.910305,
+            "lap": 0,
+            "point": {
+              "lat": 0.000885,
+              "lon": -0.001652
+            },
+            "heading": 86.956332,
+            "state": "offRoute",
+            "offset": 152.998872
+          }
+        },
+        {
+          "kind": "report",
+          "t": 217661.2305548042,
+          "reading": {
+            "progress": 2281.71974,
+            "lap": 0,
+            "point": {
+              "lat": 0.001057,
+              "lon": -0.001839
+            },
+            "heading": 312.200171,
+            "state": "live",
+            "offset": 0.131136
+          }
+        },
+        {
+          "kind": "at",
+          "t": 223661.2305548042,
+          "reading": {
+            "progress": 2301.726885,
+            "lap": 0,
+            "point": {
+              "lat": 0.001178,
+              "lon": -0.001972
+            },
+            "heading": 312.200171,
+            "state": "live",
+            "offset": 0.131136
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 16,
+      "seed": 334478,
+      "readings": [
+        {
+          "kind": "report",
+          "t": 1818.5705533251166,
+          "reading": {
+            "progress": 0,
+            "lap": 0,
+            "point": {
+              "lat": 0,
+              "lon": 0
+            },
+            "heading": 351.779323,
+            "state": "live",
+            "offset": 18.864553
+          }
+        },
+        {
+          "kind": "at",
+          "t": 7818.570553325117,
+          "reading": {
+            "progress": 0,
+            "lap": 0,
+            "point": {
+              "lat": 0,
+              "lon": 0
+            },
+            "heading": 351.779323,
+            "state": "live",
+            "offset": 18.864553
+          }
+        },
+        {
+          "kind": "report",
+          "t": 3218.1067764759064,
+          "reading": {
+            "progress": 0,
+            "lap": 0,
+            "point": {
+              "lat": 0,
+              "lon": 0
+            },
+            "heading": 351.779323,
+            "state": "live",
+            "offset": 18.864553
+          }
+        },
+        {
+          "kind": "at",
+          "t": 9218.106776475906,
+          "reading": {
+            "progress": 0,
+            "lap": 0,
+            "point": {
+              "lat": 0,
+              "lon": 0
+            },
+            "heading": 351.779323,
+            "state": "live",
+            "offset": 18.864553
+          }
+        },
+        {
+          "kind": "report",
+          "t": 4844.082682393491,
+          "reading": {
+            "progress": 8.43424,
+            "lap": 0,
+            "point": {
+              "lat": 0.000075,
+              "lon": -0.000011
+            },
+            "heading": 351.779323,
+            "state": "live",
+            "offset": 13.504591
+          }
+        },
+        {
+          "kind": "at",
+          "t": 10844.082682393491,
+          "reading": {
+            "progress": 14.938889,
+            "lap": 0,
+            "point": {
+              "lat": 0.000133,
+              "lon": -0.000019
+            },
+            "heading": 351.779323,
+            "state": "live",
+            "offset": 13.504591
+          }
+        },
+        {
+          "kind": "report",
+          "t": 6365.5114667490125,
+          "reading": {
+            "progress": 8.43424,
+            "lap": 0,
+            "point": {
+              "lat": 0.000075,
+              "lon": -0.000011
+            },
+            "heading": 351.779323,
+            "state": "live",
+            "offset": 6.475013
+          }
+        },
+        {
+          "kind": "at",
+          "t": 12365.511466749012,
+          "reading": {
+            "progress": 12.33703,
+            "lap": 0,
+            "point": {
+              "lat": 0.00011,
+              "lon": -0.000016
+            },
+            "heading": 351.779323,
+            "state": "live",
+            "offset": 6.475013
+          }
+        },
+        {
+          "kind": "report",
+          "t": 46770.547351799905,
+          "reading": {
+            "progress": 316.368801,
+            "lap": 0,
+            "point": {
+              "lat": 0.00265,
+              "lon": 0.000265
+            },
+            "heading": 35.523207,
+            "state": "live",
+            "offset": 4.727801
+          }
+        },
+        {
+          "kind": "at",
+          "t": 52770.547351799905,
+          "reading": {
+            "progress": 336.493257,
+            "lap": 0,
+            "point": {
+              "lat": 0.002797,
+              "lon": 0.00037
+            },
+            "heading": 35.523207,
+            "state": "live",
+            "offset": 4.727801
+          }
+        },
+        {
+          "kind": "report",
+          "t": 48294.96314190328,
+          "reading": {
+            "progress": 316.368801,
+            "lap": 0,
+            "point": {
+              "lat": 0.00265,
+              "lon": 0.000265
+            },
+            "heading": 35.523207,
+            "state": "live",
+            "offset": 13.915143
+          }
+        },
+        {
+          "kind": "at",
+          "t": 54294.96314190328,
+          "reading": {
+            "progress": 328.443475,
+            "lap": 0,
+            "point": {
+              "lat": 0.002738,
+              "lon": 0.000328
+            },
+            "heading": 35.523207,
+            "state": "live",
+            "offset": 13.915143
+          }
+        },
+        {
+          "kind": "report",
+          "t": 49365.13761617243,
+          "reading": {
+            "progress": 316.368801,
+            "lap": 0,
+            "point": {
+              "lat": 0.00265,
+              "lon": 0.000265
+            },
+            "heading": 35.523207,
+            "state": "live",
+            "offset": 17.07471
+          }
+        },
+        {
+          "kind": "at",
+          "t": 55365.13761617243,
+          "reading": {
+            "progress": 323.613605,
+            "lap": 0,
+            "point": {
+              "lat": 0.002703,
+              "lon": 0.000303
+            },
+            "heading": 35.523207,
+            "state": "live",
+            "offset": 17.07471
+          }
+        },
+        {
+          "kind": "report",
+          "t": 53812.508697621524,
+          "reading": {
+            "progress": 344.482707,
+            "lap": 0,
+            "point": {
+              "lat": 0.002855,
+              "lon": 0.000412
+            },
+            "heading": 35.523207,
+            "state": "live",
+            "offset": 3.833307
+          }
+        },
+        {
+          "kind": "at",
+          "t": 59812.508697621524,
+          "reading": {
+            "progress": 363.579677,
+            "lap": 0,
+            "point": {
+              "lat": 0.002995,
+              "lon": 0.000512
+            },
+            "heading": 35.523207,
+            "state": "live",
+            "offset": 3.833307
+          }
+        },
+        {
+          "kind": "report",
+          "t": 57515.196887776256,
+          "reading": {
+            "progress": 378.207181,
+            "lap": 0,
+            "point": {
+              "lat": 0.003102,
+              "lon": 0.000588
+            },
+            "heading": 35.523207,
+            "state": "live",
+            "offset": 1.655192
+          }
+        },
+        {
+          "kind": "at",
+          "t": 63515.196887776256,
+          "reading": {
+            "progress": 410.91761,
+            "lap": 0,
+            "point": {
+              "lat": 0.002826,
+              "lon": 0.000543
+            },
+            "heading": 189.919056,
+            "state": "live",
+            "offset": 1.655192
+          }
+        },
+        {
+          "kind": "report",
+          "t": 61128.85476555675,
+          "reading": {
+            "progress": 378.207181,
+            "lap": 0,
+            "point": {
+              "lat": 0.003102,
+              "lon": 0.000588
+            },
+            "heading": 35.523207,
+            "state": "live",
+            "offset": 0.613233
+          }
+        },
+        {
+          "kind": "at",
+          "t": 67128.85476555675,
+          "reading": {
+            "progress": 398.470775,
+            "lap": 0,
+            "point": {
+              "lat": 0.002936,
+              "lon": 0.000562
+            },
+            "heading": 189.919056,
+            "state": "live",
+            "offset": 0.613233
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 17,
+      "seed": 334479,
+      "readings": [
+        {
+          "kind": "report",
+          "t": 1150.7614739239216,
+          "reading": {
+            "progress": 17.245137,
+            "lap": 0,
+            "point": {
+              "lat": -0.000129,
+              "lon": 0.000086
+            },
+            "heading": 146.139116,
+            "state": "live",
+            "offset": 3.453337
+          }
+        },
+        {
+          "kind": "at",
+          "t": 7150.761473923922,
+          "reading": {
+            "progress": 17.245137,
+            "lap": 0,
+            "point": {
+              "lat": -0.000129,
+              "lon": 0.000086
+            },
+            "heading": 146.139116,
+            "state": "live",
+            "offset": 3.453337
+          }
+        },
+        {
+          "kind": "report",
+          "t": 128749.82114089653,
+          "reading": {
+            "progress": 1156.748832,
+            "lap": 0,
+            "point": {
+              "lat": -0.005035,
+              "lon": -0.000283
+            },
+            "heading": 281.792894,
+            "state": "live",
+            "offset": 1.746021
+          }
+        },
+        {
+          "kind": "at",
+          "t": 134749.82114089653,
+          "reading": {
+            "progress": 1177.586305,
+            "lap": 0,
+            "point": {
+              "lat": -0.004997,
+              "lon": -0.000467
+            },
+            "heading": 281.792894,
+            "state": "live",
+            "offset": 1.746021
+          }
+        },
+        {
+          "kind": "report",
+          "t": 130650.40464093909,
+          "reading": {
+            "progress": 1198.878436,
+            "lap": 0,
+            "point": {
+              "lat": -0.004958,
+              "lon": -0.000654
+            },
+            "heading": 281.792894,
+            "state": "live",
+            "offset": 0.072639
+          }
+        },
+        {
+          "kind": "at",
+          "t": 136650.4046409391,
+          "reading": {
+            "progress": 1258.047586,
+            "lap": 0,
+            "point": {
+              "lat": -0.004849,
+              "lon": -0.001174
+            },
+            "heading": 281.792894,
+            "state": "live",
+            "offset": 0.072639
+          }
+        },
+        {
+          "kind": "report",
+          "t": 135274.53264174983,
+          "reading": {
+            "progress": 1219.456281,
+            "lap": 0,
+            "point": {
+              "lat": -0.00492,
+              "lon": -0.000835
+            },
+            "heading": 281.792894,
+            "state": "live",
+            "offset": 13.709883
+          }
+        },
+        {
+          "kind": "at",
+          "t": 141274.53264174983,
+          "reading": {
+            "progress": 1265.341345,
+            "lap": 0,
+            "point": {
+              "lat": -0.004869,
+              "lon": -0.001236
+            },
+            "heading": 249.326103,
+            "state": "live",
+            "offset": 13.709883
+          }
+        },
+        {
+          "kind": "report",
+          "t": 138371.98733491823,
+          "reading": {
+            "progress": 1219.456281,
+            "lap": 0,
+            "point": {
+              "lat": -0.00492,
+              "lon": -0.000835
+            },
+            "heading": 281.792894,
+            "state": "live",
+            "offset": 3.897762
+          }
+        },
+        {
+          "kind": "at",
+          "t": 144371.98733491823,
+          "reading": {
+            "progress": 1246.987319,
+            "lap": 0,
+            "point": {
+              "lat": -0.004869,
+              "lon": -0.001077
+            },
+            "heading": 281.792894,
+            "state": "live",
+            "offset": 3.897762
+          }
+        },
+        {
+          "kind": "report",
+          "t": 143294.59662130103,
+          "reading": {
+            "progress": 1219.456281,
+            "lap": 0,
+            "point": {
+              "lat": -0.00492,
+              "lon": -0.000835
+            },
+            "heading": 281.792894,
+            "state": "live",
+            "offset": 0.609028
+          }
+        },
+        {
+          "kind": "at",
+          "t": 149294.59662130103,
+          "reading": {
+            "progress": 1245.782274,
+            "lap": 0,
+            "point": {
+              "lat": -0.004872,
+              "lon": -0.001066
+            },
+            "heading": 281.792894,
+            "state": "live",
+            "offset": 0.609028
+          }
+        },
+        {
+          "kind": "report",
+          "t": 219844.44412682205,
+          "reading": {
+            "progress": 1673.783424,
+            "lap": 0,
+            "point": {
+              "lat": -0.00695,
+              "lon": -0.002332
+            },
+            "heading": 243.515125,
+            "state": "live",
+            "offset": 24.733913
+          }
+        },
+        {
+          "kind": "at",
+          "t": 225844.44412682205,
+          "reading": {
+            "progress": 1697.543047,
+            "lap": 0,
+            "point": {
+              "lat": -0.007045,
+              "lon": -0.002523
+            },
+            "heading": 243.515125,
+            "state": "live",
+            "offset": 24.733913
+          }
+        },
+        {
+          "kind": "report",
+          "t": 224844.0009439364,
+          "reading": {
+            "progress": 1676.913161,
+            "lap": 0,
+            "point": {
+              "lat": -0.006962,
+              "lon": -0.002357
+            },
+            "heading": 243.515125,
+            "state": "live",
+            "offset": 9.283213
+          }
+        },
+        {
+          "kind": "at",
+          "t": 230844.0009439364,
+          "reading": {
+            "progress": 1694.14701,
+            "lap": 0,
+            "point": {
+              "lat": -0.007031,
+              "lon": -0.002495
+            },
+            "heading": 243.515125,
+            "state": "live",
+            "offset": 9.283213
+          }
+        },
+        {
+          "kind": "report",
+          "t": 227779.59493361413,
+          "reading": {
+            "progress": 1694.14701,
+            "lap": 0,
+            "point": {
+              "lat": -0.007031,
+              "lon": -0.002495
+            },
+            "heading": 243.515125,
+            "state": "offRoute",
+            "offset": 427.101742
+          }
+        },
+        {
+          "kind": "at",
+          "t": 233779.59493361413,
+          "reading": {
+            "progress": 1694.14701,
+            "lap": 0,
+            "point": {
+              "lat": -0.007031,
+              "lon": -0.002495
+            },
+            "heading": 243.515125,
+            "state": "offRoute",
+            "offset": 427.101742
+          }
+        },
+        {
+          "kind": "report",
+          "t": 232461.74658834934,
+          "reading": {
+            "progress": 1676.913161,
+            "lap": 0,
+            "point": {
+              "lat": -0.006962,
+              "lon": -0.002357
+            },
+            "heading": 243.515125,
+            "state": "live",
+            "offset": 5.605916
+          }
+        },
+        {
+          "kind": "at",
+          "t": 238461.74658834934,
+          "reading": {
+            "progress": 1694.14701,
+            "lap": 0,
+            "point": {
+              "lat": -0.007031,
+              "lon": -0.002495
+            },
+            "heading": 243.515125,
+            "state": "live",
+            "offset": 5.605916
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 18,
+      "seed": 334480,
+      "readings": [
+        {
+          "kind": "report",
+          "t": 4159.070462919772,
+          "reading": {
+            "progress": 39.12637,
+            "lap": 0,
+            "point": {
+              "lat": 0.000322,
+              "lon": -0.000141
+            },
+            "heading": 336.331197,
+            "state": "live",
+            "offset": 1.060442
+          }
+        },
+        {
+          "kind": "at",
+          "t": 10159.070462919772,
+          "reading": {
+            "progress": 39.12637,
+            "lap": 0,
+            "point": {
+              "lat": 0.000322,
+              "lon": -0.000141
+            },
+            "heading": 336.331197,
+            "state": "live",
+            "offset": 1.060442
+          }
+        },
+        {
+          "kind": "report",
+          "t": 5851.485132239759,
+          "reading": {
+            "progress": 102.122038,
+            "lap": 0,
+            "point": {
+              "lat": 0.00084,
+              "lon": -0.000368
+            },
+            "heading": 336.331197,
+            "state": "live",
+            "offset": 12.29838
+          }
+        },
+        {
+          "kind": "at",
+          "t": 11851.485132239759,
+          "reading": {
+            "progress": 148.788705,
+            "lap": 0,
+            "point": {
+              "lat": 0.001224,
+              "lon": -0.000537
+            },
+            "heading": 336.331197,
+            "state": "live",
+            "offset": 12.29838
+          }
+        },
+        {
+          "kind": "report",
+          "t": 185086.40848007053,
+          "reading": {
+            "progress": 1675.071135,
+            "lap": 0,
+            "point": {
+              "lat": -0.003659,
+              "lon": 0.000834
+            },
+            "heading": 170.03667,
+            "state": "live",
+            "offset": 9.123363
+          }
+        },
+        {
+          "kind": "at",
+          "t": 191086.40848007053,
+          "reading": {
+            "progress": 1723.548252,
+            "lap": 0,
+            "point": {
+              "lat": -0.004088,
+              "lon": 0.00091
+            },
+            "heading": 170.03667,
+            "state": "live",
+            "offset": 9.123363
+          }
+        },
+        {
+          "kind": "report",
+          "t": 262987.851515878,
+          "reading": {
+            "progress": 2601.875428,
+            "lap": 0,
+            "point": {
+              "lat": -0.00134,
+              "lon": 0.001884
+            },
+            "heading": 187.890363,
+            "state": "live",
+            "offset": 3.22533
+          }
+        },
+        {
+          "kind": "at",
+          "t": 268987.851515878,
+          "reading": {
+            "progress": 2658.72169,
+            "lap": 0,
+            "point": {
+              "lat": -0.001846,
+              "lon": 0.001814
+            },
+            "heading": 187.890363,
+            "state": "live",
+            "offset": 3.22533
+          }
+        },
+        {
+          "kind": "report",
+          "t": 297936.00373575464,
+          "reading": {
+            "progress": 2665.218405,
+            "lap": 0,
+            "point": {
+              "lat": -0.001904,
+              "lon": 0.001806
+            },
+            "heading": 187.890363,
+            "state": "offRoute",
+            "offset": 279.043107
+          }
+        },
+        {
+          "kind": "at",
+          "t": 303936.00373575464,
+          "reading": {
+            "progress": 2665.218405,
+            "lap": 0,
+            "point": {
+              "lat": -0.001904,
+              "lon": 0.001806
+            },
+            "heading": 187.890363,
+            "state": "offRoute",
+            "offset": 279.043107
+          }
+        },
+        {
+          "kind": "report",
+          "t": 302831.3136282377,
+          "reading": {
+            "progress": 3172.012399,
+            "lap": 0,
+            "point": {
+              "lat": -0.001942,
+              "lon": 0.002807
+            },
+            "heading": 122.088748,
+            "state": "live",
+            "offset": 13.62801
+          }
+        },
+        {
+          "kind": "at",
+          "t": 308831.3136282377,
+          "reading": {
+            "progress": 3205.401054,
+            "lap": 0,
+            "point": {
+              "lat": -0.0021,
+              "lon": 0.002551
+            },
+            "heading": 238.308507,
+            "state": "live",
+            "offset": 13.62801
+          }
+        },
+        {
+          "kind": "report",
+          "t": 304538.2209061645,
+          "reading": {
+            "progress": 3201.616407,
+            "lap": 0,
+            "point": {
+              "lat": -0.002082,
+              "lon": 0.00258
+            },
+            "heading": 238.308507,
+            "state": "live",
+            "offset": 0.570473
+          }
+        },
+        {
+          "kind": "at",
+          "t": 310538.2209061645,
+          "reading": {
+            "progress": 3262.118125,
+            "lap": 0,
+            "point": {
+              "lat": -0.002367,
+              "lon": 0.002118
+            },
+            "heading": 238.308507,
+            "state": "live",
+            "offset": 0.570473
+          }
+        },
+        {
+          "kind": "report",
+          "t": 308579.6011206694,
+          "reading": {
+            "progress": 3243.532483,
+            "lap": 0,
+            "point": {
+              "lat": -0.00228,
+              "lon": 0.00226
+            },
+            "heading": 238.308507,
+            "state": "offRoute",
+            "offset": 313.458775
+          }
+        },
+        {
+          "kind": "at",
+          "t": 314579.6011206694,
+          "reading": {
+            "progress": 3243.532483,
+            "lap": 0,
+            "point": {
+              "lat": -0.00228,
+              "lon": 0.00226
+            },
+            "heading": 238.308507,
+            "state": "offRoute",
+            "offset": 313.458775
+          }
+        },
+        {
+          "kind": "report",
+          "t": 312760.92114811763,
+          "reading": {
+            "progress": 3240.621308,
+            "lap": 0,
+            "point": {
+              "lat": -0.002266,
+              "lon": 0.002282
+            },
+            "heading": 238.308507,
+            "state": "live",
+            "offset": 10.477673
+          }
+        },
+        {
+          "kind": "at",
+          "t": 318760.92114811763,
+          "reading": {
+            "progress": 3251.689623,
+            "lap": 0,
+            "point": {
+              "lat": -0.002318,
+              "lon": 0.002198
+            },
+            "heading": 238.308507,
+            "state": "live",
+            "offset": 10.477673
+          }
+        },
+        {
+          "kind": "report",
+          "t": 315113.2773733698,
+          "reading": {
+            "progress": 3240.621308,
+            "lap": 0,
+            "point": {
+              "lat": -0.002266,
+              "lon": 0.002282
+            },
+            "heading": 238.308507,
+            "state": "live",
+            "offset": 14.606176
+          }
+        },
+        {
+          "kind": "at",
+          "t": 321113.2773733698,
+          "reading": {
+            "progress": 3247.262297,
+            "lap": 0,
+            "point": {
+              "lat": -0.002297,
+              "lon": 0.002232
+            },
+            "heading": 238.308507,
+            "state": "live",
+            "offset": 14.606176
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 19,
+      "seed": 334481,
+      "readings": [
+        {
+          "kind": "report",
+          "t": 4606.174967251718,
+          "reading": {
+            "progress": 0,
+            "lap": 0,
+            "point": {
+              "lat": 0,
+              "lon": 0
+            },
+            "heading": 161.584534,
+            "state": "live",
+            "offset": 12.38882
+          }
+        },
+        {
+          "kind": "at",
+          "t": 10606.174967251718,
+          "reading": {
+            "progress": 0,
+            "lap": 0,
+            "point": {
+              "lat": 0,
+              "lon": 0
+            },
+            "heading": 161.584534,
+            "state": "live",
+            "offset": 12.38882
+          }
+        },
+        {
+          "kind": "report",
+          "t": 9287.328975275159,
+          "reading": {
+            "progress": 8.244034,
+            "lap": 0,
+            "point": {
+              "lat": -0.00007,
+              "lon": 0.000023
+            },
+            "heading": 161.584534,
+            "state": "live",
+            "offset": 4.330347
+          }
+        },
+        {
+          "kind": "at",
+          "t": 15287.328975275159,
+          "reading": {
+            "progress": 12.353294,
+            "lap": 0,
+            "point": {
+              "lat": -0.000105,
+              "lon": 0.000035
+            },
+            "heading": 161.584534,
+            "state": "live",
+            "offset": 4.330347
+          }
+        },
+        {
+          "kind": "report",
+          "t": 14032.716937363148,
+          "reading": {
+            "progress": 52.727947,
+            "lap": 0,
+            "point": {
+              "lat": -0.000449,
+              "lon": 0.00015
+            },
+            "heading": 161.584534,
+            "state": "live",
+            "offset": 6.299043
+          }
+        },
+        {
+          "kind": "at",
+          "t": 20032.716937363148,
+          "reading": {
+            "progress": 77.066488,
+            "lap": 0,
+            "point": {
+              "lat": -0.000657,
+              "lon": 0.000219
+            },
+            "heading": 161.584534,
+            "state": "live",
+            "offset": 6.299043
+          }
+        },
+        {
+          "kind": "report",
+          "t": 17121.09878193587,
+          "reading": {
+            "progress": 52.727947,
+            "lap": 0,
+            "point": {
+              "lat": -0.000449,
+              "lon": 0.00015
+            },
+            "heading": 161.584534,
+            "state": "live",
+            "offset": 5.418633
+          }
+        },
+        {
+          "kind": "at",
+          "t": 23121.09878193587,
+          "reading": {
+            "progress": 67.331071,
+            "lap": 0,
+            "point": {
+              "lat": -0.000574,
+              "lon": 0.000191
+            },
+            "heading": 161.584534,
+            "state": "live",
+            "offset": 5.418633
+          }
+        },
+        {
+          "kind": "report",
+          "t": 21527.832554653287,
+          "reading": {
+            "progress": 52.727947,
+            "lap": 0,
+            "point": {
+              "lat": -0.000449,
+              "lon": 0.00015
+            },
+            "heading": 161.584534,
+            "state": "live",
+            "offset": 17.016373
+          }
+        },
+        {
+          "kind": "at",
+          "t": 27527.832554653287,
+          "reading": {
+            "progress": 65.613668,
+            "lap": 0,
+            "point": {
+              "lat": -0.000559,
+              "lon": 0.000186
+            },
+            "heading": 161.584534,
+            "state": "live",
+            "offset": 17.016373
+          }
+        },
+        {
+          "kind": "report",
+          "t": 24369.49517019093,
+          "reading": {
+            "progress": 12.635689,
+            "lap": 0,
+            "point": {
+              "lat": -0.000108,
+              "lon": 0.000036
+            },
+            "heading": 161.584534,
+            "state": "live",
+            "offset": 1.461177
+          }
+        },
+        {
+          "kind": "at",
+          "t": 30369.49517019093,
+          "reading": {
+            "progress": 12.635689,
+            "lap": 0,
+            "point": {
+              "lat": -0.000108,
+              "lon": 0.000036
+            },
+            "heading": 161.584534,
+            "state": "live",
+            "offset": 1.461177
+          }
+        },
+        {
+          "kind": "report",
+          "t": 27516.13140758127,
+          "reading": {
+            "progress": 12.635689,
+            "lap": 0,
+            "point": {
+              "lat": -0.000108,
+              "lon": 0.000036
+            },
+            "heading": 161.584534,
+            "state": "live",
+            "offset": 22.255582
+          }
+        },
+        {
+          "kind": "at",
+          "t": 33516.13140758127,
+          "reading": {
+            "progress": 15.789964,
+            "lap": 0,
+            "point": {
+              "lat": -0.000135,
+              "lon": 0.000045
+            },
+            "heading": 161.584534,
+            "state": "live",
+            "offset": 22.255582
+          }
+        },
+        {
+          "kind": "report",
+          "t": 31465.262425132096,
+          "reading": {
+            "progress": 12.635689,
+            "lap": 0,
+            "point": {
+              "lat": -0.000108,
+              "lon": 0.000036
+            },
+            "heading": 161.584534,
+            "state": "live",
+            "offset": 14.036067
+          }
+        },
+        {
+          "kind": "at",
+          "t": 37465.262425132096,
+          "reading": {
+            "progress": 14.771114,
+            "lap": 0,
+            "point": {
+              "lat": -0.000126,
+              "lon": 0.000042
+            },
+            "heading": 161.584534,
+            "state": "live",
+            "offset": 14.036067
+          }
+        },
+        {
+          "kind": "report",
+          "t": 36026.46686974913,
+          "reading": {
+            "progress": 73.347483,
+            "lap": 0,
+            "point": {
+              "lat": -0.000625,
+              "lon": 0.000208
+            },
+            "heading": 161.584534,
+            "state": "live",
+            "offset": 9.031149
+          }
+        },
+        {
+          "kind": "at",
+          "t": 42026.46686974913,
+          "reading": {
+            "progress": 105.540795,
+            "lap": 0,
+            "point": {
+              "lat": -0.0009,
+              "lon": 0.0003
+            },
+            "heading": 161.584534,
+            "state": "live",
+            "offset": 9.031149
+          }
+        },
+        {
+          "kind": "report",
+          "t": 38451.896181330085,
+          "reading": {
+            "progress": 86.733072,
+            "lap": 0,
+            "point": {
+              "lat": -0.000739,
+              "lon": 0.000246
+            },
+            "heading": 161.584534,
+            "state": "offRoute",
+            "offset": 320.059334
+          }
+        },
+        {
+          "kind": "at",
+          "t": 44451.896181330085,
+          "reading": {
+            "progress": 86.733072,
+            "lap": 0,
+            "point": {
+              "lat": -0.000739,
+              "lon": 0.000246
+            },
+            "heading": 161.584534,
+            "state": "offRoute",
+            "offset": 320.059334
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -8,7 +8,8 @@
     "typecheck": "tsc --noEmit",
     "build:demo": "tsc -p tsconfig.demo.json && mv ../demo/index.js ../demo/alongroute.js",
     "size": "npm run build:demo && node scripts/size.mjs",
-    "bench": "node --experimental-strip-types scripts/bench.mjs"
+    "bench": "node --experimental-strip-types scripts/bench.mjs",
+    "parity:update": "node --experimental-strip-types scripts/parity-golden.mjs"
   },
   "devDependencies": {
     "@types/node": "22.15.30",
