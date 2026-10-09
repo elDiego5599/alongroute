@@ -68,6 +68,7 @@ known in advance and the answer has to come out on the phone, every frame.
 
 ```ts
 import { prepareRoute, Tracker, type Point, type Fix, type Reading } from "alongroute";
+import { snapshot, restore, type TrackerSnapshot } from "alongroute/snapshot";
 
 const points: Point[] = [{ lat: 53.0, lon: -1.0 }, { lat: 53.001, lon: -1.0 }];
 const route = prepareRoute(points, { loop: false });
@@ -75,6 +76,8 @@ const bus = new Tracker(route);
 const reading: Reading | null = bus.report({ lat: 53, lon: -1, t: 1000 });
 const state = bus.state(1000);
 const drawn: Reading | null = bus.at(1500);
+const saved = JSON.stringify(snapshot(bus));
+const resumed = restore(route, JSON.parse(saved));
 const remaining: number | null = bus.distanceTo({ lat: 53.001, lon: -1 });
 const projection = route.project({ lat: 53, lon: -1 });
 ```
@@ -107,11 +110,30 @@ new Tracker(route: ReturnType<typeof prepareRoute>, options?: {
 Tracker.report(fix: Fix): Reading | null; // snapped reading, or null before a usable fix
 Tracker.state(nowMs: number): TrackerState; // freshness/off-route state at this time
 Tracker.at(nowMs: number): Reading | null; // interpolated drawing position, or null before a reading
+snapshot(tracker): TrackerSnapshot; // JSON-safe restart state
+restore(route, snapshot, options?): Tracker; // resume; options override saved options
 Tracker.distanceTo(point: Point): number | null; // forward route distance, or null when unavailable
 route.project(point: Point): Projection; // stateless nearest route projection
 ```
 
+Snapshot fields:
+
+The shared TypeScript-to-Dart fixture is [`fixtures/snapshot.json`](fixtures/snapshot.json).
+
+- `version`: format version (currently 1).
+- `previousProgress`, `previousT`: matching history.
+- `current`: last accepted reading.
+- `lapBefore`, `lap`: prior and current lap count.
+- `lastFixT`: latest accepted fix time.
+- `offRoute`: current off-route mode.
+- `speed`: smoothed speed in m/s.
+- `drawFloor`, `drawBase`, `drawT`: drawing bounds and origin time.
+- `backwardFrom`: easing origin for an accepted backward fix.
+- `backwardCandidate`: pending backward fix progress.
+- `options`: saved tracker options.
+
 ```dart
+import 'dart:convert';
 import 'package:alongroute/alongroute.dart';
 
 final points = [
@@ -123,6 +145,8 @@ final bus = Tracker(route);
 final Reading? reading = bus.report(const Fix(lat: 53, lon: -1, t: 1000));
 final TrackerState state = bus.state(1000);
 final Reading? drawn = bus.at(1500);
+final saved = jsonEncode(snapshot(bus));
+final resumed = restore(route, jsonDecode(saved));
 final double? remaining = bus.distanceTo(points.last);
 final Projection projection = route.project(points.first);
 ```

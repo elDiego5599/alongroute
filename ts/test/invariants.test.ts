@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { Tracker, prepareRoute } from "../src/index.ts";
+import { restore, snapshot } from "../src/snapshot.ts";
 
 const initialSeed = 0x51a7e;
 function rng(seed: number) {
@@ -74,6 +75,7 @@ test("seeded Tracker invariants", () => {
       }
       const route = prepareRoute(points, { loop }), vMax = 20;
       const tracker = new Tracker(route, { vMax });
+      let resumed: Tracker | undefined;
       let t = 0, distance = 0, reverseLeft = 0;
       let lastReport: { absolute: number; t: number; held: boolean } | undefined;
       let lastFrame: { absolute: number; t: number } | undefined;
@@ -92,6 +94,8 @@ test("seeded Tracker invariants", () => {
         if (r() < 0.12) fix.lat += pick(r, 100, 500) / 111319;
 
         const reading = tracker.report({ ...fix, t });
+        if (resumed) assert.deepEqual(resumed.report({ ...fix, t }), reading);
+        if (i === 4) resumed = restore(route, JSON.parse(JSON.stringify(snapshot(tracker))));
         if (!reading) {
           if (lastReport) lastReport.held = false;
         }
@@ -126,6 +130,7 @@ test("seeded Tracker invariants", () => {
             `report copy invariant: expected ${copy.progress}, got ${tracker.at(t)!.progress}`);
         }
         const atReport = tracker.at(t);
+        if (resumed) assert.deepEqual(resumed.at(t), atReport);
         if (atReport) lastFrame = { absolute: atReport.progress + atReport.lap * route.length, t };
         const state45 = tracker.state(t + 45001), state300 = tracker.state(t + 300001);
         if (state45 !== "offRoute") assert.equal(state45, "stale");

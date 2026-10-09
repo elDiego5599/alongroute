@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:math' as math;
 
 import 'package:alongroute/alongroute.dart';
@@ -90,6 +91,7 @@ void main() {
           route,
           options: const TrackerOptions(vMax: vMax),
         );
+        Tracker? resumed;
         var time = 0.0, distance = 0.0;
         var reverseLeft = 0;
         ({double absolute, double time, bool held})? lastReport;
@@ -139,6 +141,20 @@ void main() {
             lon: fix.lon,
             t: time,
           ));
+          if (resumed != null) {
+            final copy = resumed.report(Fix(lat: fix.lat, lon: fix.lon, t: time));
+            expect(copy?.progress, reading?.progress);
+            expect(copy?.lap, reading?.lap);
+            expect(copy?.point.lat, reading?.point.lat);
+            expect(copy?.point.lon, reading?.point.lon);
+            expect(copy?.heading, reading?.heading);
+            expect(copy?.state, reading?.state);
+            expect(copy?.offset, reading?.offset);
+          }
+          if (i == 4) {
+            resumed = restore(route,
+                jsonDecode(jsonEncode(snapshot(tracker))) as Map<String, Object?>);
+          }
           if (reading == null) {
             invalidateHeld();
           } else {
@@ -183,6 +199,7 @@ void main() {
                 reason: 'report copy invariant: same Point returned');
           }
           final atReport = tracker.at(time);
+          if (resumed != null) expect(resumed.at(time)?.progress, atReport?.progress);
           if (atReport != null) {
             lastFrame = (
               absolute: atReport.progress + atReport.lap * route.length,

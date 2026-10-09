@@ -1,12 +1,11 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
     "types": [],
     "noEmit": false,
-    "outDir": "../demo",
+    "declaration": true,
+    "outDir": "dist",
     "rootDir": "src"
   },
-  "include": ["src/index.ts"]
+  "include": ["src/**/*.ts"]
 }

@@ -1,5 +1,7 @@
 import 'dart:math' as math;
 
+part 'snapshot.dart';
+
 const double _earthRadius = 6378137;
 const double _rad = math.pi / 180;
 const double _cellSize = 100, _searchRadius = 300;

@@ -3,11 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./snapshot": { "types": "./dist/snapshot.d.ts", "import": "./dist/snapshot.js" }
+  },
   "scripts": {
     "test": "node --experimental-strip-types --test",
     "typecheck": "tsc --noEmit",
     "build:demo": "tsc -p tsconfig.demo.json && mv ../demo/index.js ../demo/alongroute.js",
-    "size": "npm run build:demo && node scripts/size.mjs",
+    "build": "tsc -p tsconfig.build.json",
+    "size": "npm run build && npm run build:demo && node scripts/size.mjs",
     "bench": "node --experimental-strip-types scripts/bench.mjs",
     "parity:update": "node --experimental-strip-types scripts/parity-golden.mjs"
   },
