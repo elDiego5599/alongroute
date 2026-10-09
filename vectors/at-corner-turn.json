@@ -1,0 +1,10 @@
+{
+  "name": "at turns on the route polyline",
+  "route": { "points": [{ "lat": 0, "lon": 0 }, { "lat": 0, "lon": 0.00089831 }, { "lat": 0.00089831, "lon": 0.00089831 }], "loop": false },
+  "options": {},
+  "steps": [
+    { "report": { "lat": 0, "lon": 0, "t": 0 }, "why": "First accepted fix anchors drawing at route start." },
+    { "report": { "lat": 0, "lon": 0.00089831, "t": 10000 }, "why": "100 m in 10 s is 10 m/s; alpha 0.4 gives smoothed speed 4 m/s." },
+    { "at": 15000, "expect": { "progress": [120, 1], "heading": [0, 1] }, "why": "5 s × 4 m/s adds 20 m to the corner at 100 m; route tangent turns north." }
+  ]
+}

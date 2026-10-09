@@ -1,0 +1,11 @@
+{
+  "name": "at freezes the last drawn position when a fix goes off route",
+  "route": { "points": [{ "lat": 0, "lon": 0 }, { "lat": 0, "lon": 0.0089831 }], "loop": false },
+  "options": { "speedAlpha": 1 },
+  "steps": [
+    { "report": { "lat": 0, "lon": 0.00089831, "t": 0 }, "why": "First valid fix anchors drawing at 100 m." },
+    { "report": { "lat": 0, "lon": 0.00179662, "t": 10000 }, "why": "The next valid fix is at 200 m, setting speed to 10 m/s." },
+    { "report": { "lat": 0.001, "lon": 0.00269493, "t": 15000 }, "expect": { "state": "offRoute" }, "why": "This fix is over 60 m from the route; at t=15 s the last drawn point is 250 m." },
+    { "at": 20000, "expect": { "progress": [250, 1], "state": "offRoute" }, "why": "Once off route, drawing stays at the 250 m position from the report time instead of extrapolating another 50 m." }
+  ]
+}

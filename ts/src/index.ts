@@ -58,12 +58,18 @@ const copyReading = (reading: Reading | undefined): Reading | null => reading ? 
 export class Tracker {
   private previous?: { progress: number; t: number };
   private current?: Reading;
+  private lapBefore = 0;
   private lastFixT?: number;
   private offRoute = false;
   private lap = 0;
+  private speed = 0;
+  private drawFloor = 0;
+  private drawT?: number;
+  private drawBase = 0;
+  private backwardFrom?: number;
   private backwardFixes = 0;
   readonly route: Route;
-  readonly options: { vMax?: number; maxOffset?: number; maxStopOffset?: number; staleMs?: number; lostMs?: number };
+  readonly options: { vMax?: number; maxOffset?: number; maxStopOffset?: number; staleMs?: number; lostMs?: number; speedAlpha?: number; extrapolateMs?: number; easeMs?: number };
   constructor(route: Route, options: Tracker["options"] = {}) { this.route = route; this.options = options; }
   state(nowMs: number): TrackerState {
     if (this.offRoute) return 'offRoute';
@@ -84,13 +90,22 @@ export class Tracker {
       return this.route.loop ? ((c.progress - low) % this.route.length + this.route.length) % this.route.length <= high - low : c.progress >= Math.max(0, low) && c.progress <= Math.min(this.route.length, high);
     });
     let c = this.route._choose(inWindow.length ? inWindow : candidates, fix.heading);
+    const drawn = this.at(fix.t);
+    const drawnAbsolute = drawn ? drawn.progress + drawn.lap * (this.route.loop ? this.route.length : 0) : 0;
     if (c.offset > (this.options.maxOffset ?? 60)) {
       this.offRoute = true;
-      if (this.current) this.current = { ...this.current, state: 'offRoute', offset: c.offset };
+      if (drawn) {
+        this.current = { ...drawn, state: 'offRoute', offset: c.offset };
+        this.drawFloor = this.drawBase = drawnAbsolute;
+        this.drawT = fix.t;
+        this.speed = 0;
+        this.backwardFrom = undefined;
+      }
       return copyReading(this.current);
     }
     this.offRoute = false;
     let progress = c.progress;
+    let acceptedBackward = false;
     if (this.previous) {
       const rawDelta = progress - this.previous.progress;
       const forwardDelta = this.route.loop ? (rawDelta % this.route.length + this.route.length) % this.route.length : rawDelta;
@@ -102,16 +117,48 @@ export class Tracker {
       } else if (isBackward) {
         this.backwardFixes++;
         if (this.backwardFixes < 2) progress = this.previous.progress;
-        else { if (this.route.loop && this.previous.progress < this.route.length / 2 && c.progress > this.route.length / 2) this.lap = Math.max(0, this.lap - 1); this.backwardFixes = 0; }
+        else { if (this.route.loop && this.previous.progress < this.route.length / 2 && c.progress > this.route.length / 2) this.lap = Math.max(0, this.lap - 1); this.backwardFixes = 0; acceptedBackward = true; }
       } else {
         if (this.route.loop && c.progress < this.previous.progress && forwardDelta < this.route.length / 2) this.lap++;
         this.backwardFixes = 0;
       }
     }
+    const absolute = progress + this.lap * (this.route.loop ? this.route.length : 0);
+    if (this.previous && dt > 0) {
+      const delta = absolute - (this.previous.progress + this.lapBefore * (this.route.loop ? this.route.length : 0));
+      const sample = Math.max(0, delta / dt);
+      const alpha = this.options.speedAlpha ?? 0.4;
+      this.speed += alpha * (sample - this.speed);
+    }
     this.previous = { progress, t: fix.t };
+    this.lapBefore = this.lap;
     const at = this.route._at(progress);
     this.current = { progress, lap: this.route.loop ? this.lap : 0, point: at.point, heading: at.heading, state: 'live', offset: c.offset };
+    this.backwardFrom = acceptedBackward ? drawnAbsolute : undefined;
+    this.drawFloor = acceptedBackward ? absolute : Math.max(drawnAbsolute, absolute);
+    this.drawBase = absolute;
+    this.drawT = fix.t;
     return copyReading(this.current);
+  }
+  at(nowMs: number): Reading | null {
+    if (!this.current) return null;
+    if (this.offRoute) return copyReading({ ...this.current, state: this.state(nowMs) });
+    if (this.drawT === undefined) return copyReading({ ...this.current, state: this.state(nowMs) });
+    const age = Math.max(0, nowMs - this.drawT), extra = this.options.extrapolateMs ?? 5000, ease = this.options.easeMs ?? 3000;
+    if (this.backwardFrom !== undefined) {
+      const target = this.drawBase, progressAbs = target + (this.backwardFrom - target) * (1 - Math.min(age / 2000, 1));
+      const lap = this.route.loop ? Math.floor(progressAbs / this.route.length) : 0, progress = this.route.loop ? progressAbs % this.route.length : progressAbs;
+      const at = this.route._at(progress);
+      return copyReading({ progress, lap, point: at.point, heading: at.heading, state: this.state(nowMs), offset: this.current.offset });
+    }
+    const moving = Math.min(age, extra), easing = Math.min(Math.max(0, age - extra), ease);
+    const easeDistance = ease ? easing - easing * easing / (2 * ease) : 0;
+    const distance = this.speed * (moving + easeDistance) / 1000;
+    let absolute = Math.max(this.drawFloor, this.drawBase + distance);
+    if (!this.route.loop) absolute = Math.min(this.route.length, absolute);
+    const lap = this.route.loop ? Math.floor(absolute / this.route.length) : 0, progress = this.route.loop ? absolute % this.route.length : absolute;
+    const at = this.route._at(progress);
+    return copyReading({ progress, lap, point: at.point, heading: at.heading, state: this.state(nowMs), offset: this.current.offset });
   }
   distanceTo(point: Point): number | null {
     if (!this.current || this.offRoute || this.current.offset > 60) return null;

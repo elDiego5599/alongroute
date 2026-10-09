@@ -1,0 +1,16 @@
+{
+  "name": "at interpolation wraps a loop and increments lap",
+  "route": { "points": [{ "lat": 0, "lon": 0 }, { "lat": 0, "lon": 0.00089831 }, { "lat": 0.00089831, "lon": 0.00089831 }, { "lat": 0.00089831, "lon": 0 }, { "lat": 0, "lon": 0 }], "loop": true },
+  "options": { "speedAlpha": 1, "extrapolateMs": 100000 },
+  "steps": [
+    { "report": { "lat": 0, "lon": 0.00044916, "t": 0, "heading": 90 }, "why": "First fix is about 50 m along the first side of the loop." },
+    { "report": { "lat": 0, "lon": 0.00089831, "t": 10000, "heading": 90 }, "why": "This fix is about 100 m along the loop, a forward gain of 50 m in 10 s." },
+    { "report": { "lat": 0.00044916, "lon": 0.00089831, "t": 20000, "heading": 0 }, "why": "This fix is about 150 m along the loop, another forward gain of 50 m in 10 s." },
+    { "report": { "lat": 0.00089831, "lon": 0.00089831, "t": 30000, "heading": 0 }, "why": "This fix is about 200 m along the loop, another forward gain of 50 m in 10 s." },
+    { "report": { "lat": 0.00089831, "lon": 0.00044916, "t": 40000, "heading": 270 }, "why": "This fix is about 250 m along the loop, another forward gain of 50 m in 10 s." },
+    { "report": { "lat": 0.00089831, "lon": 0, "t": 50000, "heading": 270 }, "why": "This fix is about 300 m along the loop, another forward gain of 50 m in 10 s." },
+    { "report": { "lat": 0.00044916, "lon": 0, "t": 60000, "heading": 180 }, "why": "This fix is about 350 m along the loop, another forward gain of 50 m in 10 s." },
+    { "report": { "lat": 0.00001797, "lon": 0, "t": 70000, "heading": 180 }, "why": "This fix is about 398 m along the loop, a forward gain of 48 m in 10 s, below half the 400 m loop." },
+    { "at": 71000, "expect": { "progress": [3, 1], "lap": 1 }, "why": "Speed is 4.8 m/s. One second adds 4.8 m to about 398 m; 402.8 wraps to about 3 m on lap 1." }
+  ]
+}

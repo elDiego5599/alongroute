@@ -1,0 +1,12 @@
+{
+  "name": "at eases back after a sustained backward move is accepted",
+  "route": { "points": [{ "lat": 0, "lon": 0 }, { "lat": 0, "lon": 0.0089831 }], "loop": false },
+  "options": { "speedAlpha": 1 },
+  "steps": [
+    { "report": { "lat": 0, "lon": 0.00269493, "t": 0 }, "why": "First fix is about 300 m along the open route." },
+    { "report": { "lat": 0, "lon": 0.00179662, "t": 10000 }, "why": "This fix is about 200 m, 100 m behind; the first large backward fix is held." },
+    { "report": { "lat": 0, "lon": 0.001617, "t": 20000 }, "why": "This second large backward fix is about 180 m and confirms the reversal." },
+    { "at": 21000, "expect": { "progress": [240, 1] }, "why": "The accepted drawing eases linearly from 300 m to 180 m over 2 s; halfway through it is 240 m." },
+    { "at": 22000, "expect": { "progress": [180, 1] }, "why": "After the documented 2 s backward ease, drawing reaches the accepted 180 m fix." }
+  ]
+}

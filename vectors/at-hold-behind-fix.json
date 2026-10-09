@@ -1,0 +1,12 @@
+{
+  "name": "at holds when an accepted fix is behind the drawing",
+  "route": { "points": [{ "lat": 0, "lon": 0 }, { "lat": 0, "lon": 0.0089831 }], "loop": false },
+  "options": { "speedAlpha": 1 },
+  "steps": [
+    { "report": { "lat": 0, "lon": 0.00089831, "t": 0 }, "why": "First fix anchors at 100 m." },
+    { "report": { "lat": 0, "lon": 0.00134747, "t": 10000 }, "why": "Fix advances 50 m in 10 s, setting 5 m/s." },
+    { "at": 15000, "expect": { "progress": [175, 1] }, "why": "Five seconds at 5 m/s draws 25 m beyond the fix." },
+    { "report": { "lat": 0, "lon": 0.0014373, "t": 16000 }, "why": "The accepted fix is at 160 m, behind the 175 m drawn point." },
+    { "at": 17000, "expect": { "progress": [179.2, 1] }, "why": "At the second report time the old 5 m/s trajectory has eased for one second, reaching 179.2 m; the new 160 m fix is behind it, so hold." }
+  ]
+}

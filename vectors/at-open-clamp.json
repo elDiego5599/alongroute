@@ -1,0 +1,10 @@
+{
+  "name": "at clamps extrapolation at the open route end",
+  "route": { "points": [{ "lat": 0, "lon": 0 }, { "lat": 0, "lon": 0.00179662 }], "loop": false },
+  "options": { "speedAlpha": 1 },
+  "steps": [
+    { "report": { "lat": 0, "lon": 0.00089831, "t": 0 }, "why": "First fix is 100 m along a 200 m route." },
+    { "report": { "lat": 0, "lon": 0.001078, "t": 1000 }, "why": "The fix moves forward at about 20 m/s." },
+    { "at": 5000, "expect": { "progress": [200, 1] }, "why": "Extrapolation would pass 200 m, so an open route clamps at its end." }
+  ]
+}

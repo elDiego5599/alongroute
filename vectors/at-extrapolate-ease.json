@@ -1,0 +1,11 @@
+{
+  "name": "at extrapolates then eases to a stop",
+  "route": { "points": [{ "lat": 0, "lon": 0 }, { "lat": 0, "lon": 0.0089831 }], "loop": false },
+  "options": { "speedAlpha": 1 },
+  "steps": [
+    { "report": { "lat": 0, "lon": 0.00089831, "t": 0 }, "why": "First fix is 100 m along route." },
+    { "report": { "lat": 0, "lon": 0.00179662, "t": 10000 }, "why": "100 m over 10 s sets speed to 10 m/s with alpha 1." },
+    { "at": 15000, "expect": { "progress": [250, 1] }, "why": "At the 200 m fix, the first 5 s add 10×5 = 50 m: progress 250 m." },
+    { "at": 18000, "expect": { "progress": [265, 1] }, "why": "The next 3 s ease from 10 to 0 m/s, adding 10×3/2 = 15 m: progress 265 m." }
+  ]
+}

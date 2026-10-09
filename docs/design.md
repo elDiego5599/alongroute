@@ -60,6 +60,8 @@ whole route.
   progress stays.
 - A larger backward move confirmed by 2 fixes is accepted (the bus really
   reversed, or the earlier fix was bad), with a smooth transition.
+- After confirmation, the drawing eases back to accepted progress linearly
+  over 2000 ms. A single lagging fix continues to hold the drawing forward.
 - On a loop, going from the end to the start adds a lap; it is not a
   backward move.
 
@@ -70,9 +72,14 @@ Property test: for any sequence of fixes on the route with ±25 m noise,
 
 - Speed along the route = Δprogress / Δt of the last two fixes, smoothed
   with an exponential moving average (default α = 0.4).
-- `at(now)` advances at that speed for up to `maxExtrapolation` (default
-  8 s), then eases to a stop. It never goes further than `vMax·Δt` from the
-  last fix.
+- `at(nowMs)` returns a copied Reading (or `null` before a valid fix), with
+  state from `state(nowMs)`. Speed uses an exponential moving average with
+  `speedAlpha` default 0.4; the first fix sets it to 0. It advances along
+  route geometry for `extrapolateMs` (default 5000 ms), then eases linearly
+  to a stop over `easeMs` (default 3000 ms). The ease adds exactly half of
+  speed × ease duration. A fix behind the drawn point cannot pull it back.
+  An off-route fix freezes the last drawn position and changes its state to
+  `offRoute`.
 - A fix that lands behind the drawn position does not pull it back: the
   drawing waits until the real position catches up.
 - The position is interpolated **on the polyline**, so it turns corners.
