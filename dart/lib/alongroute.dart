@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 const double _earthRadius = 6378137;
 const double _rad = math.pi / 180;
+const double _cellSize = 100, _searchRadius = 300;
 
 class Point {
   const Point({required this.lat, required this.lon});
@@ -98,12 +99,24 @@ class Route {
     this._lon0,
     this._kx,
     this._segments,
+    this._grid,
+    this._minX,
+    this._maxX,
+    this._minY,
+    this._maxY,
   );
   final List<Point> points;
   final bool loop;
   final double length;
   final double _lat0, _lon0, _kx;
   final List<_Segment> _segments;
+  final Map<String, List<int>> _grid;
+  final int _minX, _maxX, _minY, _maxY;
+  int _distanceChecks = 0;
+  int get distanceChecks => _distanceChecks;
+  List<Projection> debugCandidates(Point point) => _candidates(point)
+      .map((c) => Projection(progress: c.progress, offset: c.offset))
+      .toList();
 
   Projection project(Point point) {
     final candidate = _choose(_candidates(point));
@@ -117,7 +130,26 @@ class Route {
 
   List<_Candidate> _candidates(Point point) {
     final q = _local(point);
-    return _segments.map((s) {
+    final cx = (q.x / _cellSize).floor(), cy = (q.y / _cellSize).floor();
+    final outside = cx < _minX || cx > _maxX || cy < _minY || cy > _maxY;
+    final maxRing = outside ? 0 : [cx - _minX, _maxX - cx, cy - _minY, _maxY - cy].reduce(math.max);
+    final found = <int>{}, examined = <int>{};
+    var best = double.infinity;
+    for (var ring = 0; ring <= maxRing; ring++) {
+      for (var x = cx - ring; x <= cx + ring; x++) {
+        for (var y = cy - ring; y <= cy + ring; y++) {
+          if (ring > 0 && x != cx - ring && x != cx + ring && y != cy - ring && y != cy + ring) continue;
+          found.addAll(_grid['$x,$y'] ?? const []);
+        }
+      }
+      if (found.isNotEmpty) {
+        for (final i in found) { if (!examined.add(i)) continue; final s = _segments[i]; final t = (((q.x - s.x) * s.dx + (q.y - s.y) * s.dy) / (s.length * s.length)).clamp(0.0, 1.0).toDouble(); _distanceChecks++; best = math.min(best, math.sqrt(math.pow(q.x - s.x - t * s.dx, 2) + math.pow(q.y - s.y - t * s.dy, 2))); }
+        if (outside || math.max(0, (ring - 1) * _cellSize) > best + 15) break;
+      }
+      if (ring == maxRing) break;
+    }
+    final indices = outside ? List.generate(_segments.length, (i) => i) : found.toList()..sort();
+    return indices.map((i) { final s = _segments[i]; _distanceChecks++;
       final t =
           (((q.x - s.x) * s.dx + (q.y - s.y) * s.dy) / (s.length * s.length))
               .clamp(0.0, 1.0)
@@ -212,6 +244,15 @@ Route prepareRoute(List<Point> points, {bool? loop}) {
       'Route must contain at least one non-zero-length segment',
     );
   }
+  final grid = <String, List<int>>{};
+  var minX = 1 << 60, maxX = -(1 << 60), minY = 1 << 60, maxY = -(1 << 60);
+  for (var i = 0; i < segments.length; i++) {
+    final s = segments[i];
+    final x0 = ((math.min(s.x, s.x + s.dx) - _searchRadius) / _cellSize).floor(), x1 = ((math.max(s.x, s.x + s.dx) + _searchRadius) / _cellSize).floor();
+    final y0 = ((math.min(s.y, s.y + s.dy) - _searchRadius) / _cellSize).floor(), y1 = ((math.max(s.y, s.y + s.dy) + _searchRadius) / _cellSize).floor();
+    minX = math.min(minX, x0); maxX = math.max(maxX, x1); minY = math.min(minY, y0); maxY = math.max(maxY, y1);
+    for (var x = x0; x <= x1; x++) { for (var y = y0; y <= y1; y++) { (grid['$x,$y'] ??= []).add(i); } }
+  }
   return Route._(
     List.unmodifiable(points),
     isLoop,
@@ -220,6 +261,7 @@ Route prepareRoute(List<Point> points, {bool? loop}) {
     lon0,
     kx,
     List.unmodifiable(segments),
+    grid, minX, maxX, minY, maxY,
   );
 }
 

@@ -2,6 +2,7 @@ export type Point = { lat: number; lon: number };
 export type Fix = Point & { t: number; heading?: number; speed?: number; accuracy?: number };
 export type Projection = { progress: number; offset: number };
 type Segment = { x: number; y: number; dx: number; dy: number; length: number; start: number; heading: number };
+const CELL = 100, SEARCH_RADIUS = 300;
 const R = 6378137, rad = Math.PI / 180;
 const haversine = (a: Point, b: Point) => {
   const p1 = a.lat * rad, p2 = b.lat * rad, dp = (b.lat - a.lat) * rad, dl = (b.lon - a.lon) * rad;
@@ -26,9 +27,38 @@ export function prepareRoute(points: Point[], options: { loop?: boolean } = {}) 
   }
   if (!length) throw new Error("Route must contain at least one non-zero-length segment");
   const local = (p: Point) => ({ x: (p.lon - lon0) * rad * kx, y: (p.lat - lat0) * rad * R });
+  // A segment is registered in every 100 m cell touched by its bounding box plus 300 m.
+  const grid = new Map<string, number[]>();
+  const key = (x: number, y: number) => `${x},${y}`;
+  const bounds = { minX: Infinity, maxX: -Infinity, minY: Infinity, maxY: -Infinity };
+  segments.forEach((s, i) => {
+    const x0 = Math.floor((Math.min(s.x, s.x + s.dx) - SEARCH_RADIUS) / CELL), x1 = Math.floor((Math.max(s.x, s.x + s.dx) + SEARCH_RADIUS) / CELL);
+    const y0 = Math.floor((Math.min(s.y, s.y + s.dy) - SEARCH_RADIUS) / CELL), y1 = Math.floor((Math.max(s.y, s.y + s.dy) + SEARCH_RADIUS) / CELL);
+    bounds.minX = Math.min(bounds.minX, x0); bounds.maxX = Math.max(bounds.maxX, x1); bounds.minY = Math.min(bounds.minY, y0); bounds.maxY = Math.max(bounds.maxY, y1);
+    for (let x = x0; x <= x1; x++) for (let y = y0; y <= y1; y++) { const k = key(x, y); const cell = grid.get(k); if (cell) cell.push(i); else grid.set(k, [i]); }
+  });
+  let distanceChecks = 0;
   const projectCandidates = (p: Point) => {
     const q = local(p);
-    return segments.map(s => {
+    const cx = Math.floor(q.x / CELL), cy = Math.floor(q.y / CELL), found = new Set<number>(), examined = new Set<number>();
+    const outside = cx < bounds.minX || cx > bounds.maxX || cy < bounds.minY || cy > bounds.maxY;
+    const maxRing = outside ? 0 : Math.max(cx - bounds.minX, bounds.maxX - cx, cy - bounds.minY, bounds.maxY - cy);
+    let best = Infinity;
+    for (let ring = 0; ring <= maxRing; ring++) {
+      for (let x = cx - ring; x <= cx + ring; x++) for (let y = cy - ring; y <= cy + ring; y++) {
+        if (ring && x !== cx - ring && x !== cx + ring && y !== cy - ring && y !== cy + ring) continue;
+        for (const i of grid.get(key(x, y)) ?? []) found.add(i);
+      }
+      if (found.size) {
+        for (const i of found) if (!examined.has(i)) { examined.add(i); const s = segments[i]!; distanceChecks++; const t = Math.max(0, Math.min(1, ((q.x - s.x) * s.dx + (q.y - s.y) * s.dy) / s.length ** 2)); best = Math.min(best, Math.hypot(q.x - s.x - t * s.dx, q.y - s.y - t * s.dy)); }
+        const reach = Math.max(0, (ring - 1) * CELL);
+        if (outside || reach > best + 15) break;
+      }
+      if (ring === maxRing) break;
+    }
+    const indices = outside || found.size === segments.length ? segments.map((_, i) => i) : [...found].sort((a, b) => a - b);
+    return indices.map(i => {
+      const s = segments[i]!; distanceChecks++;
       const t = Math.max(0, Math.min(1, ((q.x - s.x) * s.dx + (q.y - s.y) * s.dy) / s.length ** 2));
       return { progress: s.start + t * s.length, offset: Math.hypot(q.x - s.x - t * s.dx, q.y - s.y - t * s.dy), heading: s.heading };
     });
@@ -40,6 +70,7 @@ export function prepareRoute(points: Point[], options: { loop?: boolean } = {}) 
   return {
     points, loop, length,
     project(point: Point): Projection { const c = choose(projectCandidates(point)); return { progress: c.progress, offset: c.offset }; },
+    _distanceChecks: () => distanceChecks,
     _local: local, _candidates: projectCandidates, _choose: choose,
     _at(progress: number): { point: Point; heading: number } {
       const p = loop ? ((progress % length) + length) % length : Math.max(0, Math.min(length, progress));
